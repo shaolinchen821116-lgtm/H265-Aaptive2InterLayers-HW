@@ -1,0 +1,32 @@
+[
+  {
+    "sequence": "TrainSeq1",
+    "qp": 10,
+    "command": "build\\intra2-ninja\\x265.exe --input /data/TrainSeq1_1920x1080_30.yuv --input-res 1920x1080 --fps 30 --frames 1 --preset medium --tune zerolatency --ref 1 --keyint 1 --min-keyint 1 --ctu 32 --min-cu-size 8 --max-tu-size 32 --tu-intra-depth 1 --qp 10 --ipratio 1.0 --aq-mode 0 --no-cutree --no-psy --no-tskip --no-tskip-fast --frame-threads 1 --no-wpp --pools 1 --psnr --ssim --log-level info --output experiment\\intra_2layer\\training_reproduction\\dry_run\\TrainSeq1\\QP10\\all\\frame0.265"
+  },
+  {
+    "sequence": "TrainSeq1",
+    "qp": 16,
+    "command": "build\\intra2-ninja\\x265.exe --input /data/TrainSeq1_1920x1080_30.yuv --input-res 1920x1080 --fps 30 --frames 1 --preset medium --tune zerolatency --ref 1 --keyint 1 --min-keyint 1 --ctu 32 --min-cu-size 8 --max-tu-size 32 --tu-intra-depth 1 --qp 16 --ipratio 1.0 --aq-mode 0 --no-cutree --no-psy --no-tskip --no-tskip-fast --frame-threads 1 --no-wpp --pools 1 --psnr --ssim --log-level info --output experiment\\intra_2layer\\training_reproduction\\dry_run\\TrainSeq1\\QP16\\all\\frame0.265"
+  },
+  {
+    "sequence": "TrainSeq2",
+    "qp": 10,
+    "command": "build\\intra2-ninja\\x265.exe --input /data/TrainSeq2_1280x720_60.yuv --input-res 1280x720 --fps 60 --frames 1 --preset medium --tune zerolatency --ref 1 --keyint 1 --min-keyint 1 --ctu 32 --min-cu-size 8 --max-tu-size 32 --tu-intra-depth 1 --qp 10 --ipratio 1.0 --aq-mode 0 --no-cutree --no-psy --no-tskip --no-tskip-fast --frame-threads 1 --no-wpp --pools 1 --psnr --ssim --log-level info --output experiment\\intra_2layer\\training_reproduction\\dry_run\\TrainSeq2\\QP10\\all\\frame0.265"
+  },
+  {
+    "sequence": "TrainSeq2",
+    "qp": 16,
+    "command": "build\\intra2-ninja\\x265.exe --input /data/TrainSeq2_1280x720_60.yuv --input-res 1280x720 --fps 60 --frames 1 --preset medium --tune zerolatency --ref 1 --keyint 1 --min-keyint 1 --ctu 32 --min-cu-size 8 --max-tu-size 32 --tu-intra-depth 1 --qp 16 --ipratio 1.0 --aq-mode 0 --no-cutree --no-psy --no-tskip --no-tskip-fast --frame-threads 1 --no-wpp --pools 1 --psnr --ssim --log-level info --output experiment\\intra_2layer\\training_reproduction\\dry_run\\TrainSeq2\\QP16\\all\\frame0.265"
+  },
+  {
+    "sequence": "ValidationSeq1",
+    "qp": 10,
+    "command": "build\\intra2-ninja\\x265.exe --input /data/ValidationSeq1_832x480_50.yuv --input-res 832x480 --fps 50 --frames 1 --preset medium --tune zerolatency --ref 1 --keyint 1 --min-keyint 1 --ctu 32 --min-cu-size 8 --max-tu-size 32 --tu-intra-depth 1 --qp 10 --ipratio 1.0 --aq-mode 0 --no-cutree --no-psy --no-tskip --no-tskip-fast --frame-threads 1 --no-wpp --pools 1 --psnr --ssim --log-level info --output experiment\\intra_2layer\\training_reproduction\\dry_run\\ValidationSeq1\\QP10\\all\\frame0.265"
+  },
+  {
+    "sequence": "ValidationSeq1",
+    "qp": 16,
+    "command": "build\\intra2-ninja\\x265.exe --input /data/ValidationSeq1_832x480_50.yuv --input-res 832x480 --fps 50 --frames 1 --preset medium --tune zerolatency --ref 1 --keyint 1 --min-keyint 1 --ctu 32 --min-cu-size 8 --max-tu-size 32 --tu-intra-depth 1 --qp 16 --ipratio 1.0 --aq-mode 0 --no-cutree --no-psy --no-tskip --no-tskip-fast --frame-threads 1 --no-wpp --pools 1 --psnr --ssim --log-level info --output experiment\\intra_2layer\\training_reproduction\\dry_run\\ValidationSeq1\\QP16\\all\\frame0.265"
+  }
+]

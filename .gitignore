@@ -1,0 +1,34 @@
+# Build products
+build/
+cmake-build-*/
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.lib
+*.dll
+
+# Encoded data and raw video (never commit test media)
+*.yuv
+*.y4m
+*.265
+*.hevc
+*.bin
+
+# Large/generated experiment data
+**/dataset_current/
+**/raw/
+**/runs/
+**/ctu_stats.csv
+*.log
+
+# Python/editor/OS temporary files
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+~$*.docx

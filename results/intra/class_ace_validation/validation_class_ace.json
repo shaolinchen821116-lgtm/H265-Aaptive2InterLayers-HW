@@ -1,0 +1,1078 @@
+{
+  "bd_rate": [
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.511826693095041
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.49560735146889634
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.8014395589549759
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8620812649983156
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.40040784820889463
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7788425035259561
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9355602259917939
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6678655870177241
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.3364075991310722
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.6923928965072212
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 3.3725237881232495
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.385628505732761
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.8749416818137234
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.122368532168938
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.0030335566960646
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.017233572811116
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": -0.08933952429960312
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7796955807830797
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 3.2567729705293536
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.1426667129838197
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.26852218864428234
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8700196852800657
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.6446373252080528
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.4840503431817078
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.1807799566821311
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.28324629241971433
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.4597343822546849
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6168974475278866
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.2321105250949307
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.34753343998041863
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.6469853074453802
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.44210452907014197
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": -0.005199798103761033
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": -0.02649676550606772
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.6123460929837075
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.4524874293080572
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": -0.006787454235979151
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": -0.01577345783555506
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9970742717327896
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.24753344680294997
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.27223444970423394
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.1567707010783792
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.943944339658942
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.4562198773658377
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.3181223089053997
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.38023810129157454
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.6871689840355355
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.494626583033031
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6294538589667331
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2936981646147983
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 4.505711630716269
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 2.086207865662759
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.2488458410651493
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.7953271118751557
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.692999040387022
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.642173006633696
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 2.142176549478303
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 5.704440518351794
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 15.428491178022142
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 6.7804273055517505
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.323991264558111
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.5845679570433813
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.6678736144721817
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.5907501024791992
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.3487462617180812
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.9471574260443223
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 9.840135750715916
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 4.289996493893744
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.8413457183426676
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.4760714978048872
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.568534762387741
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.2976888140365572
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.1230944342297544
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.7107709527724113
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 7.116264038682463
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 3.0510919388259783
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.0951208896278652
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2578865485441737
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.7995548664823771
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.1052066552404982
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.3769771575148582
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.5380247092121166
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 10.374890295511886
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 4.409292653407237
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.3798406461637436
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 4.1894227738933365
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 3.5923997650960438
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 2.937885724348055
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.3756901450590941
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.2392537172369886
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 9.398254221180679
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 3.8183471847344608
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.0263011780161424
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2900484913812793
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.1932839954112318
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.1991091285225464
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.4241171461130566
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.5940001239880588
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 2.5869816735391127
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.1238548853655383
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.637674765011309
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.9506055178474471
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9692968913439293
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA算术平均",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.84254957991442
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.08961877099575022
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.29830395219377637
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.818199446356672
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6670678667964003
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.2029918921021584
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.39550444217912595
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.7439664721054395
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC算术平均",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.4170787255219577
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.3326897344944706
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.738890914705405
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 9.443957852471561
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 4.072560573679322
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.1525742562956132
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.9322207300903689
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.7524410073727663
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE算术平均",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.6288022385434253
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.7669039819313282
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.567880128748638
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 5.759209020611189
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 2.445945389999384
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.7502302196837443
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2563794320794677
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.2857588096121846
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体算术平均",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.093852291098102
+    }
+  ],
+  "accuracy": [
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "ctus": 168000,
+      "overall_accuracy_pct": 84.58928571428571,
+      "nonneutral_accuracy_pct": 82.7902524628086,
+      "low_recall_pct": 84.95679167715413,
+      "high_recall_pct": 77.40635207450136,
+      "selected_low_pct": 64.36011904761905,
+      "neutral_pct": 10.45357142857143
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "ctus": 168000,
+      "overall_accuracy_pct": 79.34464285714286,
+      "nonneutral_accuracy_pct": 76.60286016734878,
+      "low_recall_pct": 74.55603015352692,
+      "high_recall_pct": 79.81632299428175,
+      "selected_low_pct": 51.4375,
+      "neutral_pct": 11.718452380952382
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "ctus": 16380,
+      "overall_accuracy_pct": 86.05006105006105,
+      "nonneutral_accuracy_pct": 84.42930153321976,
+      "low_recall_pct": 85.02002184200947,
+      "high_recall_pct": 82.66883645240033,
+      "selected_low_pct": 64.16361416361417,
+      "neutral_pct": 10.40903540903541
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "ctus": 16380,
+      "overall_accuracy_pct": 90.47008547008546,
+      "nonneutral_accuracy_pct": 89.62445995347291,
+      "low_recall_pct": 95.80740255486407,
+      "high_recall_pct": 62.97211436639605,
+      "selected_low_pct": 82.17948717948718,
+      "neutral_pct": 8.15018315018315
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "ctus": 16380,
+      "overall_accuracy_pct": 94.15750915750915,
+      "nonneutral_accuracy_pct": 93.78167641325535,
+      "low_recall_pct": 99.51767331365632,
+      "high_recall_pct": 40.62708472314877,
+      "selected_low_pct": 94.23687423687424,
+      "neutral_pct": 6.043956043956044
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "ctus": 16380,
+      "overall_accuracy_pct": 85.23199023199024,
+      "nonneutral_accuracy_pct": 83.56099218484539,
+      "low_recall_pct": 90.8280971583982,
+      "high_recall_pct": 64.43731490621916,
+      "selected_low_pct": 72.31379731379731,
+      "neutral_pct": 10.164835164835164
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "ctus": 36960,
+      "overall_accuracy_pct": 80.0,
+      "nonneutral_accuracy_pct": 77.3202834964563,
+      "low_recall_pct": 75.90016153405242,
+      "high_recall_pct": 79.35382778689748,
+      "selected_low_pct": 51.125541125541126,
+      "neutral_pct": 11.81547619047619
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "ctus": 36960,
+      "overall_accuracy_pct": 84.1504329004329,
+      "nonneutral_accuracy_pct": 82.35807860262008,
+      "low_recall_pct": 76.31825538802283,
+      "high_recall_pct": 85.66104537407995,
+      "selected_low_pct": 35.23538961038961,
+      "neutral_pct": 10.159632034632034
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "ctus": 36960,
+      "overall_accuracy_pct": 85.42207792207792,
+      "nonneutral_accuracy_pct": 83.47391344354814,
+      "low_recall_pct": 72.00060670408008,
+      "high_recall_pct": 91.26538600195705,
+      "selected_low_pct": 32.489177489177486,
+      "neutral_pct": 11.788419913419913
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "ctus": 36960,
+      "overall_accuracy_pct": 79.35335497835497,
+      "nonneutral_accuracy_pct": 76.03630197211406,
+      "low_recall_pct": 66.27772878366461,
+      "high_recall_pct": 84.44717301058294,
+      "selected_low_pct": 37.24837662337662,
+      "neutral_pct": 13.841991341991342
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "ctus": 36960,
+      "overall_accuracy_pct": 74.70779220779221,
+      "nonneutral_accuracy_pct": 71.2138941922769,
+      "low_recall_pct": 70.03431708991077,
+      "high_recall_pct": 72.17381590705988,
+      "selected_low_pct": 45.70887445887446,
+      "neutral_pct": 12.137445887445887
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "ctus": 36960,
+      "overall_accuracy_pct": 82.79491341991341,
+      "nonneutral_accuracy_pct": 80.03579053120683,
+      "low_recall_pct": 68.95974375773459,
+      "high_recall_pct": 88.43499861992824,
+      "selected_low_pct": 35.0974025974026,
+      "neutral_pct": 13.82034632034632
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA加权总体",
+      "ctus": 336000,
+      "overall_accuracy_pct": 81.96696428571428,
+      "nonneutral_accuracy_pct": 79.71856161150924,
+      "low_recall_pct": 80.19446718618919,
+      "high_recall_pct": 78.78505506706186,
+      "selected_low_pct": 57.898809523809526,
+      "neutral_pct": 11.086011904761905
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC加权总体",
+      "ctus": 65520,
+      "overall_accuracy_pct": 88.97741147741148,
+      "nonneutral_accuracy_pct": 87.92812369410781,
+      "low_recall_pct": 93.29270846421242,
+      "high_recall_pct": 66.70532681633668,
+      "selected_low_pct": 78.22344322344323,
+      "neutral_pct": 8.692002442002442
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE加权总体",
+      "ctus": 221760,
+      "overall_accuracy_pct": 81.07142857142857,
+      "nonneutral_accuracy_pct": 78.42638419908414,
+      "low_recall_pct": 71.66490753063191,
+      "high_recall_pct": 83.91352518923348,
+      "selected_low_pct": 39.48412698412698,
+      "neutral_pct": 12.260551948051948
+    },
+    {
+      "class": "A/C/E总体",
+      "sequence": "A/C/E总体加权总体",
+      "ctus": 623280,
+      "overall_accuracy_pct": 82.38528430240021,
+      "nonneutral_accuracy_pct": 80.15193068027125,
+      "low_recall_pct": 79.8399600951946,
+      "high_recall_pct": 80.62308547570964,
+      "selected_low_pct": 53.48350661019125,
+      "neutral_pct": 11.252246181491465
+    }
+  ]
+}

@@ -1,0 +1,4070 @@
+{
+  "bd_rate": [
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.02914037327181873
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.09595374876757434
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.47975432323150713
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.13470738934959758
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03800039057004767
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.47975432323150713
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.11913690174605307
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03800039057004767
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.354811614996553
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.02343320372686364
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03800039057004767
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.3727858212627444
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.03201552614915393
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.3458220384695121
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.9004043740309831
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.7707329709140351
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.8849347274499486
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.1149170469344929
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.3564067432730411
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.13314182021386678
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.0021952012219217387
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.06266514811461565
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.15578036607093448
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.004515792344161884
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.03972121246913485
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.11238722998113682
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.010936111479065147
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.03972121246913485
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.13680015978044802
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.00031531208724011606
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.03972121246913485
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.06301375455783909
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.008977724355241357
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.21267257777539683
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.37098580902572564
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.8236911773239042
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.4643970632614014
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.00866106751766793
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": -0.03831059660875935
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.004426952013614205
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.2051511918392146
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.09389223109017575
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.2237604469429888
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.10670793528652078
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.2237604469429888
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.10670793528652078
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.11839852917926441
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.06169233679995667
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.5844032512984709
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.8158850808580365
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.9980536960338515
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.7341929134516256
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.03744424041010053
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.04178293069785344
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.011844210206590766
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.009799974046842408
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.4343116042095585
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.07043388650895821
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.057279607996107984
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.009799974046842408
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.4343116042095585
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.12683701338546127
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.009799974046842408
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.4343116042095585
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.13832166752750785
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.009799974046842408
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.4343116042095585
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.13832166752750785
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.24496258962008
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.9366415209784762
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.06973895044057876
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.7221966722895434
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.0016421787274900623
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.14445744890143608
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0061515870639183845
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.00044213278866944705
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.07826121060773295
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.07452949952586607
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.03708461905516103
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03642656817881562
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.07301670331900656
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.026601208386978215
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03642656817881562
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.07301670331900656
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.026601208386978215
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03642656817881562
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.04670430650308699
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.02172040246403162
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.7144451050000722
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.8977235529203043
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.656849030198293
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.9687000867584228
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.002755717017866033
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.4934866659521031
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.11500953826366622
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03742468889211814
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.1885175839423603
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.022893732719864168
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.03742468889211814
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.22885741516482927
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.03894023486346043
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.4004078482087392
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.8148585251232854
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.0621679090651703
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.7057722671894417
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.03590412474130389
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.12581428107183434
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.037989738260058026
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.01136355750259721
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.17692258293791063
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.03528630185642978
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.00814861742056694
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.1349279452928176
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.022653464576039006
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.8749416818138789
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.1071574617166569
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.0416330707628818
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.0244074084414079
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.015193136198177193
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.03892663398983309
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0072305673931571945
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.13437913504027454
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.04679875608977202
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.1252221989249236
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.052147939194102655
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.26852218864428234
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.870019685279666
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.4417692525245052
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.6268824416266972
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.7926626627154265
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.14219362902800903
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.0346026068834937
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.26646734478377176
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.053905682652855
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.0346026068834937
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.2774171425268701
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.06455449208425668
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.23211052509430896
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.3245007257211441
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.8151419639856661
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.4772123254346283
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.023035086184308717
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.16940779083183255
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.03513990757244567
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.00678745423642324
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.015773457835266402
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.9970742717327896
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.24753344680294997
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.04456111214554692
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0013430047292706249
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.04456111214554692
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0013430047292706249
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.3181223089052887
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.36407978197678936
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.7265123387250494
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.48976488102898674
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.016035030959571372
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.03253600944772561
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.00611518038494685
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.09700618145684903
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.09080897643786168
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.028431046134924642
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.09700618145684903
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.07381691412802205
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.03895083662790455
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.2488458410646608
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.7846443011915403
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.5634461809346023
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.575155263402106
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.012105360928660325
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": -0.12457538324390782
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.06511273230243031
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.21850773037810356
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.5415780127582925
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.23882574060130057
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.21850773037810356
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.5415780127582925
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.23882574060130057
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.323991264558111
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.7593143272635503
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.469772178249329
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.6496654951722256
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.17188969430625978
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": -0.18856934510674828
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.058087428144859565
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.013935655700747507
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.10659425261665412
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.2913970493543916
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.13331812554773226
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.013935655700747507
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.10659425261665412
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.2913970493543916
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.13331812554773226
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.8359443800506794
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.4635482769655983
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.6292472944241965
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.3011279979529222
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": -0.005399713107900883
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.01219598412459666
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.056508151334999646
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0036095115430789804
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.09411000156447358
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.3221969306109407
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.1596666188091067
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.09411000156447358
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.41563281603296254
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.17129283627757008
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.0951208896283537
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.2616194122312185
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.3673992099610066
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.1849255878835008
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.005163167380239919
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.5632639378203796
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.0790591795936324
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.08390771830089072
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.17600519065772424
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.06292564204706252
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.08390771830089072
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.009575567207953384
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.01829645530820878
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.379840646163899
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 4.252406604993242
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 4.187815397938244
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 3.0555846175205126
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.056767180927375094
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.5743300285454556
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.11422963483880277
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.00286153673272338
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.19395145424527804
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.2449122922530753
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.3734734769347936
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.00286153673272338
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.19395145424527804
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.2449122922530753
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.3734734769347936
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.1254822319379354
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.2903454914555024
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.5254238763272143
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.3524541386568334
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.09721335043260115
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.00010997926442879447
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.32284511049134323
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.1498007027421755
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.04986890062673721
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.1974490811662409
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0054008021955706045
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.018585952998048823
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.0273474902543032
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.361556986443607
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.7175792890586615
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.1293153808174383
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.014243827929771857
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.0780036676828133
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.007669449893563662
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.020349967442769845
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.02601462876676841
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.07274433224423671
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.011455921599221597
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.004981154446577207
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.020903489502569417
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.05269597248908598
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.0006514187628249487
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.02926827705424746
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.02733928724220396
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.07205621912270764
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.0006514187628249487
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.02945739117671983
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.02261015282660761
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.08237045753083372
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.010355494271563348
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.8650898378154248
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.051900489914026
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.637674765011309
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.9610079934199711
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.029090017288146974
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.18272008344013546
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.024394123197357676
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.03079684971974972
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.18189268022882343
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.02278665315634254
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.058331784845138124
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.1986969003855843
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.02493833054850736
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.7548842926421884
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.0638131649821325
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.6204611124327064
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.7843280675627051
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.014243827929771857
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.0780036676828133
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.007669449893563662
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3290",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.020349967442769845
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.02601462876676841
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.07274433224423671
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.011455921599221597
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3292",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.004981154446577207
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.049702583912276666
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.10261545985108977
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.004981154446577207
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.03614823125742017
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.05792847463740092
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.004981154446577207
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.04280458905387696
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.24865161574874617
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.009767529285970022
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.46034827372331555
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.9951244567420026
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.2029918921018642
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.38570668378558326
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.0014409804584530894
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.11135189799239831
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.008650651720873426
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": -0.002765887040220849
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": -0.11180011339933515
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": -0.008650651720873426
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.05661228742668648
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "high",
+      "bd_rate_y_pct": 0.200633749973587
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "low",
+      "bd_rate_y_pct": 0.015302272887450044
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "adaptive40",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.034938112804174436
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 1.6864855167646835
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 1.957184022972432
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": 1.1682042089006066
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "cascade3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 1.9686464023501085
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.09190935472709698
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.24814604277653882
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.001845686494670688
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3294",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.10097622257221699
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "all10",
+      "bd_rate_y_pct": 0.09916314802099202
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "high",
+      "bd_rate_y_pct": 0.2663355319021214
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "low",
+      "bd_rate_y_pct": -0.001845686494670688
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_mean",
+      "mode": "gate3298",
+      "reference": "anchor_all",
+      "segment": "mid",
+      "bd_rate_y_pct": 0.10097622257221699
+    }
+  ],
+  "selection": [
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3290",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 13.469696969696969,
+      "anchor_leaf32_pct": 45.80808080808081,
+      "selected_precision_pct": 97.18785151856018,
+      "false_selected_pct_all": 0.3787878787878788
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3292",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 13.217171717171718,
+      "anchor_leaf32_pct": 45.80808080808081,
+      "selected_precision_pct": 97.43981658387466,
+      "false_selected_pct_all": 0.3383838383838384
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 13.06060606060606,
+      "anchor_leaf32_pct": 45.80808080808081,
+      "selected_precision_pct": 97.48646558391339,
+      "false_selected_pct_all": 0.3282828282828283
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "gate3298",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 12.813131313131313,
+      "anchor_leaf32_pct": 45.80808080808081,
+      "selected_precision_pct": 97.4773354355538,
+      "false_selected_pct_all": 0.32323232323232326
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BasketballDrive",
+      "mode": "cascade3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 13.06060606060606,
+      "anchor_leaf32_pct": 45.80808080808081,
+      "selected_precision_pct": 97.48646558391339,
+      "false_selected_pct_all": 0.3282828282828283
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3290",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 8.292929292929292,
+      "anchor_leaf32_pct": 26.227272727272727,
+      "selected_precision_pct": 95.61510353227771,
+      "false_selected_pct_all": 0.36363636363636365
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3292",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 5.2272727272727275,
+      "anchor_leaf32_pct": 26.227272727272727,
+      "selected_precision_pct": 98.26086956521739,
+      "false_selected_pct_all": 0.09090909090909091
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 5.136363636363637,
+      "anchor_leaf32_pct": 26.227272727272727,
+      "selected_precision_pct": 98.52507374631269,
+      "false_selected_pct_all": 0.07575757575757576
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "gate3298",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 4.797979797979798,
+      "anchor_leaf32_pct": 26.227272727272727,
+      "selected_precision_pct": 98.63157894736842,
+      "false_selected_pct_all": 0.06565656565656566
+    },
+    {
+      "class": "ClassB",
+      "sequence": "BQTerrace",
+      "mode": "cascade3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 5.136363636363637,
+      "anchor_leaf32_pct": 26.227272727272727,
+      "selected_precision_pct": 98.52507374631269,
+      "false_selected_pct_all": 0.07575757575757576
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3290",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 6.954545454545454,
+      "anchor_leaf32_pct": 34.72222222222222,
+      "selected_precision_pct": 96.00580973129993,
+      "false_selected_pct_all": 0.2777777777777778
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3292",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 6.853535353535354,
+      "anchor_leaf32_pct": 34.72222222222222,
+      "selected_precision_pct": 96.16801768607222,
+      "false_selected_pct_all": 0.26262626262626265
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 6.792929292929293,
+      "anchor_leaf32_pct": 34.72222222222222,
+      "selected_precision_pct": 96.2081784386617,
+      "false_selected_pct_all": 0.25757575757575757
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "gate3298",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 6.313131313131313,
+      "anchor_leaf32_pct": 34.72222222222222,
+      "selected_precision_pct": 96.16,
+      "false_selected_pct_all": 0.24242424242424243
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Cactus",
+      "mode": "cascade3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 6.792929292929293,
+      "anchor_leaf32_pct": 34.72222222222222,
+      "selected_precision_pct": 96.2081784386617,
+      "false_selected_pct_all": 0.25757575757575757
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3290",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 15.782828282828282,
+      "anchor_leaf32_pct": 74.71717171717172,
+      "selected_precision_pct": 94.752,
+      "false_selected_pct_all": 0.8282828282828283
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3292",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 9.954545454545455,
+      "anchor_leaf32_pct": 74.71717171717172,
+      "selected_precision_pct": 97.56468797564688,
+      "false_selected_pct_all": 0.24242424242424243
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 9.267676767676768,
+      "anchor_leaf32_pct": 74.71717171717172,
+      "selected_precision_pct": 98.2016348773842,
+      "false_selected_pct_all": 0.16666666666666666
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "gate3298",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 9.252525252525253,
+      "anchor_leaf32_pct": 74.71717171717172,
+      "selected_precision_pct": 98.2532751091703,
+      "false_selected_pct_all": 0.16161616161616163
+    },
+    {
+      "class": "ClassB",
+      "sequence": "Kimono1",
+      "mode": "cascade3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 9.267676767676768,
+      "anchor_leaf32_pct": 74.71717171717172,
+      "selected_precision_pct": 98.2016348773842,
+      "false_selected_pct_all": 0.16666666666666666
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3290",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 10.702020202020202,
+      "anchor_leaf32_pct": 42.27777777777778,
+      "selected_precision_pct": 97.97074091552619,
+      "false_selected_pct_all": 0.21717171717171718
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3292",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 10.570707070707071,
+      "anchor_leaf32_pct": 42.27777777777778,
+      "selected_precision_pct": 98.08886765408505,
+      "false_selected_pct_all": 0.20202020202020202
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 10.545454545454545,
+      "anchor_leaf32_pct": 42.27777777777778,
+      "selected_precision_pct": 98.1800766283525,
+      "false_selected_pct_all": 0.1919191919191919
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "gate3298",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 10.05050505050505,
+      "anchor_leaf32_pct": 42.27777777777778,
+      "selected_precision_pct": 98.34170854271356,
+      "false_selected_pct_all": 0.16666666666666666
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ParkScene",
+      "mode": "cascade3294",
+      "ctus_qp_points": 19800,
+      "selected_only32_pct": 10.545454545454545,
+      "anchor_leaf32_pct": 42.27777777777778,
+      "selected_precision_pct": 98.1800766283525,
+      "false_selected_pct_all": 0.1919191919191919
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3294",
+      "ctus_qp_points": 40000,
+      "selected_only32_pct": 5.0075,
+      "anchor_leaf32_pct": 24.3175,
+      "selected_precision_pct": 95.10733899151273,
+      "false_selected_pct_all": 0.245
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "gate3298",
+      "ctus_qp_points": 40000,
+      "selected_only32_pct": 4.8925,
+      "anchor_leaf32_pct": 24.3175,
+      "selected_precision_pct": 95.24782830863566,
+      "false_selected_pct_all": 0.2325
+    },
+    {
+      "class": "ClassA",
+      "sequence": "PeopleOnStreet",
+      "mode": "cascade3294",
+      "ctus_qp_points": 40000,
+      "selected_only32_pct": 5.0075,
+      "anchor_leaf32_pct": 24.3175,
+      "selected_precision_pct": 95.10733899151273,
+      "false_selected_pct_all": 0.245
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3294",
+      "ctus_qp_points": 40000,
+      "selected_only32_pct": 7.56,
+      "anchor_leaf32_pct": 32.665,
+      "selected_precision_pct": 96.494708994709,
+      "false_selected_pct_all": 0.265
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "gate3298",
+      "ctus_qp_points": 40000,
+      "selected_only32_pct": 7.32,
+      "anchor_leaf32_pct": 32.665,
+      "selected_precision_pct": 96.7896174863388,
+      "false_selected_pct_all": 0.235
+    },
+    {
+      "class": "ClassA",
+      "sequence": "Traffic",
+      "mode": "cascade3294",
+      "ctus_qp_points": 40000,
+      "selected_only32_pct": 7.56,
+      "anchor_leaf32_pct": 32.665,
+      "selected_precision_pct": 96.494708994709,
+      "false_selected_pct_all": 0.265
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 5.0256410256410255,
+      "anchor_leaf32_pct": 21.17948717948718,
+      "selected_precision_pct": 95.91836734693878,
+      "false_selected_pct_all": 0.20512820512820512
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "gate3298",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 3.6923076923076925,
+      "anchor_leaf32_pct": 21.17948717948718,
+      "selected_precision_pct": 94.44444444444444,
+      "false_selected_pct_all": 0.20512820512820512
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BasketballDrill",
+      "mode": "cascade3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 5.0256410256410255,
+      "anchor_leaf32_pct": 21.17948717948718,
+      "selected_precision_pct": 95.91836734693878,
+      "false_selected_pct_all": 0.20512820512820512
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 3.128205128205128,
+      "anchor_leaf32_pct": 15.820512820512821,
+      "selected_precision_pct": 95.08196721311475,
+      "false_selected_pct_all": 0.15384615384615385
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "gate3298",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 2.8974358974358974,
+      "anchor_leaf32_pct": 15.820512820512821,
+      "selected_precision_pct": 96.46017699115045,
+      "false_selected_pct_all": 0.10256410256410256
+    },
+    {
+      "class": "ClassC",
+      "sequence": "BQMall",
+      "mode": "cascade3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 3.128205128205128,
+      "anchor_leaf32_pct": 15.820512820512821,
+      "selected_precision_pct": 95.08196721311475,
+      "false_selected_pct_all": 0.15384615384615385
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 0.1794871794871795,
+      "anchor_leaf32_pct": 7.717948717948718,
+      "selected_precision_pct": 100.0,
+      "false_selected_pct_all": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "gate3298",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 0.1794871794871795,
+      "anchor_leaf32_pct": 7.717948717948718,
+      "selected_precision_pct": 100.0,
+      "false_selected_pct_all": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "PartyScene",
+      "mode": "cascade3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 0.1794871794871795,
+      "anchor_leaf32_pct": 7.717948717948718,
+      "selected_precision_pct": 100.0,
+      "false_selected_pct_all": 0.0
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 3.4358974358974357,
+      "anchor_leaf32_pct": 22.512820512820515,
+      "selected_precision_pct": 97.76119402985074,
+      "false_selected_pct_all": 0.07692307692307693
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "gate3298",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 3.3846153846153846,
+      "anchor_leaf32_pct": 22.512820512820515,
+      "selected_precision_pct": 97.72727272727273,
+      "false_selected_pct_all": 0.07692307692307693
+    },
+    {
+      "class": "ClassC",
+      "sequence": "RaceHorsesC",
+      "mode": "cascade3294",
+      "ctus_qp_points": 3900,
+      "selected_only32_pct": 3.4358974358974357,
+      "anchor_leaf32_pct": 22.512820512820515,
+      "selected_precision_pct": 97.76119402985074,
+      "false_selected_pct_all": 0.07692307692307693
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 12.193181818181818,
+      "anchor_leaf32_pct": 34.13636363636363,
+      "selected_precision_pct": 94.40820130475304,
+      "false_selected_pct_all": 0.6818181818181818
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "gate3298",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 12.045454545454545,
+      "anchor_leaf32_pct": 34.13636363636363,
+      "selected_precision_pct": 94.43396226415095,
+      "false_selected_pct_all": 0.6704545454545454
+    },
+    {
+      "class": "ClassE",
+      "sequence": "FourPeople",
+      "mode": "cascade3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 12.193181818181818,
+      "anchor_leaf32_pct": 34.13636363636363,
+      "selected_precision_pct": 94.40820130475304,
+      "false_selected_pct_all": 0.6818181818181818
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 25.079545454545453,
+      "anchor_leaf32_pct": 56.10227272727273,
+      "selected_precision_pct": 98.27820570910738,
+      "false_selected_pct_all": 0.4318181818181818
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "gate3298",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 25.045454545454547,
+      "anchor_leaf32_pct": 56.10227272727273,
+      "selected_precision_pct": 98.27586206896552,
+      "false_selected_pct_all": 0.4318181818181818
+    },
+    {
+      "class": "ClassE",
+      "sequence": "Johnny",
+      "mode": "cascade3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 25.079545454545453,
+      "anchor_leaf32_pct": 56.10227272727273,
+      "selected_precision_pct": 98.27820570910738,
+      "false_selected_pct_all": 0.4318181818181818
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 22.28409090909091,
+      "anchor_leaf32_pct": 51.35227272727273,
+      "selected_precision_pct": 98.419173890872,
+      "false_selected_pct_all": 0.3522727272727273
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "gate3298",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 22.170454545454547,
+      "anchor_leaf32_pct": 51.35227272727273,
+      "selected_precision_pct": 98.41107124551512,
+      "false_selected_pct_all": 0.3522727272727273
+    },
+    {
+      "class": "ClassE",
+      "sequence": "KristenAndSara",
+      "mode": "cascade3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 22.28409090909091,
+      "anchor_leaf32_pct": 51.35227272727273,
+      "selected_precision_pct": 98.419173890872,
+      "false_selected_pct_all": 0.3522727272727273
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 14.0,
+      "anchor_leaf32_pct": 44.125,
+      "selected_precision_pct": 96.34740259740259,
+      "false_selected_pct_all": 0.5113636363636364
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "gate3298",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 13.738636363636363,
+      "anchor_leaf32_pct": 44.125,
+      "selected_precision_pct": 96.85690653432589,
+      "false_selected_pct_all": 0.4318181818181818
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo1",
+      "mode": "cascade3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 14.0,
+      "anchor_leaf32_pct": 44.125,
+      "selected_precision_pct": 96.34740259740259,
+      "false_selected_pct_all": 0.5113636363636364
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 13.090909090909092,
+      "anchor_leaf32_pct": 46.375,
+      "selected_precision_pct": 96.61458333333333,
+      "false_selected_pct_all": 0.4431818181818182
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "gate3298",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 12.772727272727273,
+      "anchor_leaf32_pct": 46.375,
+      "selected_precision_pct": 96.79715302491103,
+      "false_selected_pct_all": 0.4090909090909091
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo3",
+      "mode": "cascade3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 13.090909090909092,
+      "anchor_leaf32_pct": 46.375,
+      "selected_precision_pct": 96.61458333333333,
+      "false_selected_pct_all": 0.4431818181818182
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 17.443181818181817,
+      "anchor_leaf32_pct": 46.97727272727273,
+      "selected_precision_pct": 96.61237785016287,
+      "false_selected_pct_all": 0.5909090909090909
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "gate3298",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 17.261363636363637,
+      "anchor_leaf32_pct": 46.97727272727273,
+      "selected_precision_pct": 96.70836076366031,
+      "false_selected_pct_all": 0.5681818181818182
+    },
+    {
+      "class": "ClassE",
+      "sequence": "vidyo4",
+      "mode": "cascade3294",
+      "ctus_qp_points": 8800,
+      "selected_only32_pct": 17.443181818181817,
+      "anchor_leaf32_pct": 46.97727272727273,
+      "selected_precision_pct": 96.61237785016287,
+      "false_selected_pct_all": 0.5909090909090909
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_weighted",
+      "mode": "cascade3294",
+      "ctus_qp_points": 247400,
+      "selected_only32_pct": 9.505658852061439,
+      "anchor_leaf32_pct": 38.10670978172999,
+      "selected_precision_pct": 96.86557677372925,
+      "false_selected_pct_all": 0.27809215844785773
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_weighted",
+      "mode": "gate3290",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 11.04040404040404,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 96.3063011395328,
+      "false_selected_pct_all": 0.4131313131313131
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_weighted",
+      "mode": "gate3292",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 9.164646464646465,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 97.50445189297923,
+      "false_selected_pct_all": 0.22727272727272727
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_weighted",
+      "mode": "gate3294",
+      "ctus_qp_points": 247400,
+      "selected_only32_pct": 9.505658852061439,
+      "anchor_leaf32_pct": 38.10670978172999,
+      "selected_precision_pct": 96.86557677372925,
+      "false_selected_pct_all": 0.27809215844785773
+    },
+    {
+      "class": "ALL",
+      "sequence": "ALL_weighted",
+      "mode": "gate3298",
+      "ctus_qp_points": 247400,
+      "selected_only32_pct": 9.25909458367017,
+      "anchor_leaf32_pct": 38.10670978172999,
+      "selected_precision_pct": 96.98351083288915,
+      "false_selected_pct_all": 0.2603071948261924
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_weighted",
+      "mode": "cascade3294",
+      "ctus_qp_points": 80000,
+      "selected_only32_pct": 6.28375,
+      "anchor_leaf32_pct": 28.49125,
+      "selected_precision_pct": 95.80102399311086,
+      "false_selected_pct_all": 0.255
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_weighted",
+      "mode": "gate3294",
+      "ctus_qp_points": 80000,
+      "selected_only32_pct": 6.28375,
+      "anchor_leaf32_pct": 28.49125,
+      "selected_precision_pct": 95.80102399311086,
+      "false_selected_pct_all": 0.255
+    },
+    {
+      "class": "ClassA",
+      "sequence": "ClassA_weighted",
+      "mode": "gate3298",
+      "ctus_qp_points": 80000,
+      "selected_only32_pct": 6.10625,
+      "anchor_leaf32_pct": 28.49125,
+      "selected_precision_pct": 96.01872289748722,
+      "false_selected_pct_all": 0.23375
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_weighted",
+      "mode": "cascade3294",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 8.960606060606061,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 97.72028585492488,
+      "false_selected_pct_all": 0.20404040404040405
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_weighted",
+      "mode": "gate3290",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 11.04040404040404,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 96.3063011395328,
+      "false_selected_pct_all": 0.4131313131313131
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_weighted",
+      "mode": "gate3292",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 9.164646464646465,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 97.50445189297923,
+      "false_selected_pct_all": 0.22727272727272727
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_weighted",
+      "mode": "gate3294",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 8.960606060606061,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 97.72028585492488,
+      "false_selected_pct_all": 0.20404040404040405
+    },
+    {
+      "class": "ClassB",
+      "sequence": "ClassB_weighted",
+      "mode": "gate3298",
+      "ctus_qp_points": 99000,
+      "selected_only32_pct": 8.645454545454545,
+      "anchor_leaf32_pct": 44.75050505050505,
+      "selected_precision_pct": 97.77277960696122,
+      "false_selected_pct_all": 0.1919191919191919
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_weighted",
+      "mode": "cascade3294",
+      "ctus_qp_points": 15600,
+      "selected_only32_pct": 2.9423076923076925,
+      "anchor_leaf32_pct": 16.807692307692307,
+      "selected_precision_pct": 97.19038214747606,
+      "false_selected_pct_all": 0.10897435897435898
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_weighted",
+      "mode": "gate3294",
+      "ctus_qp_points": 15600,
+      "selected_only32_pct": 2.9423076923076925,
+      "anchor_leaf32_pct": 16.807692307692307,
+      "selected_precision_pct": 97.19038214747606,
+      "false_selected_pct_all": 0.10897435897435898
+    },
+    {
+      "class": "ClassC",
+      "sequence": "ClassC_weighted",
+      "mode": "gate3298",
+      "ctus_qp_points": 15600,
+      "selected_only32_pct": 2.5384615384615383,
+      "anchor_leaf32_pct": 16.807692307692307,
+      "selected_precision_pct": 97.15797354071691,
+      "false_selected_pct_all": 0.09615384615384616
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_weighted",
+      "mode": "cascade3294",
+      "ctus_qp_points": 52800,
+      "selected_only32_pct": 17.348484848484848,
+      "anchor_leaf32_pct": 46.51136363636363,
+      "selected_precision_pct": 96.77999078093853,
+      "false_selected_pct_all": 0.5018939393939394
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_weighted",
+      "mode": "gate3294",
+      "ctus_qp_points": 52800,
+      "selected_only32_pct": 17.348484848484848,
+      "anchor_leaf32_pct": 46.51136363636363,
+      "selected_precision_pct": 96.77999078093853,
+      "false_selected_pct_all": 0.5018939393939394
+    },
+    {
+      "class": "ClassE",
+      "sequence": "ClassE_weighted",
+      "mode": "gate3298",
+      "ctus_qp_points": 52800,
+      "selected_only32_pct": 17.172348484848484,
+      "anchor_leaf32_pct": 46.51136363636363,
+      "selected_precision_pct": 96.91388598358814,
+      "false_selected_pct_all": 0.4772727272727273
+    }
+  ]
+}

@@ -1,0 +1,1764 @@
+{
+  "bd_rate": [
+    {
+      "sequence": "BQTerrace",
+      "mode": "high",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 19.042658664302348
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "high",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 14.370932583913177
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "high",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 14.211138323890982
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "high",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 16.28374630017715
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.16324492012449454
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.1227020274036104
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 4.584925624207803
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.5588893157278294
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive15",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.15796975708655125
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive15",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.9870854856806943
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive15",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.7495624743071536
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive15",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8354083191270734
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive20",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.1442232322917958
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive20",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8256441131384129
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive20",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.7339357950030276
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive20",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7644153796189324
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive25",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.13794343865540792
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive25",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8256441131384129
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive25",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.7339357950030276
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive25",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.763190752311349
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive30",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.1439121951791522
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive30",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.6616660839458888
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive30",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9731531073604804
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive30",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.5488750070286263
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive35",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.1439121951791522
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive35",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.6616660839458888
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive35",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9731531073604804
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive35",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.5488750070286263
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.21267257777588533
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.36230918042394755
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.862875248631223
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.4692279696196566
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive50",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.21267257777588533
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive50",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.3639241768301549
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive50",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.057276628292314
+    },
+    {
+      "sequence": "BQTerrace",
+      "mode": "adaptive50",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.5473970591209687
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "high",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 14.47759429219959
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "high",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 6.679990568043825
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "high",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 5.609726566167139
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "high",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 12.73292069443599
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.21651622493694678
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 3.8222231698903153
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 12.80629837857381
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 4.081158551256148
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive15",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.18193741086949267
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive15",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.310623577267834
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive15",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 2.58308810611394
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive15",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.1544581756922634
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive20",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.22010604091622366
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive20",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.641455419627281
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive20",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 2.1412281206078854
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive20",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.2176797689585461
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive25",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.3381420385786038
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive25",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.641455419627281
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive25",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 2.1412281206078854
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive25",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.3265828049681572
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive30",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.3381420385786038
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive30",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.412456223273063
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive30",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.658754099952131
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive30",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.12120320077429
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive35",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.3381420385786038
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive35",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.412456223273063
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive35",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.658754099952131
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive35",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.12120320077429
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.34582203846926785
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7845839985554992
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.406312032383772
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7514401058621001
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive50",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.34582203846926785
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive50",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.754943567095645
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive50",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.7904150953368614
+    },
+    {
+      "sequence": "BasketballDrive",
+      "mode": "adaptive50",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.83011353970186
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "high",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 3.7039850302661437
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "high",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 11.321365181457788
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "high",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 11.513825878492279
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "high",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 6.94397455452882
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5760563058503365
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.9807213954446503
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 3.9237149692863404
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.6360388024827532
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive15",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5718611577813615
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive15",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.5063759262228906
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive15",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.0626263231857003
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive15",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6513156063045145
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive20",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5830122055296538
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive20",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7156752132167599
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive20",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9515114473576558
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive20",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6964976023151603
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive25",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5634136945460888
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive25",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.71496950268366
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive25",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9515114473576558
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive25",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6993109208892623
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive30",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5634136945460888
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive30",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7646170366414129
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive30",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.7925865666793097
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive30",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6490122655624875
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive35",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5634136945460888
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive35",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7646170366414129
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive35",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.7925865666793097
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive35",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6490122655624875
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5844032512987152
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8158850808582807
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9608082404056306
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6921076967745909
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive50",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5844032512987152
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive50",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8202092797450211
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive50",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.3031583142365966
+    },
+    {
+      "sequence": "Cactus",
+      "mode": "adaptive50",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8081059335542706
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "high",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.7483824674787254
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "high",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.164452537919436
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "high",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.21311395920298182
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "high",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7412710915742915
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 3.6962841138601155
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 7.982653511263749
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 9.897534939436614
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 6.64971033727817
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive15",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 3.7768691339560068
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive15",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 7.051921310953513
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive15",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.654074671631478
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive15",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 4.03880612124774
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive20",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 2.98217233158633
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive20",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.742558030817909
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive20",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.566905077650226
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive20",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.529509540466778
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive25",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.6954343270837446
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive25",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.742558030817909
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive25",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.566905077650226
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive25",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.2131331511713528
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive30",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.6954343270837446
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive30",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.6875893809211506
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive30",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": -0.07782547019071773
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive30",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.0786558619866549
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive35",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.6954343270837446
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive35",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.6875893809211506
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive35",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": -0.07782547019071773
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive35",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.0786558619866549
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.2449625896178151
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.9382683754707077
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": -0.07601582067704449
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7167605447398806
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive50",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.2449625896178151
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive50",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.9382683754707077
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive50",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": -0.07601582067704449
+    },
+    {
+      "sequence": "Kimono1",
+      "mode": "adaptive50",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7167605447398806
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "high",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 2.8341143041388905
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "high",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 5.87140975408007
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "high",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 4.646768289144898
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "high",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 4.104629323384823
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5847839415112244
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7582271102933635
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 5.649632742751809
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 2.0373806361590585
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive15",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.5915605012543068
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive15",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.5212299586988545
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive15",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.42857441153883
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive15",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.773567496586014
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive20",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.617418940665293
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive20",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.49697774390011773
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive20",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.4189755270630044
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive20",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7806212404854573
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive25",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6465240071851008
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive25",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.49657202602335637
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive25",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.4189755270630044
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive25",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8027016656406483
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive30",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6465240071851008
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive30",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.5380088915834413
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive30",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.181116870355603
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive30",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7188321892301452
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive35",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6465240071851008
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive35",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.5380088915834413
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive35",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.181116870355603
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive35",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7188321892301452
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.7144451050003164
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8949754955086986
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.1563400601813267
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8522185935329496
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive50",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.7144451050003164
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive50",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.8949754955086986
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive50",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.2957066975989084
+    },
+    {
+      "sequence": "ParkScene",
+      "mode": "adaptive50",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8810939250646577
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "high",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 8.16134695167714
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "high",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 7.881630125082859
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "high",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 7.238914603379657
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "high",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 8.161308392820214
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "low",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.0473771012566235
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "low",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.9333054428591376
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "low",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 7.372421330851276
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "low",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 3.1926355285807917
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive15",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 1.0560395921895438
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive15",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 2.2754472517647573
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive15",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.6955851973554203
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive15",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 1.490711143791521
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive20",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.9093865501978593
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive20",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.284462104140096
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive20",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.3625111935363599
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive20",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.9977447063689748
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive25",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6762915012097892
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive25",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2842398184581238
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive25",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.3625111935363599
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive25",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.9609838589961539
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive30",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6774852525145381
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive30",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2128675232729913
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive30",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9055570348313612
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive30",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8233157049164408
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive35",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6774852525145381
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive35",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 1.2128675232729913
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive35",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.9055570348313612
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive35",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.8233157049164408
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive40",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6204611124324
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive40",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7592044261634268
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive40",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 0.8620639521849816
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive40",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.6963509821058356
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive50",
+      "segment": "低QP段(10,16,20,24)",
+      "bd_rate_y_pct": 0.6204611124324
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive50",
+      "segment": "中QP段(24,28,32,36)",
+      "bd_rate_y_pct": 0.7544641789300455
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive50",
+      "segment": "高QP段(36,40,44,48)",
+      "bd_rate_y_pct": 1.0741081829575272
+    },
+    {
+      "sequence": "五序列算术平均",
+      "mode": "adaptive50",
+      "segment": "全部10点",
+      "bd_rate_y_pct": 0.7566942004363275
+    }
+  ],
+  "accuracy": [
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 15,
+      "ctus": 83160,
+      "overall_accuracy_pct": 84.1919191919192,
+      "nonneutral_accuracy_pct": 82.57607888877108,
+      "low_recall_pct": 99.265443668238,
+      "high_recall_pct": 43.616033941751006,
+      "selected_low_pct": 84.32419432419432,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 15,
+      "ctus": 83160,
+      "overall_accuracy_pct": 83.17340067340068,
+      "nonneutral_accuracy_pct": 80.91620751732039,
+      "low_recall_pct": 99.09003692182458,
+      "high_recall_pct": 64.85729699180517,
+      "selected_low_pct": 65.22967772967773,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 15,
+      "ctus": 83160,
+      "overall_accuracy_pct": 81.05940355940356,
+      "nonneutral_accuracy_pct": 78.50661135597615,
+      "low_recall_pct": 98.73254916633539,
+      "high_recall_pct": 50.16710353866317,
+      "selected_low_pct": 77.07311207311207,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 15,
+      "ctus": 83160,
+      "overall_accuracy_pct": 56.155603655603656,
+      "nonneutral_accuracy_pct": 50.524458918515506,
+      "low_recall_pct": 97.67126148705096,
+      "high_recall_pct": 43.48321090472403,
+      "selected_low_pct": 62.02741702741703,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 15,
+      "ctus": 83160,
+      "overall_accuracy_pct": 77.3977873977874,
+      "nonneutral_accuracy_pct": 74.64522743214806,
+      "low_recall_pct": 97.96540651393724,
+      "high_recall_pct": 51.33385482696302,
+      "selected_low_pct": 73.04954304954305,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 20,
+      "ctus": 83160,
+      "overall_accuracy_pct": 85.46055796055796,
+      "nonneutral_accuracy_pct": 83.97439295938925,
+      "low_recall_pct": 98.46651899812575,
+      "high_recall_pct": 50.14363371193706,
+      "selected_low_pct": 81.06060606060606,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 20,
+      "ctus": 83160,
+      "overall_accuracy_pct": 83.56782106782107,
+      "nonneutral_accuracy_pct": 81.36353717745895,
+      "low_recall_pct": 97.5055964182923,
+      "high_recall_pct": 67.09995632851235,
+      "selected_low_pct": 63.06758056758057,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 20,
+      "ctus": 83160,
+      "overall_accuracy_pct": 81.32275132275132,
+      "nonneutral_accuracy_pct": 78.80545283353574,
+      "low_recall_pct": 97.36454411523981,
+      "high_recall_pct": 52.801441677588464,
+      "selected_low_pct": 74.93746993746994,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 20,
+      "ctus": 83160,
+      "overall_accuracy_pct": 78.58465608465609,
+      "nonneutral_accuracy_pct": 75.83418142343443,
+      "low_recall_pct": 74.86424394319131,
+      "high_recall_pct": 75.97903897440696,
+      "selected_low_pct": 31.1002886002886,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 20,
+      "ctus": 83160,
+      "overall_accuracy_pct": 76.87950937950939,
+      "nonneutral_accuracy_pct": 74.06383208331086,
+      "low_recall_pct": 96.14128821608786,
+      "high_recall_pct": 51.99471313354733,
+      "selected_low_pct": 71.7965367965368,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 25,
+      "ctus": 83160,
+      "overall_accuracy_pct": 85.41606541606542,
+      "nonneutral_accuracy_pct": 83.92535256070406,
+      "low_recall_pct": 98.36807330417827,
+      "high_recall_pct": 50.20992619436956,
+      "selected_low_pct": 80.96560846560847,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 25,
+      "ctus": 83160,
+      "overall_accuracy_pct": 83.34054834054834,
+      "nonneutral_accuracy_pct": 81.1057770989035,
+      "low_recall_pct": 96.95322266476728,
+      "high_recall_pct": 67.10252523955096,
+      "selected_low_pct": 62.83790283790284,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 25,
+      "ctus": 83160,
+      "overall_accuracy_pct": 81.3924963924964,
+      "nonneutral_accuracy_pct": 78.88459806503555,
+      "low_recall_pct": 96.95998877534318,
+      "high_recall_pct": 53.55832241153342,
+      "selected_low_pct": 74.42279942279943,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 25,
+      "ctus": 83160,
+      "overall_accuracy_pct": 83.25517075517075,
+      "nonneutral_accuracy_pct": 81.10455254766266,
+      "low_recall_pct": 65.6641604010025,
+      "high_recall_pct": 83.41053353920054,
+      "selected_low_pct": 23.887686387686387,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 25,
+      "ctus": 83160,
+      "overall_accuracy_pct": 76.71476671476671,
+      "nonneutral_accuracy_pct": 73.87902660119786,
+      "low_recall_pct": 95.32097466202542,
+      "high_recall_pct": 52.44517573436193,
+      "selected_low_pct": 71.21572871572872,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 30,
+      "ctus": 83160,
+      "overall_accuracy_pct": 87.15608465608466,
+      "nonneutral_accuracy_pct": 85.84322977414908,
+      "low_recall_pct": 96.69638969349312,
+      "high_recall_pct": 60.507358465550006,
+      "selected_low_pct": 75.55796055796056,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 30,
+      "ctus": 83160,
+      "overall_accuracy_pct": 84.97955747955749,
+      "nonneutral_accuracy_pct": 82.96465004636954,
+      "low_recall_pct": 96.06942465912725,
+      "high_recall_pct": 71.38489994091505,
+      "selected_low_pct": 59.32900432900433,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 30,
+      "ctus": 83160,
+      "overall_accuracy_pct": 82.18253968253968,
+      "nonneutral_accuracy_pct": 79.78112249771434,
+      "low_recall_pct": 94.71739587961555,
+      "high_recall_pct": 58.85321100917431,
+      "selected_low_pct": 69.66810966810966,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 30,
+      "ctus": 83160,
+      "overall_accuracy_pct": 83.8047138047138,
+      "nonneutral_accuracy_pct": 81.72467602958139,
+      "low_recall_pct": 65.11069340016708,
+      "high_recall_pct": 84.20592959965064,
+      "selected_low_pct": 22.99062049062049,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 30,
+      "ctus": 83160,
+      "overall_accuracy_pct": 78.20707070707071,
+      "nonneutral_accuracy_pct": 75.55306750121404,
+      "low_recall_pct": 92.41479802477131,
+      "high_recall_pct": 58.697704528902435,
+      "selected_low_pct": 65.74795574795574,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 35,
+      "ctus": 83160,
+      "overall_accuracy_pct": 87.15608465608466,
+      "nonneutral_accuracy_pct": 85.84322977414908,
+      "low_recall_pct": 96.69638969349312,
+      "high_recall_pct": 60.507358465550006,
+      "selected_low_pct": 75.55796055796056,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 35,
+      "ctus": 83160,
+      "overall_accuracy_pct": 84.97955747955749,
+      "nonneutral_accuracy_pct": 82.96465004636954,
+      "low_recall_pct": 96.06942465912725,
+      "high_recall_pct": 71.38489994091505,
+      "selected_low_pct": 59.32900432900433,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 35,
+      "ctus": 83160,
+      "overall_accuracy_pct": 82.18253968253968,
+      "nonneutral_accuracy_pct": 79.78112249771434,
+      "low_recall_pct": 94.71739587961555,
+      "high_recall_pct": 58.85321100917431,
+      "selected_low_pct": 69.66810966810966,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 35,
+      "ctus": 83160,
+      "overall_accuracy_pct": 83.8047138047138,
+      "nonneutral_accuracy_pct": 81.72467602958139,
+      "low_recall_pct": 65.11069340016708,
+      "high_recall_pct": 84.20592959965064,
+      "selected_low_pct": 22.99062049062049,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 35,
+      "ctus": 83160,
+      "overall_accuracy_pct": 78.20707070707071,
+      "nonneutral_accuracy_pct": 75.55306750121404,
+      "low_recall_pct": 92.41479802477131,
+      "high_recall_pct": 58.697704528902435,
+      "selected_low_pct": 65.74795574795574,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 40,
+      "ctus": 83160,
+      "overall_accuracy_pct": 88.78306878306879,
+      "nonneutral_accuracy_pct": 87.63651786661012,
+      "low_recall_pct": 94.52490486738229,
+      "high_recall_pct": 71.55610553763204,
+      "selected_low_pct": 70.57599807599807,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 40,
+      "ctus": 83160,
+      "overall_accuracy_pct": 91.72558922558923,
+      "nonneutral_accuracy_pct": 90.6156238066663,
+      "low_recall_pct": 89.94098322528127,
+      "high_recall_pct": 91.21175533691269,
+      "selected_low_pct": 44.92303992303992,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 40,
+      "ctus": 83160,
+      "overall_accuracy_pct": 82.2041847041847,
+      "nonneutral_accuracy_pct": 79.80568481093842,
+      "low_recall_pct": 86.87884386034656,
+      "high_recall_pct": 69.8951507208388,
+      "selected_low_pct": 59.936267436267435,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 40,
+      "ctus": 83160,
+      "overall_accuracy_pct": 87.05146705146706,
+      "nonneutral_accuracy_pct": 85.38842526630029,
+      "low_recall_pct": 45.248538011695906,
+      "high_recall_pct": 91.38320934512392,
+      "selected_low_pct": 13.051948051948052,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 40,
+      "ctus": 83160,
+      "overall_accuracy_pct": 77.1103896103896,
+      "nonneutral_accuracy_pct": 74.32282954729402,
+      "low_recall_pct": 83.1215089451955,
+      "high_recall_pct": 65.527472823888,
+      "selected_low_pct": 57.02861952861953,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "BQTerrace",
+      "cutoff": 50,
+      "ctus": 83160,
+      "overall_accuracy_pct": 88.98629148629149,
+      "nonneutral_accuracy_pct": 87.86051320114515,
+      "low_recall_pct": 92.62982525889325,
+      "high_recall_pct": 76.72691916736642,
+      "selected_low_pct": 67.25829725829726,
+      "neutral_pct": 9.273689273689273
+    },
+    {
+      "sequence": "BasketballDrive",
+      "cutoff": 50,
+      "ctus": 83160,
+      "overall_accuracy_pct": 91.71596921596921,
+      "nonneutral_accuracy_pct": 90.60471332715073,
+      "low_recall_pct": 89.78690002035061,
+      "high_recall_pct": 91.32735633365017,
+      "selected_low_pct": 44.73184223184223,
+      "neutral_pct": 11.827801827801828
+    },
+    {
+      "sequence": "Cactus",
+      "cutoff": 50,
+      "ctus": 83160,
+      "overall_accuracy_pct": 82.21139971139971,
+      "nonneutral_accuracy_pct": 79.81387224867977,
+      "low_recall_pct": 85.40093071112878,
+      "high_recall_pct": 71.98558322411533,
+      "selected_low_pct": 57.83068783068783,
+      "neutral_pct": 11.877104377104377
+    },
+    {
+      "sequence": "Kimono1",
+      "cutoff": 50,
+      "ctus": 83160,
+      "overall_accuracy_pct": 87.07190957190957,
+      "nonneutral_accuracy_pct": 85.41149331705,
+      "low_recall_pct": 45.248538011695906,
+      "high_recall_pct": 91.40972254713891,
+      "selected_low_pct": 13.027898027898027,
+      "neutral_pct": 11.381673881673882
+    },
+    {
+      "sequence": "ParkScene",
+      "cutoff": 50,
+      "ctus": 83160,
+      "overall_accuracy_pct": 77.75252525252525,
+      "nonneutral_accuracy_pct": 75.04316624399719,
+      "low_recall_pct": 82.06913300412855,
+      "high_recall_pct": 68.01985272300597,
+      "selected_low_pct": 54.87133237133237,
+      "neutral_pct": 10.856180856180856
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 15,
+      "ctus": 415800,
+      "overall_accuracy_pct": 76.39562289562289,
+      "nonneutral_accuracy_pct": 73.43371682254623,
+      "low_recall_pct": 98.54493955147724,
+      "high_recall_pct": 50.69150004078127,
+      "selected_low_pct": 72.34078884078885,
+      "neutral_pct": 11.043290043290042
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 20,
+      "ctus": 415800,
+      "overall_accuracy_pct": 81.16305916305916,
+      "nonneutral_accuracy_pct": 78.80827929542585,
+      "low_recall_pct": 92.86843833818742,
+      "high_recall_pct": 59.60375676519843,
+      "selected_low_pct": 64.3924963924964,
+      "neutral_pct": 11.043290043290042
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 25,
+      "ctus": 415800,
+      "overall_accuracy_pct": 82.02380952380952,
+      "nonneutral_accuracy_pct": 79.77986137470073,
+      "low_recall_pct": 90.65328396146333,
+      "high_recall_pct": 61.345296623803286,
+      "selected_low_pct": 62.66594516594517,
+      "neutral_pct": 11.043290043290042
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 30,
+      "ctus": 415800,
+      "overall_accuracy_pct": 83.26599326599326,
+      "nonneutral_accuracy_pct": 81.17334916980568,
+      "low_recall_pct": 89.00174033143486,
+      "high_recall_pct": 66.7298207088385,
+      "selected_low_pct": 58.65873015873016,
+      "neutral_pct": 11.043290043290042
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 35,
+      "ctus": 415800,
+      "overall_accuracy_pct": 83.26599326599326,
+      "nonneutral_accuracy_pct": 81.17334916980568,
+      "low_recall_pct": 89.00174033143486,
+      "high_recall_pct": 66.7298207088385,
+      "selected_low_pct": 58.65873015873016,
+      "neutral_pct": 11.043290043290042
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 40,
+      "ctus": 415800,
+      "overall_accuracy_pct": 85.37493987493987,
+      "nonneutral_accuracy_pct": 83.55381625956183,
+      "low_recall_pct": 79.9429557819803,
+      "high_recall_pct": 77.91473875287909,
+      "selected_low_pct": 49.1031746031746,
+      "neutral_pct": 11.043290043290042
+    },
+    {
+      "sequence": "五序列加权总体",
+      "cutoff": 50,
+      "ctus": 415800,
+      "overall_accuracy_pct": 85.54761904761905,
+      "nonneutral_accuracy_pct": 83.74675166760457,
+      "low_recall_pct": 79.02706540123941,
+      "high_recall_pct": 79.89388679905537,
+      "selected_low_pct": 47.544011544011546,
+      "neutral_pct": 11.043290043290042
+    }
+  ]
+}

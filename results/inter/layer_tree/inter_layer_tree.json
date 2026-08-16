@@ -1,0 +1,170 @@
+{
+  "features": [
+    "qp",
+    "ime_sad_q8",
+    "refine_l1",
+    "mvd_qpel_l1",
+    "mv_fullpel_l1",
+    "pme_activity",
+    "ime_boundary"
+  ],
+  "max_depth": 4,
+  "min_leaf": 512,
+  "low_weight": 2.0,
+  "cutoff": 0.5,
+  "sample_count": 448800,
+  "tree": {
+    "samples": 448800,
+    "probability_low": 0.54840431,
+    "feature": "qp",
+    "threshold": 29,
+    "left": {
+      "samples": 224400,
+      "probability_low": 0.69591369,
+      "feature": "ime_sad_q8",
+      "threshold": 665,
+      "left": {
+        "samples": 113652,
+        "probability_low": 0.54590583,
+        "feature": "qp",
+        "threshold": 24,
+        "left": {
+          "samples": 60092,
+          "probability_low": 0.7120751,
+          "feature": "mv_fullpel_l1",
+          "threshold": 2,
+          "left": {
+            "samples": 18240,
+            "probability_low": 0.79181294
+          },
+          "right": {
+            "samples": 41852,
+            "probability_low": 0.67393302
+          }
+        },
+        "right": {
+          "samples": 53560,
+          "probability_low": 0.29979049,
+          "feature": "ime_sad_q8",
+          "threshold": 565,
+          "left": {
+            "samples": 38166,
+            "probability_low": 0.25303245
+          },
+          "right": {
+            "samples": 15394,
+            "probability_low": 0.40559296
+          }
+        }
+      },
+      "right": {
+        "samples": 110748,
+        "probability_low": 0.82075718,
+        "feature": "mv_fullpel_l1",
+        "threshold": 4,
+        "left": {
+          "samples": 69809,
+          "probability_low": 0.8754903,
+          "feature": "ime_sad_q8",
+          "threshold": 959,
+          "left": {
+            "samples": 32593,
+            "probability_low": 0.79925582
+          },
+          "right": {
+            "samples": 37216,
+            "probability_low": 0.93472256
+          }
+        },
+        "right": {
+          "samples": 40939,
+          "probability_low": 0.71402544,
+          "feature": "qp",
+          "threshold": 24,
+          "left": {
+            "samples": 20180,
+            "probability_low": 0.81210266
+          },
+          "right": {
+            "samples": 20759,
+            "probability_low": 0.60180508
+          }
+        }
+      }
+    },
+    "right": {
+      "samples": 224400,
+      "probability_low": 0.36326836,
+      "feature": "ime_sad_q8",
+      "threshold": 1184,
+      "left": {
+        "samples": 159751,
+        "probability_low": 0.2202627,
+        "feature": "ime_sad_q8",
+        "threshold": 781,
+        "left": {
+          "samples": 100476,
+          "probability_low": 0.14196555,
+          "feature": "qp",
+          "threshold": 34,
+          "left": {
+            "samples": 56491,
+            "probability_low": 0.17562047
+          },
+          "right": {
+            "samples": 43985,
+            "probability_low": 0.09687608
+          }
+        },
+        "right": {
+          "samples": 59275,
+          "probability_low": 0.33891465,
+          "feature": "qp",
+          "threshold": 34,
+          "left": {
+            "samples": 28820,
+            "probability_low": 0.46129204
+          },
+          "right": {
+            "samples": 30455,
+            "probability_low": 0.20372173
+          }
+        }
+      },
+      "right": {
+        "samples": 64649,
+        "probability_low": 0.63441167,
+        "feature": "qp",
+        "threshold": 34,
+        "left": {
+          "samples": 26889,
+          "probability_low": 0.76988883,
+          "feature": "mv_fullpel_l1",
+          "threshold": 7,
+          "left": {
+            "samples": 20301,
+            "probability_low": 0.82090896
+          },
+          "right": {
+            "samples": 6588,
+            "probability_low": 0.58063126
+          }
+        },
+        "right": {
+          "samples": 37760,
+          "probability_low": 0.51819876,
+          "feature": "ime_sad_q8",
+          "threshold": 1633,
+          "left": {
+            "samples": 19589,
+            "probability_low": 0.38214404
+          },
+          "right": {
+            "samples": 18171,
+            "probability_low": 0.64136977
+          }
+        }
+      }
+    }
+  }
+}

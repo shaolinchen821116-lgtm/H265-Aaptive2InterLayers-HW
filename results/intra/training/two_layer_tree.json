@@ -1,0 +1,307 @@
+{
+  "task": "LOW(16/8) vs HIGH(32/16)",
+  "depth": 4,
+  "min_leaf": 800,
+  "feature_names": [
+    "sad32/qstep",
+    "sad16/qstep",
+    "sad8/qstep",
+    "gain32/qstep",
+    "gain8/qstep",
+    "grad/qstep",
+    "lap/qstep",
+    "anisotropy/qstep",
+    "gain8/sad16",
+    "gain32/sad32",
+    "grad/sad8",
+    "lap/grad",
+    "edge4",
+    "edge8",
+    "edge16",
+    "edge32",
+    "qp",
+    "sad8/qstep2",
+    "grad/qstep2",
+    "lap/qstep2"
+  ],
+  "tree": {
+    "samples": 369882,
+    "low_count": 176616,
+    "low_probability": 0.47749282203513554,
+    "feature": 1,
+    "threshold": 174.62828947368422,
+    "left": {
+      "samples": 123433,
+      "low_count": 12212,
+      "low_probability": 0.09893626501826902,
+      "feature": 15,
+      "threshold": 4.5,
+      "left": {
+        "samples": 101455,
+        "low_count": 4128,
+        "low_probability": 0.04068798974914987,
+        "feature": 2,
+        "threshold": 83.5961550217006,
+        "left": {
+          "samples": 80764,
+          "low_count": 1116,
+          "low_probability": 0.013818037739586946,
+          "feature": 2,
+          "threshold": 59.02955688854489,
+          "left": {
+            "samples": 66039,
+            "low_count": 301,
+            "low_probability": 0.004557912748527385,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 14725,
+            "low_count": 815,
+            "low_probability": 0.05534804753820034,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "sad8/qstep"
+        },
+        "right": {
+          "samples": 20691,
+          "low_count": 3012,
+          "low_probability": 0.14557053791503552,
+          "feature": 14,
+          "threshold": 5.5,
+          "left": {
+            "samples": 12799,
+            "low_count": 688,
+            "low_probability": 0.0537541995468396,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 7892,
+            "low_count": 2324,
+            "low_probability": 0.2944754181449569,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "edge16"
+        },
+        "feature_name": "sad8/qstep"
+      },
+      "right": {
+        "samples": 21978,
+        "low_count": 8084,
+        "low_probability": 0.3678223678223678,
+        "feature": 1,
+        "threshold": 92.38810440735986,
+        "left": {
+          "samples": 9799,
+          "low_count": 1365,
+          "low_probability": 0.1392999285641392,
+          "feature": 1,
+          "threshold": 67.76973684210526,
+          "left": {
+            "samples": 5842,
+            "low_count": 386,
+            "low_probability": 0.06607326258130777,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 3957,
+            "low_count": 979,
+            "low_probability": 0.24740965377811475,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "sad16/qstep"
+        },
+        "right": {
+          "samples": 12179,
+          "low_count": 6719,
+          "low_probability": 0.5516873306511207,
+          "feature": 12,
+          "threshold": 1182.5,
+          "left": {
+            "samples": 7355,
+            "low_count": 4660,
+            "low_probability": 0.6335825968728755,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 4824,
+            "low_count": 2059,
+            "low_probability": 0.4268242122719735,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "edge4"
+        },
+        "feature_name": "sad16/qstep"
+      },
+      "feature_name": "edge32"
+    },
+    "right": {
+      "samples": 246449,
+      "low_count": 164404,
+      "low_probability": 0.6670913657592443,
+      "feature": 15,
+      "threshold": 0.5,
+      "left": {
+        "samples": 116609,
+        "low_count": 51762,
+        "low_probability": 0.44389369602689327,
+        "feature": 6,
+        "threshold": 1177.0320197044334,
+        "left": {
+          "samples": 61403,
+          "low_count": 16377,
+          "low_probability": 0.2667133527677801,
+          "feature": 10,
+          "threshold": 1.174696041373852,
+          "left": {
+            "samples": 28670,
+            "low_count": 4415,
+            "low_probability": 0.15399372166027206,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 32733,
+            "low_count": 11962,
+            "low_probability": 0.36544160327498243,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "grad/sad8"
+        },
+        "right": {
+          "samples": 55206,
+          "low_count": 35385,
+          "low_probability": 0.6409629388109988,
+          "feature": 11,
+          "threshold": 1.0979597614159875,
+          "left": {
+            "samples": 6779,
+            "low_count": 1600,
+            "low_probability": 0.23602301224369376,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 48427,
+            "low_count": 33785,
+            "low_probability": 0.6976480062774898,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "lap/grad"
+        },
+        "feature_name": "lap/qstep"
+      },
+      "right": {
+        "samples": 129840,
+        "low_count": 112642,
+        "low_probability": 0.8675446703635243,
+        "feature": 15,
+        "threshold": 36.5,
+        "left": {
+          "samples": 56479,
+          "low_count": 44904,
+          "low_probability": 0.795056569698472,
+          "feature": 12,
+          "threshold": 1086.5,
+          "left": {
+            "samples": 34818,
+            "low_count": 31216,
+            "low_probability": 0.896547762651502,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 21661,
+            "low_count": 13688,
+            "low_probability": 0.6319191173076035,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "edge4"
+        },
+        "right": {
+          "samples": 73361,
+          "low_count": 67738,
+          "low_probability": 0.9233516446068074,
+          "feature": 3,
+          "threshold": 107.68647089241489,
+          "left": {
+            "samples": 29242,
+            "low_count": 25244,
+            "low_probability": 0.863278845496204,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "right": {
+            "samples": 44119,
+            "low_count": 42494,
+            "low_probability": 0.9631677961875836,
+            "feature": -1,
+            "threshold": 0.0,
+            "left": null,
+            "right": null,
+            "feature_name": null
+          },
+          "feature_name": "gain32/qstep"
+        },
+        "feature_name": "edge32"
+      },
+      "feature_name": "edge32"
+    },
+    "feature_name": "sad16/qstep"
+  }
+}

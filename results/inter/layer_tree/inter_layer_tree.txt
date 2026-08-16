@@ -1,0 +1,46 @@
+if (qp <= 29)
+    if (ime_sad_q8 <= 665)
+        if (qp <= 24)
+            if (mv_fullpel_l1 <= 2)
+                return 79;  // n=18240
+            else
+                return 67;  // n=41852
+        else
+            if (ime_sad_q8 <= 565)
+                return 25;  // n=38166
+            else
+                return 41;  // n=15394
+    else
+        if (mv_fullpel_l1 <= 4)
+            if (ime_sad_q8 <= 959)
+                return 80;  // n=32593
+            else
+                return 93;  // n=37216
+        else
+            if (qp <= 24)
+                return 81;  // n=20180
+            else
+                return 60;  // n=20759
+else
+    if (ime_sad_q8 <= 1184)
+        if (ime_sad_q8 <= 781)
+            if (qp <= 34)
+                return 18;  // n=56491
+            else
+                return 10;  // n=43985
+        else
+            if (qp <= 34)
+                return 46;  // n=28820
+            else
+                return 20;  // n=30455
+    else
+        if (qp <= 34)
+            if (mv_fullpel_l1 <= 7)
+                return 82;  // n=20301
+            else
+                return 58;  // n=6588
+        else
+            if (ime_sad_q8 <= 1633)
+                return 38;  // n=19589
+            else
+                return 64;  // n=18171

@@ -1,0 +1,6 @@
+class,name,path,width,height,fps
+ClassB,BasketballDrive,D:/yuv_data/yuv_hevc/ClassB/BasketballDrive_1920x1080_50.yuv,1920,1080,50
+ClassB,BQTerrace,D:/yuv_data/yuv_hevc/ClassB/BQTerrace_1920x1080_60.yuv,1920,1080,60
+ClassB,Cactus,D:/yuv_data/yuv_hevc/ClassB/Cactus_1920x1080_50.yuv,1920,1080,50
+ClassB,Kimono1,D:/yuv_data/yuv_hevc/ClassB/Kimono1_1920x1080_24.yuv,1920,1080,24
+ClassB,ParkScene,D:/yuv_data/yuv_hevc/ClassB/ParkScene_1920x1080_24.yuv,1920,1080,24
