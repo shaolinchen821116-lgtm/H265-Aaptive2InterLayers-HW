@@ -53,6 +53,7 @@ int main(void)
     hw_hme_input input;
     hw_hme_callbacks callbacks;
     hw_hme_result result;
+    hw_hme_inter_layer_decision layer_decision;
     test_context context;
     int i;
     hw_hme_config_default(&config);
@@ -92,6 +93,11 @@ int main(void)
     CHECK(result.fme_candidates == 17u);
     CHECK(result.pme_used_amvp == 1u);
     CHECK(result.pme_rate_weight_q8 > 0u);
+    CHECK(hw_hme_select_inter_layers(&result, input.amvp_qpel, input.qp,
+                                     50, 92, &layer_decision) == 0);
+    CHECK(layer_decision.layer_set >= HW_HME_INTER_HIGH_32_16 &&
+          layer_decision.layer_set <= HW_HME_INTER_ONLY_32);
+    CHECK(layer_decision.only32_probability <= 100u);
     config.pme_cost_mode = 0;
     config.pme_attractor = 0;
     CHECK(hw_hme_search(&config, &input, &callbacks, &result) == 0);

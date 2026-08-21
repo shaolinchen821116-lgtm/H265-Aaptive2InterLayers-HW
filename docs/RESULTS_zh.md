@@ -83,6 +83,23 @@ Class 平均分别为 A `−1.300%`、B `−0.712%`、C `−1.165%`、E `−0.95
 
 原始数值见 `results/inter/layer_sweep/` 和 `results/inter/classb_layer_sweep/`。
 
+### 3.1 P 帧高一层保守门控
+
+在原自适应高两层/低两层之前增加 CU32-only 门控。最终采用深度 6 整数 CART 和 cutoff 92：
+
+| 指标 | 结果 |
+|---|---:|
+| 相对完整三层平均 BD-rate | +1.500% |
+| 相对原两层自适应增量 BD-rate | **+0.002%** |
+| 17 序列中最差增量 | **+0.080%（vidyo1）** |
+| 实际 CU32-only 率 | 6.425% |
+| Class B 留一序列触发精度 | 92.841% |
+| Class A/C/E 独立触发精度 | 93.390% |
+
+强制 CU32-only 的平均损失为 +35.860%，最差 BQMall 为 +77.450%，所以该模式只用作边界对照。较激进 cutoff 89 的 CU32-only 率为 15.707%、平均增量为 +0.042%，但 vidyo1 增量达到 +0.784%；最终选择 cutoff 92 是为了控制逐序列最差风险。
+
+完整训练、输入输出格式、流程图和逐序列表见 `P_INTER_ONLY32_TRAINING_RESULTS_zh.md`；精简结果见 `results/inter/only32_abce_30f/`。
+
 ## 4. 决策正确率
 
 Class B 采集 448,800 个 CU32 样本，标签来自完整三层最终 RDO：

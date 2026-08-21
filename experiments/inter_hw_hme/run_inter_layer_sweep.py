@@ -39,8 +39,8 @@ def main() -> int:
     parser.add_argument("--sequences", default="all")
     parser.add_argument("--frames", type=int, default=30)
     parser.add_argument("--qps", default="22,27,32,37")
-    parser.add_argument("--variants", default="1:50,2:50,3:40,3:50,3:60",
-                        help="comma-separated layer_mode:probability_cutoff pairs")
+    parser.add_argument("--variants", default="1:50:92,2:50:92,3:40:92,5:50:92,6:40:92",
+                        help="comma-separated layer_mode:layer_cutoff:only32_cutoff triples")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
@@ -48,8 +48,8 @@ def main() -> int:
     detail: list[dict[str, object]] = []
     summary: list[dict[str, object]] = []
     for item in args.variants.split(","):
-        mode, cutoff = (int(value) for value in item.split(":"))
-        tag = f"layer_m{mode}_c{cutoff}"
+        mode, cutoff, only32_cutoff = (int(value) for value in item.split(":"))
+        tag = f"layer_m{mode}_c{cutoff}_o{only32_cutoff}"
         out_dir = args.output / tag
         command = [
             sys.executable, str(here / "run_classb.py"),
@@ -61,6 +61,7 @@ def main() -> int:
             "--pme-cost-mode", "1", "--pme-rate-scale", "256",
             "--pme-texture", "8,24", "--pme-attractor", "1",
             "--layer-mode", str(mode), "--layer-cutoff", str(cutoff),
+            "--only32-cutoff", str(only32_cutoff),
         ]
         if args.force:
             command.append("--force")
@@ -82,19 +83,24 @@ def main() -> int:
             seq_points = [item for item in point_rows if item["sequence"] == sequence]
             seq_high = sum(int(float(item.get("layer_high2", 0) or 0)) for item in seq_runs)
             seq_low = sum(int(float(item.get("layer_low2", 0) or 0)) for item in seq_runs)
+            seq_only32 = sum(int(float(item.get("layer_only32", 0) or 0)) for item in seq_runs)
+            seq_total = max(seq_high + seq_low + seq_only32, 1)
             detail.append({
                 "variant": tag,
                 "class": row["class"],
                 "sequence": sequence,
                 "bd_rate_y_psnr_pct": float(row["bd_rate_y_psnr_pct"]),
                 "mean_speed_ratio": sum(float(item["speed_ratio"]) for item in seq_points) / len(seq_points),
-                "selected_high_pct": 100.0 * seq_high / max(seq_high + seq_low, 1),
-                "selected_low_pct": 100.0 * seq_low / max(seq_high + seq_low, 1),
+                "selected_high_pct": 100.0 * seq_high / seq_total,
+                "selected_low_pct": 100.0 * seq_low / seq_total,
+                "selected_only32_pct": 100.0 * seq_only32 / seq_total,
             })
         bd_values = [float(row["bd_rate_y_psnr_pct"]) for row in bd_rows]
         speed_values = [float(row["speed_ratio"]) for row in point_rows]
         high = sum(int(float(row.get("layer_high2", 0) or 0)) for row in run_rows)
         low = sum(int(float(row.get("layer_low2", 0) or 0)) for row in run_rows)
+        only32 = sum(int(float(row.get("layer_only32", 0) or 0)) for row in run_rows)
+        total = max(high + low + only32, 1)
         worst = max(bd_rows, key=lambda row: float(row["bd_rate_y_psnr_pct"]))
         summary.append({
             "variant": tag,
@@ -103,8 +109,9 @@ def main() -> int:
             "worst_sequence": worst["sequence"],
             "worst_bd_rate_pct": float(worst["bd_rate_y_psnr_pct"]),
             "mean_speed_ratio": sum(speed_values) / len(speed_values),
-            "selected_high_pct": 100.0 * high / max(high + low, 1),
-            "selected_low_pct": 100.0 * low / max(high + low, 1),
+            "selected_high_pct": 100.0 * high / total,
+            "selected_low_pct": 100.0 * low / total,
+            "selected_only32_pct": 100.0 * only32 / total,
         })
 
     write_csv(args.output / "inter_layer_sweep_detail.csv", detail)

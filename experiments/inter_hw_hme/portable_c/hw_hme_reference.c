@@ -1,4 +1,5 @@
 #include "hw_hme_reference.h"
+#include "inter_only32_gate_model.h"
 
 #include <limits.h>
 #include <stdlib.h>
@@ -6,6 +7,7 @@
 
 static int max_i(int a, int b) { return a > b ? a : b; }
 static int min_i(int a, int b) { return a < b ? a : b; }
+static uint32_t abs_u32(int value) { return (uint32_t)(value < 0 ? -value : value); }
 
 static hw_hme_mv mv_scale(hw_hme_mv mv, int scale)
 {
@@ -303,6 +305,11 @@ int hw_hme_search(const hw_hme_config* c, const hw_hme_input* in,
     out->ime_mv_full = best_ime;
     out->ime_sad = best_ime_sad;
     out->ime_cost = (uint32_t)best_ime_cost;
+    out->ime_boundary = (uint8_t)(
+        best_ime.x == max_i(in->mv_min_full.x, out->ime_center_full.x - c->ime_range_x_full) ||
+        best_ime.x == min_i(in->mv_max_full.x, out->ime_center_full.x + c->ime_range_x_full) ||
+        best_ime.y == max_i(in->mv_min_full.y, out->ime_center_full.y - c->ime_range_y_full) ||
+        best_ime.y == min_i(in->mv_max_full.y, out->ime_center_full.y + c->ime_range_y_full));
 
     /* FME uses qpel units: IME seed, one AMVP guard candidate, then
      * 8 half-pel and 8 quarter-pel samples around the better seed. */
@@ -360,5 +367,67 @@ int hw_hme_search(const hw_hme_config* c, const hw_hme_input* in,
     out->fme_mv_qpel = best_qpel;
     out->fme_sad = best_fme_sad;
     out->fme_cost = (uint32_t)best_fme_cost;
+    return 0;
+}
+
+int hw_hme_select_inter_layers(const hw_hme_result* result,
+                               hw_hme_mv amvp_qpel, int qp,
+                               int low2_probability_cutoff,
+                               int only32_probability_cutoff,
+                               hw_hme_inter_layer_decision* decision)
+{
+    uint32_t sad, mv, low_probability;
+    hw_hme_mv ime_qpel;
+    if (!result || !decision || qp < 0 || qp > 51 ||
+        low2_probability_cutoff < 0 || low2_probability_cutoff > 100 ||
+        only32_probability_cutoff < 0 || only32_probability_cutoff > 100)
+        return -1;
+    memset(decision, 0, sizeof(*decision));
+    decision->layer_set = HW_HME_INTER_LOW_16_8;
+    decision->features.ime_sad_per_pixel_q8 = (result->ime_sad + 2u) >> 2;
+    decision->features.pme_to_ime_l1 =
+        abs_u32(result->ime_mv_full.x - result->ime_center_full.x) +
+        abs_u32(result->ime_mv_full.y - result->ime_center_full.y);
+    ime_qpel = mv_scale(result->ime_mv_full, 4);
+    decision->features.ime_mvd_qpel_l1 =
+        abs_u32(ime_qpel.x - amvp_qpel.x) + abs_u32(ime_qpel.y - amvp_qpel.y);
+    decision->features.ime_mv_fullpel_l1 =
+        abs_u32(result->ime_mv_full.x) + abs_u32(result->ime_mv_full.y);
+    decision->features.pme_activity = result->pme_activity;
+    decision->features.ime_boundary = result->ime_boundary;
+    decision->only32_probability = hw_hme_inter_only32_model_probability(
+        qp, decision->features.ime_sad_per_pixel_q8,
+        decision->features.pme_to_ime_l1,
+        decision->features.ime_mvd_qpel_l1,
+        decision->features.ime_mv_fullpel_l1,
+        decision->features.pme_activity, decision->features.ime_boundary);
+    if (decision->only32_probability >= (uint32_t)only32_probability_cutoff)
+    {
+        decision->layer_set = HW_HME_INTER_ONLY_32;
+        return 0;
+    }
+
+    sad = decision->features.ime_sad_per_pixel_q8;
+    mv = decision->features.ime_mv_fullpel_l1;
+    if (qp <= 29)
+    {
+        if (sad <= 665)
+            low_probability = qp <= 24 ? (mv <= 2 ? 79u : 67u)
+                                      : (sad <= 565 ? 25u : 41u);
+        else if (mv <= 4)
+            low_probability = sad <= 959 ? 80u : 93u;
+        else
+            low_probability = qp <= 24 ? 81u : 60u;
+    }
+    else if (sad <= 1184)
+        low_probability = sad <= 781 ? (qp <= 34 ? 18u : 10u)
+                                     : (qp <= 34 ? 46u : 20u);
+    else if (qp <= 34)
+        low_probability = mv <= 7 ? 82u : 58u;
+    else
+        low_probability = sad <= 1633 ? 38u : 64u;
+    decision->low2_probability = low_probability;
+    decision->layer_set = low_probability >= (uint32_t)low2_probability_cutoff
+                        ? HW_HME_INTER_LOW_16_8 : HW_HME_INTER_HIGH_32_16;
     return 0;
 }

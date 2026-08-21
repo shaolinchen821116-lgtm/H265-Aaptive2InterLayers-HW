@@ -126,6 +126,7 @@ static const struct option long_options[] =
     { "hw-hme-layer-sad-slope", required_argument, NULL, 0 },
     { "hw-hme-layer-refine", required_argument, NULL, 0 },
     { "hw-hme-layer-cutoff", required_argument, NULL, 0 },
+    { "hw-hme-only32-cutoff", required_argument, NULL, 0 },
     { "hw-hme-stats",         no_argument, NULL, 0 },
     { "no-hw-hme-stats",      no_argument, NULL, 0 },
     { "rdpenalty",      required_argument, NULL, 0 },

@@ -167,11 +167,12 @@ namespace X265_NS {
         H0("   --hw-hme-pme-rate-scale <Q8>  Adaptive PME sqrt(lambda) rate scale in Q8. Default %d\n", param->hwHmePmeRateScaleQ8);
         H1("   --hw-hme-pme-texture <lo,hi>  Mean-gradient thresholds for adaptive PME. Default %d,%d\n", param->hwHmePmeTextureLow, param->hwHmePmeTextureHigh);
         H0("   --hw-hme-pme-attractor <0|1|2> Zero, AMVP, or dual-min attractor. Default %d\n", param->hwHmePmeAttractor);
-        H0("   --hw-hme-inter-layers <0..4>  P-frame CU layers: all/high2/low2/adaptive/collect. Default %d\n", param->hwHmeInterLayerMode);
+        H0("   --hw-hme-inter-layers <0..6>  P CU layers: all/high2/low2/adaptive/collect/only32/cascade32. Default %d\n", param->hwHmeInterLayerMode);
         H1("   --hw-hme-layer-sad <Q8>       Adaptive CU32 IME SAD/pixel base threshold. Default %d\n", param->hwHmeInterLayerSadQ8);
         H1("   --hw-hme-layer-sad-slope <Q8> Threshold increment per QP above 22. Default %d\n", param->hwHmeInterLayerSadSlopeQ8);
         H1("   --hw-hme-layer-refine <pel>   PME-to-IME L1 correction threshold. Default %d\n", param->hwHmeInterLayerRefine);
         H0("   --hw-hme-layer-cutoff <1..99> Low-layer probability cutoff for integer CART. Default %d\n", param->hwHmeInterLayerCutoff);
+        H0("   --hw-hme-only32-cutoff <1..99> CU32-only gate probability cutoff. Default %d\n", param->hwHmeInterOnly32Cutoff);
         H1("   --[no-]hw-hme-stats           Print aggregate stage counters at process exit. Default %s\n", OPT(param->bEnableHwHMEStats));
         H0("\nSpatial / intra options:\n");
         H0("   --[no-]strong-intra-smoothing Enable strong intra smoothing for 32x32 blocks. Default %s\n", OPT(param->bEnableStrongIntraSmoothing));

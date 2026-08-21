@@ -87,7 +87,33 @@ typedef struct hw_hme_result
     uint32_t pme_rate_weight_q8;
     uint8_t pme_texture_class;
     uint8_t pme_used_amvp;
+    uint8_t ime_boundary;
 } hw_hme_result;
+
+typedef enum hw_hme_inter_layer_set
+{
+    HW_HME_INTER_HIGH_32_16 = 0,
+    HW_HME_INTER_LOW_16_8 = 1,
+    HW_HME_INTER_ONLY_32 = 2
+} hw_hme_inter_layer_set;
+
+typedef struct hw_hme_inter_layer_features
+{
+    uint32_t ime_sad_per_pixel_q8;
+    uint32_t pme_to_ime_l1;
+    uint32_t ime_mvd_qpel_l1;
+    uint32_t ime_mv_fullpel_l1;
+    uint32_t pme_activity;
+    uint8_t ime_boundary;
+} hw_hme_inter_layer_features;
+
+typedef struct hw_hme_inter_layer_decision
+{
+    hw_hme_inter_layer_set layer_set;
+    hw_hme_inter_layer_features features;
+    uint32_t only32_probability;
+    uint32_t low2_probability;
+} hw_hme_inter_layer_decision;
 
 /* Fills the final experiment defaults: PME [-32,32]x[-28,28] on ds4,
  * IME [-12,12]^2, adaptive additive cost, Q8 scale 256, gradient
@@ -109,6 +135,15 @@ int hw_hme_downsample4(const uint8_t* src, ptrdiff_t src_stride,
  * HEVC quarter-pel interpolation, which are platform-specific. */
 int hw_hme_search(const hw_hme_config* config, const hw_hme_input* input,
                   const hw_hme_callbacks* callbacks, hw_hme_result* result);
+
+/* Hardware-oriented CU32 decision. The function first applies the conservative
+ * ONLY32 gate, then falls back to the existing HIGH(32/16) versus LOW(16/8)
+ * integer tree. The result and AMVP must come from the CU32 IME probe. */
+int hw_hme_select_inter_layers(const hw_hme_result* result,
+                               hw_hme_mv amvp_qpel, int qp,
+                               int low2_probability_cutoff,
+                               int only32_probability_cutoff,
+                               hw_hme_inter_layer_decision* decision);
 
 /* Small, deterministic Exp-Golomb-style fallback for prototypes. Production
  * ports should connect their codec's exact MVD bit estimator instead. */

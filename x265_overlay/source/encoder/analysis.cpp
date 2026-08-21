@@ -44,6 +44,7 @@ struct HardwareInterLayerAggregate
     Lock lock;
     uint64_t high2;
     uint64_t low2;
+    uint64_t only32;
     uint64_t leaf32;
     uint64_t leaf16;
     uint64_t leaf8;
@@ -51,12 +52,13 @@ struct HardwareInterLayerAggregate
     uint64_t imeSadQ8;
     uint64_t refineL1;
     uint64_t boundary;
+    uint64_t only32Probability;
     bool registered;
 
     HardwareInterLayerAggregate()
     {
-        high2 = low2 = leaf32 = leaf16 = leaf8 = 0;
-        validFeatures = imeSadQ8 = refineL1 = boundary = 0;
+        high2 = low2 = only32 = leaf32 = leaf16 = leaf8 = 0;
+        validFeatures = imeSadQ8 = refineL1 = boundary = only32Probability = 0;
         registered = false;
     }
 };
@@ -66,22 +68,26 @@ HardwareInterLayerAggregate g_hwInterLayerStats;
 static void printHardwareInterLayerStats()
 {
     ScopedLock lock(g_hwInterLayerStats.lock);
-    const uint64_t selected = g_hwInterLayerStats.high2 + g_hwInterLayerStats.low2;
+    const uint64_t selected = g_hwInterLayerStats.high2 + g_hwInterLayerStats.low2 +
+                              g_hwInterLayerStats.only32;
     if (!selected)
         return;
     const double valid = (double)X265_MAX(g_hwInterLayerStats.validFeatures, (uint64_t)1);
     fprintf(stderr,
-        "x265 [info]: HW-inter-layer summary: high2=%llu low2=%llu high=%.2f%%; "
-        "leaf32=%llu leaf16=%llu leaf8=%llu; avg-IME-SAD-Q8=%.2f avg-refine=%.2f boundary=%.2f%%\n",
+        "x265 [info]: HW-inter-layer summary: high2=%llu low2=%llu only32=%llu high=%.2f%% one=%.2f%%; "
+        "leaf32=%llu leaf16=%llu leaf8=%llu; avg-IME-SAD-Q8=%.2f avg-refine=%.2f boundary=%.2f%% avg-only32-prob=%.2f\n",
         (unsigned long long)g_hwInterLayerStats.high2,
         (unsigned long long)g_hwInterLayerStats.low2,
+        (unsigned long long)g_hwInterLayerStats.only32,
         100.0 * (double)g_hwInterLayerStats.high2 / selected,
+        100.0 * (double)g_hwInterLayerStats.only32 / selected,
         (unsigned long long)g_hwInterLayerStats.leaf32,
         (unsigned long long)g_hwInterLayerStats.leaf16,
         (unsigned long long)g_hwInterLayerStats.leaf8,
         (double)g_hwInterLayerStats.imeSadQ8 / valid,
         (double)g_hwInterLayerStats.refineL1 / valid,
-        100.0 * (double)g_hwInterLayerStats.boundary / valid);
+        100.0 * (double)g_hwInterLayerStats.boundary / valid,
+        (double)g_hwInterLayerStats.only32Probability / valid);
 }
 
 static void recordHardwareInterLayerStats(const HardwareInterLayerDecision& decision,
@@ -96,6 +102,7 @@ static void recordHardwareInterLayerStats(const HardwareInterLayerDecision& deci
     }
     g_hwInterLayerStats.high2 += decision.layerSet == HW_INTER_LAYER_HIGH_32_16;
     g_hwInterLayerStats.low2 += decision.layerSet == HW_INTER_LAYER_LOW_16_8;
+    g_hwInterLayerStats.only32 += decision.layerSet == HW_INTER_LAYER_ONLY_32;
     g_hwInterLayerStats.leaf32 += leaf32;
     g_hwInterLayerStats.leaf16 += leaf16;
     g_hwInterLayerStats.leaf8 += leaf8;
@@ -105,6 +112,7 @@ static void recordHardwareInterLayerStats(const HardwareInterLayerDecision& deci
         g_hwInterLayerStats.imeSadQ8 += decision.features.imeSadPerPixelQ8;
         g_hwInterLayerStats.refineL1 += decision.features.pmeToImeL1;
         g_hwInterLayerStats.boundary += decision.features.imeBoundary;
+        g_hwInterLayerStats.only32Probability += decision.only32Probability;
     }
 }
 
@@ -233,6 +241,8 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
     m_hwInterLayerDecision = HardwareInterLayerDecision();
     m_hwInterLayerDecision.layerSet = m_param->hwHmeInterLayerMode == 1
                                     ? HW_INTER_LAYER_HIGH_32_16
+                                    : m_param->hwHmeInterLayerMode == 5
+                                    ? HW_INTER_LAYER_ONLY_32
                                     : HW_INTER_LAYER_LOW_16_8;
 
     /* Selector v2 uses the integer CART (default risk cutoff 40). */
@@ -482,7 +492,22 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
                 leaf32, leaf16, leaf8, oracle);
         }
         else
+        {
+            if (m_param->hwHmeInterLayerMode == 5 &&
+                !m_hwInterLayerDecision.features.valid)
+            {
+                const MotionData& rootMe = m_modeDepth[0].pred[PRED_2Nx2N].bestME[0][0];
+                m_hwInterLayerDecision.features = hwInterLayerFeatures(rootMe);
+                if (m_hwInterLayerDecision.features.valid)
+                {
+                    const HardwareInterLayerFeatures& f = m_hwInterLayerDecision.features;
+                    m_hwInterLayerDecision.only32Probability = hwInterOnly32ModelProbability(
+                        qp, f.imeSadPerPixelQ8, f.pmeToImeL1, f.imeMvdQPelL1,
+                        f.imeMvFullPelL1, f.pmeActivity, f.imeBoundary);
+                }
+            }
             recordHardwareInterLayerStats(m_hwInterLayerDecision, leaf32, leaf16, leaf8);
+        }
     }
 
     return *m_modeDepth[0].bestMode;
@@ -1369,9 +1394,11 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
         bool chooseMerge = false;
         bool bCtuInfoCheck = false;
         int sameContentRef = 0;
+        const int hwLayerMode = m_param->hwHmeInterLayerMode;
         const bool hwLayerExperiment = m_param->bEnableHwHME && m_slice->isInterP() &&
-                                       m_param->hwHmeInterLayerMode > 0 &&
-                                       m_param->hwHmeInterLayerMode < 4;
+                                       (hwLayerMode == 1 || hwLayerMode == 2 ||
+                                        hwLayerMode == 3 || hwLayerMode == 5 ||
+                                        hwLayerMode == 6);
         bool hwRootProbeDone = false;
         bool hwAllowCurrent = true;
 
@@ -1400,7 +1427,8 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
         /* Adaptive mode needs the CU32 IME result before deciding whether to
          * recurse to CU8. Probe 2Nx2N once here and reuse the same result in
          * Step 3, so the selector adds no duplicate motion search. */
-        if (hwLayerExperiment && depth == 0 && m_param->hwHmeInterLayerMode == 3)
+        if (hwLayerExperiment && depth == 0 &&
+            (hwLayerMode == 3 || hwLayerMode == 6))
         {
             uint32_t probeRefMasks[2] = { 0, 0 };
             md.pred[PRED_2Nx2N].cu.initSubCU(parentCTU, cuGeom, qp);
@@ -1411,6 +1439,10 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
                 m_param->hwHmeInterLayerSadSlopeQ8,
                 m_param->hwHmeInterLayerRefine,
                 m_param->hwHmeInterLayerCutoff);
+            if (hwLayerMode == 6 &&
+                m_hwInterLayerDecision.only32Probability >=
+                (uint32_t)m_param->hwHmeInterOnly32Cutoff)
+                m_hwInterLayerDecision.layerSet = HW_INTER_LAYER_ONLY_32;
             hwRootProbeDone = true;
         }
         if (hwLayerExperiment && depth == 0 &&
@@ -1548,6 +1580,12 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
         if (hwLayerExperiment && depth == 1 && mightNotSplit &&
             m_hwInterLayerDecision.layerSet == HW_INTER_LAYER_HIGH_32_16)
             skipRecursion = true;
+        if (hwLayerExperiment && depth == 0 && mightNotSplit &&
+            m_hwInterLayerDecision.layerSet == HW_INTER_LAYER_ONLY_32)
+        {
+            mightSplit = false;
+            minDepth = depth;
+        }
         /* Step 2. Evaluate each of the 4 split sub-blocks in series */
         if (mightSplit && !skipRecursion)
         {

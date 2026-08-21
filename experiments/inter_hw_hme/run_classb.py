@@ -19,9 +19,10 @@ HW_STATS_RE = re.compile(
     r"PME-zero=([0-9.]+)% IME-changed=([0-9.]+)% FME-changed=([0-9.]+)%"
 )
 LAYER_STATS_RE = re.compile(
-    r"HW-inter-layer summary: high2=(\d+) low2=(\d+) high=([0-9.]+)%; "
+    r"HW-inter-layer summary: high2=(\d+) low2=(\d+) only32=(\d+) "
+    r"high=([0-9.]+)% one=([0-9.]+)%; "
     r"leaf32=(\d+) leaf16=(\d+) leaf8=(\d+); avg-IME-SAD-Q8=([0-9.]+) "
-    r"avg-refine=([0-9.]+) boundary=([0-9.]+)%"
+    r"avg-refine=([0-9.]+) boundary=([0-9.]+)% avg-only32-prob=([0-9.]+)"
 )
 
 FIELDS = [
@@ -30,9 +31,10 @@ FIELDS = [
     "encoder_fps", "bitstream_bytes", "pu8", "pu16", "pu32",
     "pme_candidates_avg", "ime_candidates_avg", "fme_candidates_avg",
     "pme_zero_pct", "ime_changed_pct", "fme_changed_pct", "returncode",
-    "layer_high2", "layer_low2", "layer_high_pct", "layer_leaf32",
+    "layer_high2", "layer_low2", "layer_only32", "layer_high_pct",
+    "layer_only32_pct", "layer_leaf32",
     "layer_leaf16", "layer_leaf8", "layer_ime_sad_q8",
-    "layer_refine_avg", "layer_boundary_pct",
+    "layer_refine_avg", "layer_boundary_pct", "layer_only32_prob_avg",
 ]
 
 
@@ -70,7 +72,7 @@ def make_command(encoder: Path, seq: dict[str, str], mode: str, qp: int,
                  pme_texture: str, pme_attractor: int,
                  layer_mode: int, layer_sad: int,
                  layer_slope: int, layer_refine: int,
-                 layer_cutoff: int) -> list[str]:
+                 layer_cutoff: int, only32_cutoff: int) -> list[str]:
     command = [
         str(encoder),
         "--input", seq["path"],
@@ -116,6 +118,7 @@ def make_command(encoder: Path, seq: dict[str, str], mode: str, qp: int,
             "--hw-hme-layer-sad-slope", str(layer_slope),
             "--hw-hme-layer-refine", str(layer_refine),
             "--hw-hme-layer-cutoff", str(layer_cutoff),
+            "--hw-hme-only32-cutoff", str(only32_cutoff),
             "--hw-hme-stats",
         ]
     command += ["-o", str(bitstream)]
@@ -127,7 +130,7 @@ def run_one(encoder: Path, seq: dict[str, str], mode: str, qp: int,
             pme_rate_scale: int, pme_texture: str,
             pme_attractor: int, layer_mode: int, layer_sad: int,
             layer_slope: int, layer_refine: int,
-            layer_cutoff: int) -> dict[str, object]:
+            layer_cutoff: int, only32_cutoff: int) -> dict[str, object]:
     stem = f'{seq["name"]}_qp{qp}_{mode}'
     bitstream = out_dir / f"{stem}.hevc"
     csv_path = out_dir / f"{stem}.csv"
@@ -143,7 +146,8 @@ def run_one(encoder: Path, seq: dict[str, str], mode: str, qp: int,
     command = make_command(encoder, seq, mode, qp, frames, bitstream, csv_path,
                            pme_cost_mode, pme_rate_scale, pme_texture,
                            pme_attractor, layer_mode, layer_sad,
-                           layer_slope, layer_refine, layer_cutoff)
+                           layer_slope, layer_refine, layer_cutoff,
+                           only32_cutoff)
     print(f'[{seq["name"]}] mode={mode} qp={qp} frames={frames}', flush=True)
     started = time.perf_counter()
     completed = subprocess.run(command, stdout=subprocess.PIPE,
@@ -184,13 +188,16 @@ def run_one(encoder: Path, seq: dict[str, str], mode: str, qp: int,
         "returncode": completed.returncode,
         "layer_high2": 0,
         "layer_low2": 0,
+        "layer_only32": 0,
         "layer_high_pct": 0.0,
+        "layer_only32_pct": 0.0,
         "layer_leaf32": 0,
         "layer_leaf16": 0,
         "layer_leaf8": 0,
         "layer_ime_sad_q8": 0.0,
         "layer_refine_avg": 0.0,
         "layer_boundary_pct": 0.0,
+        "layer_only32_prob_avg": 0.0,
         "wall_s": round(wall_s, 3),
         "command": command,
     }
@@ -212,13 +219,16 @@ def run_one(encoder: Path, seq: dict[str, str], mode: str, qp: int,
         result.update({
             "layer_high2": int(values[0]),
             "layer_low2": int(values[1]),
-            "layer_high_pct": float(values[2]),
-            "layer_leaf32": int(values[3]),
-            "layer_leaf16": int(values[4]),
-            "layer_leaf8": int(values[5]),
-            "layer_ime_sad_q8": float(values[6]),
-            "layer_refine_avg": float(values[7]),
-            "layer_boundary_pct": float(values[8]),
+            "layer_only32": int(values[2]),
+            "layer_high_pct": float(values[3]),
+            "layer_only32_pct": float(values[4]),
+            "layer_leaf32": int(values[5]),
+            "layer_leaf16": int(values[6]),
+            "layer_leaf8": int(values[7]),
+            "layer_ime_sad_q8": float(values[8]),
+            "layer_refine_avg": float(values[9]),
+            "layer_boundary_pct": float(values[10]),
+            "layer_only32_prob_avg": float(values[11]),
         })
     json_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     return result
@@ -249,11 +259,12 @@ def main() -> int:
     parser.add_argument("--pme-rate-scale", type=int, default=256)
     parser.add_argument("--pme-texture", default="8,24")
     parser.add_argument("--pme-attractor", type=int, choices=(0, 1, 2), default=1)
-    parser.add_argument("--layer-mode", type=int, choices=range(5), default=0)
+    parser.add_argument("--layer-mode", type=int, choices=range(7), default=0)
     parser.add_argument("--layer-sad", type=int, default=2048)
     parser.add_argument("--layer-slope", type=int, default=64)
     parser.add_argument("--layer-refine", type=int, default=8)
     parser.add_argument("--layer-cutoff", type=int, default=50)
+    parser.add_argument("--only32-cutoff", type=int, default=92)
     args = parser.parse_args()
 
     encoder = args.encoder.resolve()
@@ -286,7 +297,8 @@ def main() -> int:
                                     args.pme_rate_scale, args.pme_texture,
                                     args.pme_attractor, args.layer_mode,
                                     args.layer_sad, args.layer_slope,
-                                    args.layer_refine, args.layer_cutoff))
+                                    args.layer_refine, args.layer_cutoff,
+                                    args.only32_cutoff))
                 write_summary(args.output / "runs.csv", rows)
     print(f"Wrote {args.output / 'runs.csv'}")
     return 0

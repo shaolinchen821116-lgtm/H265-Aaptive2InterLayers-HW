@@ -1,0 +1,67 @@
+{
+  "model": "D:\\002_Study\\x265_code\\H265-Aaptive2InterLayers-HW\\results\\inter\\only32_classb_train\\inter_only32_tree.json",
+  "runs": "D:\\002_Study\\x265_code\\x265-master\\experiment\\inter_hw_hme\\results\\ace_only32_label_collect_12f\\runs.csv",
+  "cutoff": 92,
+  "overall": {
+    "name": "All independent samples",
+    "cutoff": 92,
+    "samples": 663520,
+    "oracle_only32_pct": 50.273691825415966,
+    "selected_only32_pct": 8.381962864721485,
+    "accuracy_pct": 57.00024113817217,
+    "precision_pct": 93.3903912543153,
+    "recall_pct": 15.570664556203084,
+    "false_gate_pct": 0.5540149505666747,
+    "tp": 51940,
+    "tn": 326268,
+    "fp": 3676,
+    "fn": 281636
+  },
+  "class_rows": [
+    {
+      "name": "ClassA",
+      "cutoff": 92,
+      "samples": 352000,
+      "oracle_only32_pct": 38.232102272727275,
+      "selected_only32_pct": 4.853977272727272,
+      "accuracy_pct": 66.121875,
+      "precision_pct": 94.84958445510945,
+      "recall_pct": 12.042176597784168,
+      "false_gate_pct": 0.25,
+      "tp": 16206,
+      "tn": 216543,
+      "fp": 880,
+      "fn": 118371
+    },
+    {
+      "name": "ClassC",
+      "cutoff": 92,
+      "samples": 68640,
+      "oracle_only32_pct": 36.61130536130536,
+      "selected_only32_pct": 2.2479603729603728,
+      "accuracy_pct": 64.94026806526807,
+      "precision_pct": 84.51069345430979,
+      "recall_pct": 5.189017111022682,
+      "false_gate_pct": 0.3481934731934732,
+      "tp": 1304,
+      "tn": 43271,
+      "fp": 239,
+      "fn": 23826
+    },
+    {
+      "name": "ClassE",
+      "cutoff": 92,
+      "samples": 242880,
+      "oracle_only32_pct": 71.58638010540184,
+      "selected_only32_pct": 15.22850790513834,
+      "accuracy_pct": 41.53656126482213,
+      "precision_pct": 93.08676021304782,
+      "recall_pct": 19.8022649235919,
+      "false_gate_pct": 1.0527832674571804,
+      "tp": 34430,
+      "tn": 66454,
+      "fp": 2557,
+      "fn": 139439
+    }
+  ]
+}

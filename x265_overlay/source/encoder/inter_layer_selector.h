@@ -11,13 +11,15 @@
 
 #include "common.h"
 #include "search.h"
+#include "inter_only32_gate_model.h"
 
 namespace X265_NS {
 
 enum HardwareInterLayerSet
 {
     HW_INTER_LAYER_HIGH_32_16 = 0,
-    HW_INTER_LAYER_LOW_16_8 = 1
+    HW_INTER_LAYER_LOW_16_8 = 1,
+    HW_INTER_LAYER_ONLY_32 = 2
 };
 
 struct HardwareInterLayerFeatures
@@ -37,6 +39,7 @@ struct HardwareInterLayerDecision
 {
     HardwareInterLayerSet layerSet;
     HardwareInterLayerFeatures features;
+    uint32_t only32Probability;
 };
 
 static inline HardwareInterLayerFeatures hwInterLayerFeatures(const MotionData& me)
@@ -64,9 +67,15 @@ static inline HardwareInterLayerDecision hwSelectInterLayers(
 {
     HardwareInterLayerDecision out;
     out.features = hwInterLayerFeatures(me);
+    out.only32Probability = 0;
     out.layerSet = HW_INTER_LAYER_LOW_16_8; /* fail-safe for missing probe */
     if (!out.features.valid)
         return out;
+
+    out.only32Probability = hwInterOnly32ModelProbability(
+        qp, out.features.imeSadPerPixelQ8, out.features.pmeToImeL1,
+        out.features.imeMvdQPelL1, out.features.imeMvFullPelL1,
+        out.features.pmeActivity, out.features.imeBoundary);
 
     (void)sadBaseQ8;
     (void)sadSlopeQ8;

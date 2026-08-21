@@ -142,11 +142,26 @@ python .\experiments\inter_hw_hme\run_inter_layer_sweep.py `
   --manifest .\experiments\inter_hw_hme\sequence_manifest_abce.csv `
   --anchor-runs D:\work\results\abce_adaptive_30f\runs.csv `
   --anchor-mode hw --frames 30 --qps 22,27,32,37 `
-  --variants 1:50,2:50,3:50 `
+  --variants 1:50:92,2:50:92,3:50:92 `
   --output D:\work\results\abce_inter_layer_sweep
 ```
 
-`variants` 为 `layer_mode:probability_cutoff`。输出 `inter_layer_sweep_summary.csv` 和 `inter_layer_sweep_detail.csv`，同时每个子目录保留完整逐序列 BD-rate。
+`variants` 为 `layer_mode:two_layer_cutoff:only32_cutoff`。前 0..3 模式不使用第三项，但仍保留该字段以统一批量命令。输出 `inter_layer_sweep_summary.csv` 和 `inter_layer_sweep_detail.csv`，同时每个子目录保留完整逐序列 BD-rate。
+
+### 8.4 CU32-only 高一层门控
+
+mode 4 的同一份完整 RDO 日志也可用于 CU32-only 训练，正标签定义为 `leaf32>0`：
+
+```powershell
+python .\experiments\inter_hw_hme\train_inter_only32_gate.py `
+  D:\work\results\classb_layer_collect\runs.csv `
+  --output .\results\inter\only32_classb_train `
+  --max-depth 6 --min-leaf 512 --recommended-cutoff 92 `
+  --cpp-header .\x265_overlay\source\encoder\inter_only32_gate_model.h `
+  --portable-header .\experiments\inter_hw_hme\portable_c\inter_only32_gate_model.h
+```
+
+固定模型的独立验证使用 `evaluate_inter_only32_gate.py`。正式编码使用 `--hw-hme-inter-layers 6 --hw-hme-layer-cutoff 50 --hw-hme-only32-cutoff 92`。完整字段定义、阈值选择原则和 ABCE 结果见 `P_INTER_ONLY32_TRAINING_RESULTS_zh.md`。
 
 ## 9. 便携 C 验证
 

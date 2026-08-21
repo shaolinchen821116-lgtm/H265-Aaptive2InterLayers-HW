@@ -1241,7 +1241,8 @@ typedef struct x265_param
 
     /* P-slice CU-depth experiment: 0=all 32/16/8, 1=force high 32/16,
      * 2=force low 16/8, 3=adaptive from the CU32 IME result, 4=collect
-     * full-search training records without pruning. */
+     * full-search training records, 5=force CU32 only, 6=conservative
+     * CU32-only gate with adaptive high2/low2 fallback. */
     int       hwHmeInterLayerMode;
 
     /* Adaptive layer-selector thresholds. IME SAD is normalized to Q8 per
@@ -1980,8 +1981,13 @@ typedef struct x265_param
     double   minVbvFullness;
 
     /* Maximum VBV fullness to be maintained. Default 80. Keep the buffer
-    * at max 80% full */
+     * at max 80% full */
     double   maxVbvFullness;
+
+    /* CU32-only probability cutoff (1..99) for the conservative integer
+     * CART. Kept at the end so pre-existing x265_param field offsets remain
+     * unchanged. The gate is used only by inter-layer mode 6. */
+    int       hwHmeInterOnly32Cutoff;
 } x265_param;
 
 /* x265_param_alloc:

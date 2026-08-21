@@ -232,6 +232,7 @@ void x265_param_default(x265_param* param)
     param->hwHmeInterLayerSadSlopeQ8 = 64;
     param->hwHmeInterLayerRefine = 8;
     param->hwHmeInterLayerCutoff = 50;
+    param->hwHmeInterOnly32Cutoff = 92;
     param->bEnableHwHMEStats = 0;
     param->bSourceReferenceEstimation = 0;
     param->limitTU = 0;
@@ -1422,6 +1423,7 @@ int x265_param_parse(x265_param* p, const char* name, const char* value)
         OPT("hw-hme-layer-sad-slope") p->hwHmeInterLayerSadSlopeQ8 = atoi(value);
         OPT("hw-hme-layer-refine") p->hwHmeInterLayerRefine = atoi(value);
         OPT("hw-hme-layer-cutoff") p->hwHmeInterLayerCutoff = atoi(value);
+        OPT("hw-hme-only32-cutoff") p->hwHmeInterOnly32Cutoff = atoi(value);
         OPT("hw-hme-stats") p->bEnableHwHMEStats = atobool(value);
         OPT("vbv-live-multi-pass") p->bliveVBV2pass = atobool(value);
         OPT("min-vbv-fullness") p->minVbvFullness = atof(value);
@@ -1866,8 +1868,8 @@ int x265_check_params(x265_param* param)
               "HW-HME PME texture thresholds must satisfy 0 <= low < high <= 255");
         CHECK(param->hwHmePmeAttractor < 0 || param->hwHmePmeAttractor > 2,
               "HW-HME PME attractor must be 0, 1, or 2");
-        CHECK(param->hwHmeInterLayerMode < 0 || param->hwHmeInterLayerMode > 4,
-              "HW-HME inter layer mode must be between 0 and 4");
+        CHECK(param->hwHmeInterLayerMode < 0 || param->hwHmeInterLayerMode > 6,
+              "HW-HME inter layer mode must be between 0 and 6");
         CHECK(param->hwHmeInterLayerSadQ8 < 0 || param->hwHmeInterLayerSadQ8 > 65535 ||
               param->hwHmeInterLayerSadSlopeQ8 < 0 || param->hwHmeInterLayerSadSlopeQ8 > 4096,
               "HW-HME inter layer SAD thresholds are outside the supported range");
@@ -1875,6 +1877,8 @@ int x265_check_params(x265_param* param)
               "HW-HME inter layer refine threshold must be between 0 and 64");
         CHECK(param->hwHmeInterLayerCutoff < 1 || param->hwHmeInterLayerCutoff > 99,
               "HW-HME inter layer probability cutoff must be between 1 and 99");
+        CHECK(param->hwHmeInterOnly32Cutoff < 1 || param->hwHmeInterOnly32Cutoff > 99,
+              "HW-HME inter only32 probability cutoff must be between 1 and 99");
         CHECK(param->hwHmeInterLayerMode && param->maxNumReferences != 1,
               "HW-HME inter layer experiment requires --ref 1");
         CHECK(param->maxCUSize != 32 || param->minCUSize != 8,
@@ -1970,12 +1974,13 @@ void x265_print_params(x265_param* param)
 
     if (param->bEnableHwHME)
         x265_log(param, X265_LOG_INFO,
-            "HW-HME PME(ds) / IME(full) / FME : +/-[%d,%d] / +/-[%d,%d] / AMVP-guard+half+quarter; PME mode %d scaleQ8 %d texture %d,%d attractor %d; inter-layers %d\n",
+            "HW-HME PME(ds) / IME(full) / FME : +/-[%d,%d] / +/-[%d,%d] / AMVP-guard+half+quarter; PME mode %d scaleQ8 %d texture %d,%d attractor %d; inter-layers %d only32-cutoff %d\n",
             param->hwHmePmeRangeX, param->hwHmePmeRangeY,
             param->hwHmeImeRangeX, param->hwHmeImeRangeY,
             param->hwHmePmeCostMode, param->hwHmePmeRateScaleQ8,
             param->hwHmePmeTextureLow, param->hwHmePmeTextureHigh,
-            param->hwHmePmeAttractor, param->hwHmeInterLayerMode);
+            param->hwHmePmeAttractor, param->hwHmeInterLayerMode,
+            param->hwHmeInterOnly32Cutoff);
     else if (param->bEnableHME)
         x265_log(param, X265_LOG_INFO, "HME L0,1,2 / range / subpel / merge : %s, %s, %s / %d / %d / %d\n",
             x265_motion_est_names[param->hmeSearchMethod[0]], x265_motion_est_names[param->hmeSearchMethod[1]], x265_motion_est_names[param->hmeSearchMethod[2]], param->searchRange, param->subpelRefine, param->maxNumMergeCand);
@@ -2197,7 +2202,7 @@ char *x265_param2string(x265_param* p, int padx, int pady)
     }
     BOOL(p->bEnableHwHME, "hw-hme");
     if (p->bEnableHwHME)
-        s += sprintf(s, " pme-range=%d,%d ime-range=%d,%d pme-sad-shift=%d pme-cost-mode=%d pme-rate-scale=%d pme-texture=%d,%d pme-attractor=%d inter-layers=%d layer-sad=%d layer-slope=%d layer-refine=%d layer-cutoff=%d hw-hme-stats=%d",
+        s += sprintf(s, " pme-range=%d,%d ime-range=%d,%d pme-sad-shift=%d pme-cost-mode=%d pme-rate-scale=%d pme-texture=%d,%d pme-attractor=%d inter-layers=%d layer-sad=%d layer-slope=%d layer-refine=%d layer-cutoff=%d only32-cutoff=%d hw-hme-stats=%d",
             p->hwHmePmeRangeX, p->hwHmePmeRangeY,
             p->hwHmeImeRangeX, p->hwHmeImeRangeY,
             p->hwHmePmeSadShift, p->hwHmePmeCostMode,
@@ -2206,6 +2211,7 @@ char *x265_param2string(x265_param* p, int padx, int pady)
             p->hwHmeInterLayerMode, p->hwHmeInterLayerSadQ8,
             p->hwHmeInterLayerSadSlopeQ8, p->hwHmeInterLayerRefine,
             p->hwHmeInterLayerCutoff,
+            p->hwHmeInterOnly32Cutoff,
             p->bEnableHwHMEStats);
     BOOL(p->bEnableWeightedPred, "weightp");
     BOOL(p->bEnableWeightedBiPred, "weightb");
@@ -2536,6 +2542,7 @@ void x265_copy_params(x265_param* dst, x265_param* src)
     dst->hwHmeInterLayerSadSlopeQ8 = src->hwHmeInterLayerSadSlopeQ8;
     dst->hwHmeInterLayerRefine = src->hwHmeInterLayerRefine;
     dst->hwHmeInterLayerCutoff = src->hwHmeInterLayerCutoff;
+    dst->hwHmeInterOnly32Cutoff = src->hwHmeInterOnly32Cutoff;
     dst->bEnableHwHMEStats = src->bEnableHwHMEStats;
     dst->bEnableWeightedBiPred = src->bEnableWeightedBiPred;
     dst->bEnableWeightedPred = src->bEnableWeightedPred;
