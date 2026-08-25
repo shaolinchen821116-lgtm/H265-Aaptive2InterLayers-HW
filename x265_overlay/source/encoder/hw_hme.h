@@ -29,6 +29,7 @@ struct HardwareHMETrace
     uint8_t  pmeTextureClass;
     uint8_t  pmeUsedAmvp;
     uint32_t imeSad;
+    uint32_t imeMvdBits;
     uint32_t imeMvCost;
     uint32_t fmeSad;
     uint32_t fmeMvCost;

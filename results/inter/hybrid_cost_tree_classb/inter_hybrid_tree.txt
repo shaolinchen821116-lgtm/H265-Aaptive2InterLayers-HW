@@ -1,0 +1,370 @@
+if (cost_prefers_low <= 0)
+    if (cost_ratio_bin <= 3)
+        if (root_mvd_bits <= 6)
+            if (qp <= 24)
+                if (sad32_q8 <= 458)
+                    if (mv32_fullpel_l1 <= 10)
+                        if (mv32_fullpel_l1 <= 1)
+                            return 38;  // n=261, low=76
+                        else
+                            return 19;  // n=1468, low=199
+                    else
+                        return 39;  // n=434, low=128
+                else
+                    if (activity32 <= 2)
+                        if (mv32_fullpel_l1 <= 6)
+                            return 36;  // n=367, low=100
+                        else
+                            return 48;  // n=308, low=118
+                    else
+                        return 60;  // n=401, low=200
+            else
+                if (mvd32_qpel_l1 <= 1)
+                    if (mv8_span_l1 <= 1)
+                        if (sad16_range_q8 <= 262)
+                            return 3;  // n=10620, low=199
+                        else
+                            return 10;  // n=2094, low=149
+                    else
+                        if (cost_abs_delta_q8pp <= 26)
+                            return 18;  // n=1088, low=135
+                        else
+                            return 8;  // n=1229, low=69
+                else
+                    if (sad16_range_q8 <= 133)
+                        if (sad_gain16_to8_max_q8 <= 21)
+                            return 5;  // n=1398, low=48
+                        else
+                            return 14;  // n=948, low=94
+                    else
+                        if (cost_abs_delta_q8pp <= 38)
+                            return 29;  // n=1790, low=381
+                        else
+                            return 17;  // n=2559, low=299
+        else
+            if (qp <= 24)
+                if (cost32_q8pp <= 499)
+                    if (sad8_mad_q8 <= 52)
+                        if (sad32_q8 <= 466)
+                            return 28;  // n=3959, low=820
+                        else
+                            return 41;  // n=1630, low=516
+                    else
+                        if (cost32_q8pp <= 473)
+                            return 44;  // n=730, low=253
+                        else
+                            return 57;  // n=519, low=246
+                else
+                    if (sad32_q8 <= 575)
+                        if (refine32_l1 <= 9)
+                            return 57;  // n=6027, low=2850
+                        else
+                            return 75;  // n=284, low=188
+                    else
+                        if (sad16_mean_q8 <= 604)
+                            return 69;  // n=1703, low=1016
+                        else
+                            return 79;  // n=1512, low=1087
+            else
+                if (activity8_range <= 8)
+                    if (mv32_fullpel_l1 <= 4)
+                        if (sad_gain16_to8_q8 <= 12)
+                            return 16;  // n=1623, low=177
+                        else
+                            return 37;  // n=2095, low=588
+                    else
+                        if (sad_gain16_to8_max_q8 <= 35)
+                            return 6;  // n=3506, low=155
+                        else
+                            return 17;  // n=3827, low=450
+                else
+                    if (mv32_fullpel_l1 <= 4)
+                        if (cost_abs_delta_q8pp <= 34)
+                            return 55;  // n=3830, low=1709
+                        else
+                            return 41;  // n=9836, low=3129
+                    else
+                        if (sad16_range_q8 <= 419)
+                            return 25;  // n=4740, low=875
+                        else
+                            return 36;  // n=3491, low=955
+    else
+        if (mv8_span_l1 <= 2)
+            if (sad8_range_q8 <= 1198)
+                if (cost_ratio_bin <= 4)
+                    if (activity8_range <= 7)
+                        if (mv8_span_l1 <= 1)
+                            return 2;  // n=12544, low=161
+                        else
+                            return 6;  // n=3144, low=137
+                    else
+                        if (root_mvd_bits <= 6)
+                            return 3;  // n=2539, low=54
+                        else
+                            return 12;  // n=5234, low=426
+                else
+                    if (sad8_range_q8 <= 930)
+                        if (activity8_range <= 7)
+                            return 0;  // n=38481, low=113
+                        else
+                            return 2;  // n=7540, low=85
+                    else
+                        if (mv32_fullpel_l1 <= 10)
+                            return 6;  // n=1222, low=53
+                        else
+                            return 1;  // n=278, low=1
+            else
+                if (mv32_fullpel_l1 <= 0)
+                    if (sad8_range_q8 <= 1674)
+                        if (mv8_span_l1 <= 1)
+                            return 7;  // n=629, low=30
+                        else
+                            return 13;  // n=287, low=26
+                    else
+                        return 19;  // n=286, low=39
+                else
+                    if (cost_abs_delta_q8pp <= 256)
+                        if (sad_gain16_to8_max_q8 <= 87)
+                            return 25;  // n=680, low=125
+                        else
+                            return 37;  // n=261, low=74
+                    else
+                        if (sad8_range_q8 <= 1442)
+                            return 11;  // n=414, low=31
+                        else
+                            return 23;  // n=357, low=60
+        else
+            if (sad16_range_q8 <= 404)
+                if (cost_ratio_bin <= 4)
+                    if (mv32_fullpel_l1 <= 3)
+                        if (root_mvd_bits <= 8)
+                            return 13;  // n=474, low=42
+                        else
+                            return 26;  // n=1786, low=336
+                    else
+                        if (qp <= 24)
+                            return 24;  // n=1481, low=254
+                        else
+                            return 12;  // n=9152, low=752
+                else
+                    if (cost_ratio_bin <= 5)
+                        if (sad16_mad_q8 <= 77)
+                            return 6;  // n=6416, low=251
+                        else
+                            return 11;  // n=3321, low=253
+                    else
+                        if (cost8_to32_q8pp <= 671)
+                            return 12;  // n=291, low=25
+                        else
+                            return 2;  // n=4365, low=45
+            else
+                if (cost_ratio_bin <= 4)
+                    if (mv32_fullpel_l1 <= 10)
+                        if (sad16_range_q8 <= 635)
+                            return 29;  // n=1561, low=328
+                        else
+                            return 40;  // n=1127, low=343
+                    else
+                        if (sad_gain16_to8_max_q8 <= 226)
+                            return 16;  // n=761, low=84
+                        else
+                            return 29;  // n=593, low=125
+                else
+                    if (cost_abs_delta_q8pp <= 380)
+                        if (sad_gain16_to8_max_q8 <= 184)
+                            return 16;  // n=1113, low=123
+                        else
+                            return 27;  // n=847, low=169
+                    else
+                        if (activity8_range <= 8)
+                            return 5;  // n=473, low=15
+                        else
+                            return 14;  // n=698, low=68
+else
+    if (sad_gain16_to8_max_q8 <= 0)
+        if (qp <= 24)
+            if (sad8_mad_q8 <= 67)
+                if (sad32_q8 <= 423)
+                    if (mv32_fullpel_l1 <= 8)
+                        if (cost8_to32_q8pp <= 253)
+                            return 9;  // n=383, low=25
+                        else
+                            return 34;  // n=283, low=72
+                    else
+                        return 44;  // n=265, low=92
+                else
+                    if (activity8_mean <= 7)
+                        if (activity32 <= 1)
+                            return 38;  // n=325, low=95
+                        else
+                            return 52;  // n=1274, low=537
+                    else
+                        if (sad8_range_q8 <= 278)
+                            return 67;  // n=420, low=240
+                        else
+                            return 77;  // n=308, low=211
+            else
+                if (sad8_range_q8 <= 546)
+                    if (activity16_mean <= 6)
+                        if (cost_abs_delta_q8pp <= 65)
+                            return 67;  // n=302, low=173
+                        else
+                            return 60;  // n=286, low=142
+                    else
+                        if (mvd32_qpel_l1 <= 0)
+                            return 76;  // n=1185, low=804
+                        else
+                            return 89;  // n=468, low=397
+                else
+                    if (sad16_mean_q8 <= 1178)
+                        if (sad8_mad_q8 <= 152)
+                            return 90;  // n=630, low=537
+                        else
+                            return 95;  // n=1063, low=979
+                    else
+                        if (activity8_range <= 26)
+                            return 98;  // n=377, low=366
+                        else
+                            return 99;  // n=719, low=711
+        else
+            if (sad8_range_q8 <= 1130)
+                if (qp <= 29)
+                    if (cost32_q8pp <= 714)
+                        if (sad8_range_q8 <= 530)
+                            return 7;  // n=9205, low=462
+                        else
+                            return 46;  // n=712, low=260
+                    else
+                        if (sad8_range_q8 <= 554)
+                            return 44;  // n=2864, low=997
+                        else
+                            return 78;  // n=1690, low=1179
+                else
+                    if (sad8_range_q8 <= 874)
+                        if (sad8_range_q8 <= 654)
+                            return 1;  // n=19037, low=141
+                        else
+                            return 6;  // n=5311, low=210
+                    else
+                        if (qp <= 34)
+                            return 40;  // n=974, low=303
+                        else
+                            return 3;  // n=2462, low=58
+            else
+                if (qp <= 34)
+                    if (qp <= 29)
+                        if (sad16_mean_q8 <= 1093)
+                            return 86;  // n=518, low=419
+                        else
+                            return 98;  // n=960, low=930
+                    else
+                        if (sad16_mean_q8 <= 1297)
+                            return 61;  // n=1114, low=572
+                        else
+                            return 86;  // n=1002, low=800
+                else
+                    if (sad8_range_q8 <= 1726)
+                        if (cost8_to32_q8pp <= 1231)
+                            return 10;  // n=1835, low=129
+                        else
+                            return 30;  // n=369, low=82
+                    else
+                        if (cost_abs_delta_q8pp <= 268)
+                            return 37;  // n=778, low=216
+                        else
+                            return 58;  // n=627, low=298
+    else
+        if (mv32_fullpel_l1 <= 4)
+            if (cost_abs_delta_q8pp <= 99)
+                if (qp <= 29)
+                    if (sad16_mean_q8 <= 676)
+                        if (qp <= 24)
+                            return 64;  // n=9650, low=5248
+                        else
+                            return 43;  // n=2459, low=819
+                    else
+                        if (qp <= 24)
+                            return 88;  // n=5742, low=4762
+                        else
+                            return 73;  // n=6031, low=3855
+                else
+                    if (root_mvd_bits <= 6)
+                        if (sad16_range_q8 <= 473)
+                            return 32;  // n=2055, low=496
+                        else
+                            return 46;  // n=1771, low=636
+                    else
+                        if (sad16_mean_q8 <= 899)
+                            return 43;  // n=965, low=322
+                        else
+                            return 63;  // n=4724, low=2505
+            else
+                if (qp <= 34)
+                    if (sad8_mad_q8 <= 195)
+                        if (qp <= 24)
+                            return 86;  // n=7749, low=6186
+                        else
+                            return 64;  // n=5531, low=3007
+                    else
+                        if (qp <= 29)
+                            return 95;  // n=40110, low=37204
+                        else
+                            return 83;  // n=15546, low=11801
+                else
+                    if (cost32_q8pp <= 1686)
+                        if (sad8_range_q8 <= 1294)
+                            return 33;  // n=1010, low=248
+                        else
+                            return 53;  // n=2106, low=901
+                    else
+                        if (mv32_fullpel_l1 <= 0)
+                            return 62;  // n=3995, low=2083
+                        else
+                            return 75;  // n=3400, low=2278
+        else
+            if (qp <= 24)
+                if (sad8_mean_q8 <= 537)
+                    if (sad16_mad_q8 <= 130)
+                        if (cost32_q8pp <= 490)
+                            return 46;  // n=3219, low=1152
+                        else
+                            return 59;  // n=8006, low=3908
+                    else
+                        if (mv16_root_max_l1 <= 2)
+                            return 65;  // n=527, low=290
+                        else
+                            return 81;  // n=1078, low=792
+                else
+                    if (activity16_range <= 8)
+                        if (mvd32_qpel_l1 <= 11)
+                            return 69;  // n=9947, low=5971
+                        else
+                            return 80;  // n=5022, low=3666
+                    else
+                        if (mvd32_qpel_l1 <= 16)
+                            return 85;  // n=4477, low=3522
+                        else
+                            return 94;  // n=2310, low=2119
+            else
+                if (activity8_range <= 18)
+                    if (sad16_mad_q8 <= 227)
+                        if (activity8_range <= 9)
+                            return 25;  // n=8863, low=1641
+                        else
+                            return 37;  // n=10352, low=2898
+                    else
+                        if (activity8_range <= 9)
+                            return 35;  // n=2143, low=561
+                        else
+                            return 53;  // n=7122, low=3026
+                else
+                    if (sad8_range_q8 <= 1706)
+                        if (qp <= 29)
+                            return 62;  // n=5022, low=2618
+                        else
+                            return 46;  // n=5448, low=1983
+                    else
+                        if (mv32_fullpel_l1 <= 8)
+                            return 83;  // n=3087, low=2373
+                        else
+                            return 65;  // n=5755, low=3209

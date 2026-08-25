@@ -2166,6 +2166,8 @@ void Search::singleMotionEstimation(Search& master, Mode& interMode, const Predi
             bestME[list].hwImeCenterFullPel = hwTrace.imeCenterFullPel;
             bestME[list].hwImeMvFullPel = hwTrace.imeMvFullPel;
             bestME[list].hwImeSad = hwTrace.imeSad;
+            bestME[list].hwImeMvdBits = hwTrace.imeMvdBits;
+            bestME[list].hwImeMvCost = hwTrace.imeMvCost;
             bestME[list].hwPmeActivity = hwTrace.pmeActivity;
             bestME[list].hwImeBoundary =
                 abs(hwTrace.imeMvFullPel.x - hwTrace.imeCenterFullPel.x) >= m_param->hwHmeImeRangeX ||
@@ -2507,6 +2509,8 @@ void Search::predInterSearch(Mode& interMode, const CUGeom& cuGeom, bool bChroma
                             bestME[list].hwImeCenterFullPel = hwTrace.imeCenterFullPel;
                             bestME[list].hwImeMvFullPel = hwTrace.imeMvFullPel;
                             bestME[list].hwImeSad = hwTrace.imeSad;
+                            bestME[list].hwImeMvdBits = hwTrace.imeMvdBits;
+                            bestME[list].hwImeMvCost = hwTrace.imeMvCost;
                             bestME[list].hwPmeActivity = hwTrace.pmeActivity;
                             bestME[list].hwImeBoundary =
                                 abs(hwTrace.imeMvFullPel.x - hwTrace.imeCenterFullPel.x) >= m_param->hwHmeImeRangeX ||

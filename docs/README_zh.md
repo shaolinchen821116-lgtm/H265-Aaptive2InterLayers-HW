@@ -4,6 +4,9 @@
 - `RESULTS_zh.md`：ABCE 30 帧逐序列 BD-rate、速度、选层概率和判断正确率。
 - `REPRODUCE_zh.md`：覆盖源码、构建、数据清单、编码、参数扫描、训练、验证和便携 C 使用步骤。
 - `x265_HW_HME_ABCE_30帧_PME优化与P帧选层报告.docx`：Inter 主研究最终 Word 报告。
+- `P_INTER_MULTISCALE_2LAYER_OPTIMIZATION_zh.md`：mode 8 多尺度两层优化、训练和 ABCE 结果。
+- `P_INTER_HIERARCHY_COST_BASELINE_zh.md`：mode 9 层次 cost-only 公式、日志和 Class B 结果。
+- `P帧多尺度与层次Cost两层选择_测试与训练报告_zh.docx`：本轮完整源码、mode 8/mode 9 测试、训练和流程图的正式报告。
 - `P_INTER_ONLY32_TRAINING_RESULTS_zh.md`：P 帧高一层门控的完整训练、数据格式、算法、测试和移植说明。
 - `P帧高一层保守门控_训练与ABCE验证报告_zh.docx`：本轮三级级联研究的正式 Word 报告。
 - `ClassACE_Intra2Layer_Validation_and_C99_Report_Final_zh.docx`：Intra 三层选两层 Class A/C/E 验证与 C99 报告。

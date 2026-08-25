@@ -1,5 +1,6 @@
 #include "hw_hme_reference.h"
 #include "inter_only32_gate_model.h"
+#include "inter_multiscale_gate_model.h"
 
 #include <limits.h>
 #include <stdlib.h>
@@ -429,5 +430,173 @@ int hw_hme_select_inter_layers(const hw_hme_result* result,
     decision->low2_probability = low_probability;
     decision->layer_set = low_probability >= (uint32_t)low2_probability_cutoff
                         ? HW_HME_INTER_LOW_16_8 : HW_HME_INTER_HIGH_32_16;
+    return 0;
+}
+
+enum hw_hme_ms_index
+{
+    MS_QP = 0, MS_SAD32, MS_REFINE32, MS_MVD32, MS_MV32,
+    MS_ACTIVITY32, MS_BOUNDARY32, MS_SAD16_MEAN, MS_SAD16_RANGE,
+    MS_SAD16_MAD, MS_SAD8_MEAN, MS_SAD8_RANGE, MS_SAD8_MAD,
+    MS_GAIN32_16, MS_GAIN16_8, MS_GAIN16_8_MAX, MS_MV16_ROOT_MEAN,
+    MS_MV16_ROOT_MAX, MS_MV16_SPAN, MS_MV8_PARENT_MEAN,
+    MS_MV8_PARENT_MAX, MS_MV8_ROOT_MEAN, MS_MV8_ROOT_MAX,
+    MS_MV8_SPAN, MS_ACTIVITY16_MEAN, MS_ACTIVITY16_RANGE,
+    MS_ACTIVITY8_MEAN, MS_ACTIVITY8_RANGE, MS_BOUNDARY_COUNT
+};
+
+static uint32_t mv_diff_l1(hw_hme_mv a, hw_hme_mv b)
+{
+    return abs_u32(a.x - b.x) + abs_u32(a.y - b.y);
+}
+
+int hw_hme_build_inter_scale_features(
+    const hw_hme_result* root, hw_hme_mv root_amvp_qpel, int qp,
+    const hw_hme_result probe16[4], const hw_hme_result probe8[16],
+    int ime_range_x, int ime_range_y, hw_hme_inter_scale_features* out)
+{
+    uint32_t sad16[4], sad8[16];
+    uint64_t sad16_sum = 0, sad8_sum = 0;
+    uint64_t activity16_sum = 0, activity8_sum = 0;
+    uint64_t mv16_root_sum = 0, mv8_parent_sum = 0, mv8_root_sum = 0;
+    uint32_t sad16_min = UINT_MAX, sad16_max = 0;
+    uint32_t sad8_min = UINT_MAX, sad8_max = 0;
+    uint32_t activity16_min = UINT_MAX, activity16_max = 0;
+    uint32_t activity8_min = UINT_MAX, activity8_max = 0;
+    uint32_t mv16_root_max = 0, mv8_parent_max = 0, mv8_root_max = 0;
+    int min16x = INT_MAX, max16x = INT_MIN, min16y = INT_MAX, max16y = INT_MIN;
+    int min8x = INT_MAX, max8x = INT_MIN, min8y = INT_MAX, max8y = INT_MIN;
+    uint32_t boundary_count;
+    hw_hme_mv root_qpel;
+    int i;
+    if (!root || !probe16 || !probe8 || !out || qp < 0 || qp > 51 ||
+        ime_range_x < 0 || ime_range_y < 0)
+        return -1;
+    memset(out, 0, sizeof(*out));
+    root_qpel = mv_scale(root->ime_mv_full, 4);
+    out->value[MS_QP] = (uint32_t)qp;
+    out->value[MS_SAD32] = (root->ime_sad + 2u) >> 2;
+    out->value[MS_REFINE32] = mv_diff_l1(root->ime_mv_full,
+                                         root->ime_center_full);
+    out->value[MS_MVD32] = mv_diff_l1(root_qpel, root_amvp_qpel);
+    out->value[MS_MV32] = abs_u32(root->ime_mv_full.x) +
+                          abs_u32(root->ime_mv_full.y);
+    out->value[MS_ACTIVITY32] = root->pme_activity;
+    out->value[MS_BOUNDARY32] = root->ime_boundary;
+    boundary_count = root->ime_boundary;
+
+    for (i = 0; i < 4; ++i)
+    {
+        uint32_t root_diff;
+        sad16[i] = probe16[i].ime_sad; /* 256 pixels => raw SAD is Q8/pixel */
+        sad16_sum += sad16[i];
+        sad16_min = sad16[i] < sad16_min ? sad16[i] : sad16_min;
+        sad16_max = sad16[i] > sad16_max ? sad16[i] : sad16_max;
+        activity16_sum += probe16[i].pme_activity;
+        activity16_min = probe16[i].pme_activity < activity16_min ?
+                         probe16[i].pme_activity : activity16_min;
+        activity16_max = probe16[i].pme_activity > activity16_max ?
+                         probe16[i].pme_activity : activity16_max;
+        min16x = min_i(min16x, probe16[i].ime_mv_full.x);
+        max16x = max_i(max16x, probe16[i].ime_mv_full.x);
+        min16y = min_i(min16y, probe16[i].ime_mv_full.y);
+        max16y = max_i(max16y, probe16[i].ime_mv_full.y);
+        root_diff = mv_diff_l1(probe16[i].ime_mv_full, root->ime_mv_full);
+        mv16_root_sum += root_diff;
+        mv16_root_max = root_diff > mv16_root_max ? root_diff : mv16_root_max;
+        boundary_count +=
+            abs_u32(probe16[i].ime_mv_full.x - probe16[i].ime_center_full.x) >= (uint32_t)ime_range_x ||
+            abs_u32(probe16[i].ime_mv_full.y - probe16[i].ime_center_full.y) >= (uint32_t)ime_range_y;
+    }
+    for (i = 0; i < 16; ++i)
+    {
+        uint32_t parent_diff, root_diff;
+        sad8[i] = probe8[i].ime_sad << 2; /* 64 pixels => SAD * 4 is Q8/pixel */
+        sad8_sum += sad8[i];
+        sad8_min = sad8[i] < sad8_min ? sad8[i] : sad8_min;
+        sad8_max = sad8[i] > sad8_max ? sad8[i] : sad8_max;
+        activity8_sum += probe8[i].pme_activity;
+        activity8_min = probe8[i].pme_activity < activity8_min ?
+                        probe8[i].pme_activity : activity8_min;
+        activity8_max = probe8[i].pme_activity > activity8_max ?
+                        probe8[i].pme_activity : activity8_max;
+        min8x = min_i(min8x, probe8[i].ime_mv_full.x);
+        max8x = max_i(max8x, probe8[i].ime_mv_full.x);
+        min8y = min_i(min8y, probe8[i].ime_mv_full.y);
+        max8y = max_i(max8y, probe8[i].ime_mv_full.y);
+        parent_diff = mv_diff_l1(probe8[i].ime_mv_full,
+                                 probe16[i >> 2].ime_mv_full);
+        root_diff = mv_diff_l1(probe8[i].ime_mv_full, root->ime_mv_full);
+        mv8_parent_sum += parent_diff;
+        mv8_root_sum += root_diff;
+        mv8_parent_max = parent_diff > mv8_parent_max ? parent_diff : mv8_parent_max;
+        mv8_root_max = root_diff > mv8_root_max ? root_diff : mv8_root_max;
+        boundary_count +=
+            abs_u32(probe8[i].ime_mv_full.x - probe8[i].ime_center_full.x) >= (uint32_t)ime_range_x ||
+            abs_u32(probe8[i].ime_mv_full.y - probe8[i].ime_center_full.y) >= (uint32_t)ime_range_y;
+    }
+
+    out->value[MS_SAD16_MEAN] = (uint32_t)((sad16_sum + 2u) >> 2);
+    out->value[MS_SAD8_MEAN] = (uint32_t)((sad8_sum + 8u) >> 4);
+    out->value[MS_SAD16_RANGE] = sad16_max - sad16_min;
+    out->value[MS_SAD8_RANGE] = sad8_max - sad8_min;
+    {
+        uint64_t mad16 = 0, mad8 = 0, gain_sum = 0;
+        uint32_t gain_max = 0;
+        for (i = 0; i < 4; ++i)
+            mad16 += abs_u32((int)sad16[i] - (int)out->value[MS_SAD16_MEAN]);
+        for (i = 0; i < 16; ++i)
+            mad8 += abs_u32((int)sad8[i] - (int)out->value[MS_SAD8_MEAN]);
+        out->value[MS_SAD16_MAD] = (uint32_t)((mad16 + 2u) >> 2);
+        out->value[MS_SAD8_MAD] = (uint32_t)((mad8 + 8u) >> 4);
+        out->value[MS_GAIN32_16] = out->value[MS_SAD32] > out->value[MS_SAD16_MEAN] ?
+            out->value[MS_SAD32] - out->value[MS_SAD16_MEAN] : 0;
+        for (i = 0; i < 4; ++i)
+        {
+            uint32_t child_mean = (sad8[4 * i] + sad8[4 * i + 1] +
+                                   sad8[4 * i + 2] + sad8[4 * i + 3] + 2u) >> 2;
+            uint32_t gain = sad16[i] > child_mean ? sad16[i] - child_mean : 0;
+            gain_sum += gain;
+            gain_max = gain > gain_max ? gain : gain_max;
+        }
+        out->value[MS_GAIN16_8] = (uint32_t)((gain_sum + 2u) >> 2);
+        out->value[MS_GAIN16_8_MAX] = gain_max;
+    }
+    out->value[MS_MV16_ROOT_MEAN] = (uint32_t)((mv16_root_sum + 2u) >> 2);
+    out->value[MS_MV16_ROOT_MAX] = mv16_root_max;
+    out->value[MS_MV16_SPAN] = (uint32_t)(max16x - min16x + max16y - min16y);
+    out->value[MS_MV8_PARENT_MEAN] = (uint32_t)((mv8_parent_sum + 8u) >> 4);
+    out->value[MS_MV8_PARENT_MAX] = mv8_parent_max;
+    out->value[MS_MV8_ROOT_MEAN] = (uint32_t)((mv8_root_sum + 8u) >> 4);
+    out->value[MS_MV8_ROOT_MAX] = mv8_root_max;
+    out->value[MS_MV8_SPAN] = (uint32_t)(max8x - min8x + max8y - min8y);
+    out->value[MS_ACTIVITY16_MEAN] = (uint32_t)((activity16_sum + 2u) >> 2);
+    out->value[MS_ACTIVITY16_RANGE] = activity16_max - activity16_min;
+    out->value[MS_ACTIVITY8_MEAN] = (uint32_t)((activity8_sum + 8u) >> 4);
+    out->value[MS_ACTIVITY8_RANGE] = activity8_max - activity8_min;
+    out->value[MS_BOUNDARY_COUNT] = boundary_count;
+    out->valid = 1;
+    return 0;
+}
+
+int hw_hme_select_inter_layers_multiscale(
+    const hw_hme_inter_scale_features* features, int probability_cutoff,
+    hw_hme_inter_layer_decision* decision)
+{
+    uint32_t probability;
+    if (!features || !features->valid || !decision ||
+        probability_cutoff < 0 || probability_cutoff > 100)
+        return -1;
+    memset(decision, 0, sizeof(*decision));
+    decision->features.ime_sad_per_pixel_q8 = features->value[MS_SAD32];
+    decision->features.pme_to_ime_l1 = features->value[MS_REFINE32];
+    decision->features.ime_mvd_qpel_l1 = features->value[MS_MVD32];
+    decision->features.ime_mv_fullpel_l1 = features->value[MS_MV32];
+    decision->features.pme_activity = features->value[MS_ACTIVITY32];
+    decision->features.ime_boundary = (uint8_t)features->value[MS_BOUNDARY32];
+    probability = hwInterMultiscaleLowProbability(features->value);
+    decision->low2_probability = probability;
+    decision->layer_set = probability >= (uint32_t)probability_cutoff ?
+                          HW_HME_INTER_LOW_16_8 : HW_HME_INTER_HIGH_32_16;
     return 0;
 }

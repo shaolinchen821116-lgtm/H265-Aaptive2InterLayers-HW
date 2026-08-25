@@ -115,6 +115,7 @@ public:
     IntraLayerExperimentMode m_intraLayerMode;
     IntraLayerDecision       m_intraLayerDecision;
     HardwareInterLayerDecision m_hwInterLayerDecision;
+    HardwareInterScaleFeatures m_hwInterScaleFeatures;
 
     bool      m_modeFlag[2];
     bool      m_checkMergeAndSkipOnly[2];
@@ -186,6 +187,16 @@ protected:
     void checkInter_rd5_6(Mode& interMode, const CUGeom& cuGeom, PartSize partSize, uint32_t refmask[2]);
 
     void checkBidir2Nx2N(Mode& inter2Nx2N, Mode& bidir2Nx2N, const CUGeom& cuGeom);
+
+    bool collectHardwareInterScaleFeatures(const CUData& parentCTU,
+                                           const CUGeom& rootGeom,
+                                           int32_t qp,
+                                           const MotionData& rootMe);
+    bool runHardwareInterScaleProbe(const CUData& parentCTU,
+                                    const CUGeom& cuGeom,
+                                    int32_t qp, int ref,
+                                    const MV& commonAmvp,
+                                    HardwareHMETrace& trace);
 
     /* encode current bestMode losslessly, pick best RD cost */
     void tryLossless(const CUGeom& cuGeom);

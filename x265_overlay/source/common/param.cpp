@@ -1868,8 +1868,8 @@ int x265_check_params(x265_param* param)
               "HW-HME PME texture thresholds must satisfy 0 <= low < high <= 255");
         CHECK(param->hwHmePmeAttractor < 0 || param->hwHmePmeAttractor > 2,
               "HW-HME PME attractor must be 0, 1, or 2");
-        CHECK(param->hwHmeInterLayerMode < 0 || param->hwHmeInterLayerMode > 6,
-              "HW-HME inter layer mode must be between 0 and 6");
+        CHECK(param->hwHmeInterLayerMode < 0 || param->hwHmeInterLayerMode > 9,
+              "HW-HME inter layer mode must be between 0 and 9");
         CHECK(param->hwHmeInterLayerSadQ8 < 0 || param->hwHmeInterLayerSadQ8 > 65535 ||
               param->hwHmeInterLayerSadSlopeQ8 < 0 || param->hwHmeInterLayerSadSlopeQ8 > 4096,
               "HW-HME inter layer SAD thresholds are outside the supported range");

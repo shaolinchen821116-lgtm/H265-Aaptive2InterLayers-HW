@@ -53,7 +53,9 @@ int main(void)
     hw_hme_input input;
     hw_hme_callbacks callbacks;
     hw_hme_result result;
+    hw_hme_result probe16[4], probe8[16];
     hw_hme_inter_layer_decision layer_decision;
+    hw_hme_inter_scale_features scale_features;
     test_context context;
     int i;
     hw_hme_config_default(&config);
@@ -98,6 +100,22 @@ int main(void)
     CHECK(layer_decision.layer_set >= HW_HME_INTER_HIGH_32_16 &&
           layer_decision.layer_set <= HW_HME_INTER_ONLY_32);
     CHECK(layer_decision.only32_probability <= 100u);
+    for (i = 0; i < 4; ++i)
+        probe16[i] = result;
+    for (i = 0; i < 16; ++i)
+        probe8[i] = result;
+    /* Adjust raw SAD units to the child block sizes. The all-zero motion case
+     * also provides a deterministic aggregation and inference smoke test. */
+    CHECK(hw_hme_build_inter_scale_features(&result, input.amvp_qpel,
+                                             input.qp, probe16, probe8,
+                                             12, 12, &scale_features) == 0);
+    CHECK(scale_features.valid == 1u);
+    CHECK(scale_features.value[0] == 32u);
+    CHECK(hw_hme_select_inter_layers_multiscale(&scale_features, 45,
+                                                 &layer_decision) == 0);
+    CHECK(layer_decision.low2_probability <= 100u);
+    CHECK(layer_decision.layer_set == HW_HME_INTER_HIGH_32_16 ||
+          layer_decision.layer_set == HW_HME_INTER_LOW_16_8);
     config.pme_cost_mode = 0;
     config.pme_attractor = 0;
     CHECK(hw_hme_search(&config, &input, &callbacks, &result) == 0);

@@ -98,6 +98,8 @@ struct MotionData
     MV       hwImeCenterFullPel;
     MV       hwImeMvFullPel;
     uint32_t hwImeSad;
+    uint32_t hwImeMvdBits;
+    uint32_t hwImeMvCost;
     uint16_t hwPmeActivity;
     uint8_t  hwImeBoundary;
     uint8_t  hwValid;
@@ -434,7 +436,8 @@ protected:
     int       selectMVP(const CUData& cu, const PredictionUnit& pu, const MV amvp[AMVP_NUM_CANDS], int list, int ref);
     int       hardwareMotionEstimate(Mode& interMode, const PredictionUnit& pu,
                                      int list, int ref, const MV& amvp,
-                                     MV& outQPel, HardwareHMETrace* trace = NULL);
+                                     MV& outQPel, HardwareHMETrace* trace = NULL,
+                                     bool imeOnly = false);
     const MV& checkBestMVP(const MV amvpCand[2], const MV& mv, int& mvpIdx, uint32_t& outBits, uint32_t& outCost) const;
     void     setSearchRange(const CUData& cu, const MV& mvp, int merange, MV& mvmin, MV& mvmax) const;
     uint32_t mergeEstimation(CUData& cu, const CUGeom& cuGeom, const PredictionUnit& pu, int puIdx, MergeData& m);

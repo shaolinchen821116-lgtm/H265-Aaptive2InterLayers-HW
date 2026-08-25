@@ -239,6 +239,7 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
     m_modeDepth[0].fencYuv.copyFromPicYuv(*m_frame->m_fencPic, ctu.m_cuAddr, 0);
 
     m_hwInterLayerDecision = HardwareInterLayerDecision();
+    m_hwInterScaleFeatures = HardwareInterScaleFeatures();
     m_hwInterLayerDecision.layerSet = m_param->hwHmeInterLayerMode == 1
                                     ? HW_INTER_LAYER_HIGH_32_16
                                     : m_param->hwHmeInterLayerMode == 5
@@ -247,6 +248,12 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
 
     /* Selector v2 uses the integer CART (default risk cutoff 40). */
     m_intraLayerMode = getIntraLayerExperimentMode();
+    /* Inter-layer experiments must never prune the I picture. This explicit
+     * override also protects test reproducibility from a stale environment
+     * variable left by the independent intra study. */
+    if (m_param->bEnableHwHME && m_param->hwHmeInterLayerMode &&
+        m_slice->m_sliceType == I_SLICE)
+        m_intraLayerMode = INTRA_LAYER_MODE_ALL;
     IntraLayerSelector intraLayerSelector;
     m_intraLayerDecision = intraLayerSelector.select(m_modeDepth[0].fencYuv.m_buf[0],
                                                      m_modeDepth[0].fencYuv.m_size,
@@ -491,6 +498,37 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
                 f.imeMvFullPelL1, f.pmeActivity, f.imeBoundary,
                 leaf32, leaf16, leaf8, oracle);
         }
+        else if (m_param->hwHmeInterLayerMode == 7)
+        {
+            const MotionData& rootMe = m_modeDepth[0].pred[PRED_2Nx2N].bestME[0][0];
+            uint32_t values[HW_INTER_MS_FEATURE_COUNT];
+            m_hwInterScaleFeatures.toArray(values);
+            char line[2048];
+            int used = snprintf(line, sizeof(line),
+                "INTERLAYERMS,%u,%u,%u,%u",
+                ctu.m_cuAddr, ctu.m_cuPelX, ctu.m_cuPelY,
+                (uint32_t)m_hwInterScaleFeatures.valid);
+            for (uint32_t i = 0; i < HW_INTER_MS_FEATURE_COUNT &&
+                 used > 0 && used < (int)sizeof(line); i++)
+                used += snprintf(line + used, sizeof(line) - used, ",%u", values[i]);
+            const char* oracle = leaf8 ? "low" : "high";
+            if (used > 0 && used < (int)sizeof(line))
+                snprintf(line + used, sizeof(line) - used, ",%u,%u,%u,%s\n",
+                         leaf32, leaf16, leaf8, oracle);
+            fprintf(stderr, "%s", line);
+            const HardwareInterScaleFeatures& cf = m_hwInterScaleFeatures;
+            const char* costSelected = cf.cost32 < cf.cost8To32 ? "high" : "low";
+            fprintf(stderr,
+                "INTERLAYERCOST,%u,%u,%u,%u,%d,%u,%u,%u," X265_LL ",%u,"
+                X265_LL "," X265_LL "," X265_LL "," X265_LL ",%u,"
+                X265_LL ",%s,%u,%u,%u,%s\n",
+                ctu.m_cuAddr, ctu.m_cuPelX, ctu.m_cuPelY,
+                (uint32_t)cf.valid, qp, cf.sqrtLambdaQ8,
+                rootMe.hwImeSad, cf.rootMvdBits, cf.cost32, cf.splitBits32,
+                cf.cost8Group[0], cf.cost8Group[1], cf.cost8Group[2],
+                cf.cost8Group[3], cf.splitBits8To32, cf.cost8To32,
+                costSelected, leaf32, leaf16, leaf8, oracle);
+        }
         else
         {
             if (m_param->hwHmeInterLayerMode == 5 &&
@@ -511,6 +549,206 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
     }
 
     return *m_modeDepth[0].bestMode;
+}
+
+bool Analysis::runHardwareInterScaleProbe(const CUData& parentCTU,
+                                          const CUGeom& cuGeom,
+                                          int32_t qp, int ref,
+                                          const MV& commonAmvp,
+                                          HardwareHMETrace& trace)
+{
+    if (!(cuGeom.flags & CUGeom::PRESENT) ||
+        (cuGeom.log2CUSize != 4 && cuGeom.log2CUSize != 3))
+        return false;
+
+    const uint32_t depth = cuGeom.depth;
+    ModeDepth& md = m_modeDepth[depth];
+    m_modeDepth[0].fencYuv.copyPartToYuv(md.fencYuv, cuGeom.absPartIdx);
+    Mode& probe = md.pred[PRED_2Nx2N];
+    probe.initCosts();
+    probe.cu.initSubCU(parentCTU, cuGeom, qp);
+    probe.cu.setPartSizeSubParts(SIZE_2Nx2N);
+    probe.cu.setPredModeSubParts(MODE_INTER);
+    PredictionUnit pu(probe.cu, cuGeom, 0);
+    m_me.setSourcePU(*probe.fencYuv, pu.ctuAddr, pu.cuAbsPartIdx,
+                     pu.puAbsPartIdx, pu.width, pu.height,
+                     m_param->searchMethod, m_param->subpelRefine, false);
+    MV outQPel;
+    hardwareMotionEstimate(probe, pu, 0, ref, commonAmvp,
+                           outQPel, &trace, true);
+    return true;
+}
+
+bool Analysis::collectHardwareInterScaleFeatures(const CUData& parentCTU,
+                                                 const CUGeom& rootGeom,
+                                                 int32_t qp,
+                                                 const MotionData& rootMe)
+{
+    m_hwInterScaleFeatures = HardwareInterScaleFeatures();
+    HardwareInterScaleFeatures& f = m_hwInterScaleFeatures;
+    f.qp = (uint32_t)qp;
+    f.root = hwInterLayerFeatures(rootMe);
+    if (!f.root.valid || rootMe.ref < 0 || rootGeom.log2CUSize != 5)
+        return false;
+
+    const CUGeom* geom16[4];
+    const CUGeom* geom8[16];
+    for (uint32_t i = 0; i < 4; i++)
+    {
+        geom16[i] = &rootGeom + rootGeom.childOffset + i;
+        if (!(geom16[i]->flags & CUGeom::PRESENT) || geom16[i]->log2CUSize != 4)
+            return false;
+        for (uint32_t j = 0; j < 4; j++)
+        {
+            geom8[i * 4 + j] = geom16[i] + geom16[i]->childOffset + j;
+            if (!(geom8[i * 4 + j]->flags & CUGeom::PRESENT) ||
+                geom8[i * 4 + j]->log2CUSize != 3)
+                return false;
+        }
+    }
+
+    HardwareHMETrace trace16[4];
+    HardwareHMETrace trace8[16];
+    for (uint32_t i = 0; i < 4; i++)
+        if (!runHardwareInterScaleProbe(parentCTU, *geom16[i], qp,
+                                        rootMe.ref, rootMe.mvp, trace16[i]))
+            return false;
+    for (uint32_t i = 0; i < 16; i++)
+        if (!runHardwareInterScaleProbe(parentCTU, *geom8[i], qp,
+                                        rootMe.ref, rootMe.mvp, trace8[i]))
+            return false;
+
+    uint32_t sad16[4], sad8[16];
+    uint64_t sad16Sum = 0, sad8Sum = 0;
+    uint64_t activity16Sum = 0, activity8Sum = 0;
+    uint32_t sad16Min = MAX_UINT, sad16Max = 0;
+    uint32_t sad8Min = MAX_UINT, sad8Max = 0;
+    uint32_t activity16Min = MAX_UINT, activity16Max = 0;
+    uint32_t activity8Min = MAX_UINT, activity8Max = 0;
+    int min16x = INT_MAX, max16x = INT_MIN, min16y = INT_MAX, max16y = INT_MIN;
+    int min8x = INT_MAX, max8x = INT_MIN, min8y = INT_MAX, max8y = INT_MIN;
+    uint64_t mv16RootSum = 0, mv8ParentSum = 0, mv8RootSum = 0;
+    uint32_t mv16RootMax = 0, mv8ParentMax = 0, mv8RootMax = 0;
+    f.boundaryCount = f.root.imeBoundary;
+
+    for (uint32_t i = 0; i < 4; i++)
+    {
+        sad16[i] = trace16[i].imeSad;
+        sad16Sum += sad16[i];
+        sad16Min = X265_MIN(sad16Min, sad16[i]);
+        sad16Max = X265_MAX(sad16Max, sad16[i]);
+        activity16Sum += trace16[i].pmeActivity;
+        activity16Min = X265_MIN(activity16Min, (uint32_t)trace16[i].pmeActivity);
+        activity16Max = X265_MAX(activity16Max, (uint32_t)trace16[i].pmeActivity);
+        min16x = X265_MIN(min16x, (int)trace16[i].imeMvFullPel.x);
+        max16x = X265_MAX(max16x, (int)trace16[i].imeMvFullPel.x);
+        min16y = X265_MIN(min16y, (int)trace16[i].imeMvFullPel.y);
+        max16y = X265_MAX(max16y, (int)trace16[i].imeMvFullPel.y);
+        const uint32_t rootDiff = abs(trace16[i].imeMvFullPel.x - rootMe.hwImeMvFullPel.x) +
+                                  abs(trace16[i].imeMvFullPel.y - rootMe.hwImeMvFullPel.y);
+        mv16RootSum += rootDiff;
+        mv16RootMax = X265_MAX(mv16RootMax, rootDiff);
+        f.boundaryCount +=
+            abs(trace16[i].imeMvFullPel.x - trace16[i].imeCenterFullPel.x) >= m_param->hwHmeImeRangeX ||
+            abs(trace16[i].imeMvFullPel.y - trace16[i].imeCenterFullPel.y) >= m_param->hwHmeImeRangeY;
+    }
+    for (uint32_t i = 0; i < 16; i++)
+    {
+        /* 8x8 has 64 pixels: SAD * 256 / 64 == SAD << 2. */
+        sad8[i] = trace8[i].imeSad << 2;
+        sad8Sum += sad8[i];
+        sad8Min = X265_MIN(sad8Min, sad8[i]);
+        sad8Max = X265_MAX(sad8Max, sad8[i]);
+        activity8Sum += trace8[i].pmeActivity;
+        activity8Min = X265_MIN(activity8Min, (uint32_t)trace8[i].pmeActivity);
+        activity8Max = X265_MAX(activity8Max, (uint32_t)trace8[i].pmeActivity);
+        min8x = X265_MIN(min8x, (int)trace8[i].imeMvFullPel.x);
+        max8x = X265_MAX(max8x, (int)trace8[i].imeMvFullPel.x);
+        min8y = X265_MIN(min8y, (int)trace8[i].imeMvFullPel.y);
+        max8y = X265_MAX(max8y, (int)trace8[i].imeMvFullPel.y);
+        const MV& parentMv = trace16[i >> 2].imeMvFullPel;
+        const uint32_t parentDiff = abs(trace8[i].imeMvFullPel.x - parentMv.x) +
+                                    abs(trace8[i].imeMvFullPel.y - parentMv.y);
+        const uint32_t rootDiff = abs(trace8[i].imeMvFullPel.x - rootMe.hwImeMvFullPel.x) +
+                                  abs(trace8[i].imeMvFullPel.y - rootMe.hwImeMvFullPel.y);
+        mv8ParentSum += parentDiff;
+        mv8RootSum += rootDiff;
+        mv8ParentMax = X265_MAX(mv8ParentMax, parentDiff);
+        mv8RootMax = X265_MAX(mv8RootMax, rootDiff);
+        f.boundaryCount +=
+            abs(trace8[i].imeMvFullPel.x - trace8[i].imeCenterFullPel.x) >= m_param->hwHmeImeRangeX ||
+            abs(trace8[i].imeMvFullPel.y - trace8[i].imeCenterFullPel.y) >= m_param->hwHmeImeRangeY;
+    }
+
+    /* 16x16 has 256 pixels, hence its raw IME SAD is already Q8/pixel. */
+    f.sad16MeanQ8 = (uint32_t)((sad16Sum + 2) >> 2);
+    f.sad8MeanQ8 = (uint32_t)((sad8Sum + 8) >> 4);
+    f.sad16RangeQ8 = sad16Max - sad16Min;
+    f.sad8RangeQ8 = sad8Max - sad8Min;
+    uint64_t sad16Mad = 0, sad8Mad = 0;
+    for (uint32_t i = 0; i < 4; i++)
+        sad16Mad += abs((int)sad16[i] - (int)f.sad16MeanQ8);
+    for (uint32_t i = 0; i < 16; i++)
+        sad8Mad += abs((int)sad8[i] - (int)f.sad8MeanQ8);
+    f.sad16MadQ8 = (uint32_t)((sad16Mad + 2) >> 2);
+    f.sad8MadQ8 = (uint32_t)((sad8Mad + 8) >> 4);
+    f.sadGain32To16Q8 = f.root.imeSadPerPixelQ8 > f.sad16MeanQ8
+                       ? f.root.imeSadPerPixelQ8 - f.sad16MeanQ8 : 0;
+    uint64_t gain16To8Sum = 0;
+    for (uint32_t i = 0; i < 4; i++)
+    {
+        const uint32_t childMean = (sad8[i * 4] + sad8[i * 4 + 1] +
+                                    sad8[i * 4 + 2] + sad8[i * 4 + 3] + 2) >> 2;
+        const uint32_t gain = sad16[i] > childMean ? sad16[i] - childMean : 0;
+        gain16To8Sum += gain;
+        f.sadGain16To8MaxQ8 = X265_MAX(f.sadGain16To8MaxQ8, gain);
+    }
+    f.sadGain16To8Q8 = (uint32_t)((gain16To8Sum + 2) >> 2);
+
+    f.mv16RootMeanL1 = (uint32_t)((mv16RootSum + 2) >> 2);
+    f.mv16RootMaxL1 = mv16RootMax;
+    f.mv16SpanL1 = (uint32_t)(max16x - min16x + max16y - min16y);
+    f.mv8ParentMeanL1 = (uint32_t)((mv8ParentSum + 8) >> 4);
+    f.mv8ParentMaxL1 = mv8ParentMax;
+    f.mv8RootMeanL1 = (uint32_t)((mv8RootSum + 8) >> 4);
+    f.mv8RootMaxL1 = mv8RootMax;
+    f.mv8SpanL1 = (uint32_t)(max8x - min8x + max8y - min8y);
+    f.activity16Mean = (uint32_t)((activity16Sum + 2) >> 2);
+    f.activity16Range = activity16Max - activity16Min;
+    f.activity8Mean = (uint32_t)((activity8Sum + 8) >> 4);
+    f.activity8Range = activity8Max - activity8Min;
+    /* Hierarchical cost-only baseline. m_rdCost.m_lambda is x265's current
+     * sqrt(lambda) in Q8. A non-split CU32 signals one split flag. The low
+     * path signals the CU32 split plus four CU16 split flags (five bits).
+     * Per the requested estimator, each CU16 region is 4 * min(J8) across
+     * its four children, where J8=SAD+sqrt(lambda)*MVD_bits. */
+    f.sqrtLambdaQ8 = (uint32_t)m_rdCost.m_lambda;
+    f.splitBits32 = 1;
+    f.splitBits8To32 = 5;
+    const MV rootQPel = rootMe.hwImeMvFullPel * 4;
+    f.rootMvdBits = m_me.bitcost(rootQPel, rootMe.mvp);
+    const uint64_t rootMvRate = ((uint64_t)f.sqrtLambdaQ8 *
+                                 f.rootMvdBits + 128) >> 8;
+    const uint64_t rootSplitRate = ((uint64_t)f.sqrtLambdaQ8 *
+                                    f.splitBits32 + 128) >> 8;
+    f.cost32 = (uint64_t)rootMe.hwImeSad + rootMvRate + rootSplitRate;
+    f.cost8To32 = ((uint64_t)f.sqrtLambdaQ8 * f.splitBits8To32 + 128) >> 8;
+    for (uint32_t group = 0; group < 4; group++)
+    {
+        uint64_t minCost8 = ~(uint64_t)0;
+        for (uint32_t child = 0; child < 4; child++)
+        {
+            const HardwareHMETrace& trace = trace8[group * 4 + child];
+            const uint64_t rate = ((uint64_t)f.sqrtLambdaQ8 *
+                                   trace.imeMvdBits + 128) >> 8;
+            const uint64_t cost8 = (uint64_t)trace.imeSad + rate;
+            minCost8 = X265_MIN(minCost8, cost8);
+        }
+        f.cost8Group[group] = minCost8 << 2;
+        f.cost8To32 += f.cost8Group[group];
+    }
+    f.valid = 1;
+    return true;
 }
 
 void Analysis::collectPUStatistics(const CUData& ctu, const CUGeom& cuGeom)
@@ -1398,7 +1636,13 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
         const bool hwLayerExperiment = m_param->bEnableHwHME && m_slice->isInterP() &&
                                        (hwLayerMode == 1 || hwLayerMode == 2 ||
                                         hwLayerMode == 3 || hwLayerMode == 5 ||
-                                        hwLayerMode == 6);
+                                        hwLayerMode == 6 || hwLayerMode == 8 ||
+                                        hwLayerMode == 9);
+        const bool hwLayerRootProbe = m_param->bEnableHwHME && m_slice->isInterP() &&
+                                      depth == 0 &&
+                                      (hwLayerMode == 3 || hwLayerMode == 6 ||
+                                       hwLayerMode == 7 || hwLayerMode == 8 ||
+                                       hwLayerMode == 9);
         bool hwRootProbeDone = false;
         bool hwAllowCurrent = true;
 
@@ -1427,18 +1671,27 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
         /* Adaptive mode needs the CU32 IME result before deciding whether to
          * recurse to CU8. Probe 2Nx2N once here and reuse the same result in
          * Step 3, so the selector adds no duplicate motion search. */
-        if (hwLayerExperiment && depth == 0 &&
-            (hwLayerMode == 3 || hwLayerMode == 6))
+        if (hwLayerRootProbe)
         {
             uint32_t probeRefMasks[2] = { 0, 0 };
             md.pred[PRED_2Nx2N].cu.initSubCU(parentCTU, cuGeom, qp);
             checkInter_rd0_4(md.pred[PRED_2Nx2N], cuGeom, SIZE_2Nx2N, probeRefMasks);
-            m_hwInterLayerDecision = hwSelectInterLayers(
-                md.pred[PRED_2Nx2N].bestME[0][0], qp,
-                m_param->hwHmeInterLayerSadQ8,
-                m_param->hwHmeInterLayerSadSlopeQ8,
-                m_param->hwHmeInterLayerRefine,
-                m_param->hwHmeInterLayerCutoff);
+            const MotionData& rootMe = md.pred[PRED_2Nx2N].bestME[0][0];
+            if (hwLayerMode == 7 || hwLayerMode == 8 || hwLayerMode == 9)
+                collectHardwareInterScaleFeatures(parentCTU, cuGeom, qp, rootMe);
+            if (hwLayerMode == 9 && m_hwInterScaleFeatures.valid)
+                m_hwInterLayerDecision = hwSelectInterLayersHierarchyCost(
+                    m_hwInterScaleFeatures);
+            else if (hwLayerMode == 8 && m_hwInterScaleFeatures.valid)
+                m_hwInterLayerDecision = hwSelectInterLayersMultiscale(
+                    m_hwInterScaleFeatures, m_param->hwHmeInterLayerCutoff);
+            else
+                m_hwInterLayerDecision = hwSelectInterLayers(
+                    rootMe, qp,
+                    m_param->hwHmeInterLayerSadQ8,
+                    m_param->hwHmeInterLayerSadSlopeQ8,
+                    m_param->hwHmeInterLayerRefine,
+                    m_param->hwHmeInterLayerCutoff);
             if (hwLayerMode == 6 &&
                 m_hwInterLayerDecision.only32Probability >=
                 (uint32_t)m_param->hwHmeInterOnly32Cutoff)

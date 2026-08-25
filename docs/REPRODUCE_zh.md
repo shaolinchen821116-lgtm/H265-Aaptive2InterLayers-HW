@@ -192,3 +192,68 @@ python .\experiments\intra_2layer\run_experiments.py `
 ## 11. 复现记录建议
 
 每次实验固定记录：x265 基线提交或归档 SHA-256、覆盖代码提交、编译器和构建选项、位深、序列文件 SHA-256、帧数、QP、命令行、决策树 JSON、原始 `runs.csv` 与最终汇总。BD-rate 比较双方必须使用完全相同的输入帧和编码约束。
+
+## 12. 完整源码直接构建
+
+本仓库的 `x265/` 已是合入研究改动的完整源码，不必先准备外部源码树：
+
+```powershell
+cmake -S .\x265\source -B .\x265\build\hw -G Ninja `
+  -DCMAKE_BUILD_TYPE=Release -DENABLE_SHARED=OFF -DENABLE_CLI=ON
+cmake --build .\x265\build\hw
+```
+
+`x265_overlay/` 与完整源码保持同一实现，供已有平台按文件覆盖或人工移植。不要提交 `x265/build/`、YUV、码流、逐 CTU 日志。
+
+## 13. 多尺度两层与层次 cost 复现
+
+### 13.1 完整三层采集
+
+mode 7 不裁剪 P 帧，输出 29 维 `INTERLAYERMS` 和层次代价 `INTERLAYERCOST`：
+
+```powershell
+python .\experiments\inter_hw_hme\run_classb.py `
+  --encoder .\x265\build\hw\x265.exe `
+  --manifest .\experiments\inter_hw_hme\sequence_manifest.csv `
+  --frames 12 --qps 22,27,32,37 --modes hw `
+  --pme-cost-mode 1 --pme-rate-scale 256 `
+  --pme-texture 8,24 --pme-attractor 1 `
+  --layer-mode 7 --output D:\work\classb_multiscale_collect
+```
+
+### 13.2 多尺度 CART
+
+```powershell
+python .\experiments\inter_hw_hme\train_inter_multiscale_tree.py `
+  D:\work\classb_multiscale_collect\runs.csv `
+  --output D:\work\multiscale_model `
+  --max-depth 7 --min-leaf 256 --low-weight 1.5 `
+  --recommended-cutoff 45 `
+  --cpp-header .\x265_overlay\source\encoder\inter_multiscale_gate_model.h
+```
+
+正式编码使用 `--hw-hme-inter-layers 8 --hw-hme-layer-cutoff 45`。I 帧由代码强制保持 intra32/intra16/intra8 三层开放。
+
+### 13.3 层次 cost-only
+
+```powershell
+python .\experiments\inter_hw_hme\analyze_inter_hierarchy_cost.py `
+  D:\work\classb_multiscale_collect\runs.csv `
+  --output D:\work\classb_multiscale_collect\cost_accuracy.csv
+```
+
+正式 cost-only 编码使用 `--hw-hme-inter-layers 9`。该模式严格比较 `J32` 与四组 `4×min(J8)` 之和并计入 1/5 个 split bits；它是研究基线，当前 Class B 平均 +1.659%，不作为最终推荐。
+
+### 13.4 cost-rooted 混合训练
+
+```powershell
+python .\experiments\inter_hw_hme\train_inter_hybrid_cost_tree.py `
+  D:\work\classb_multiscale_collect\runs.csv `
+  --output D:\work\hybrid_model `
+  --max-depth 7 --min-leaf 256 --low-weight 1.5 `
+  --recommended-cutoff 45
+```
+
+该脚本强制 cost-only 判决为根节点，再用 cost 裕量、四组 cost 一致性、纹理、SAD 与 MV 一致性训练两侧修正子树。模型导出后仍须进行逐序列留一验证和真实 30 帧 BD-rate 测试，不能只按分类正确率发布。
+
+仓库已保存一次 Class B 候选训练到 `results/inter/hybrid_cost_tree_classb/`。cutoff 45 的留一正确率为 76.294%，低于 mode 8 的 77.731%；尚未集成为新的运行模式，也没有真实 BD-rate，目录中的头文件仅供继续实验。

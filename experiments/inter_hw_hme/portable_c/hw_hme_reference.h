@@ -115,6 +115,16 @@ typedef struct hw_hme_inter_layer_decision
     uint32_t low2_probability;
 } hw_hme_inter_layer_decision;
 
+enum { HW_HME_INTER_MS_FEATURE_COUNT = 29 };
+
+/* Frozen mode-8 feature vector. Index order is identical to the generated
+ * CART header and to INTERLAYERMS logs; see the training documentation. */
+typedef struct hw_hme_inter_scale_features
+{
+    uint32_t value[HW_HME_INTER_MS_FEATURE_COUNT];
+    uint8_t valid;
+} hw_hme_inter_scale_features;
+
 /* Fills the final experiment defaults: PME [-32,32]x[-28,28] on ds4,
  * IME [-12,12]^2, adaptive additive cost, Q8 scale 256, gradient
  * thresholds 8/24, weights 256/160/96, and AMVP attractor. */
@@ -144,6 +154,21 @@ int hw_hme_select_inter_layers(const hw_hme_result* result,
                                int low2_probability_cutoff,
                                int only32_probability_cutoff,
                                hw_hme_inter_layer_decision* decision);
+
+/* Aggregates one CU32, four CU16 and sixteen CU8 PME/IME-only results. All
+ * divisions are fixed /4 or /16 rounded shifts. The probe order is raster:
+ * CU16[0..3], and four raster CU8 children per CU16. AMVP is the common CU32
+ * predictor used by all 20 child probes. */
+int hw_hme_build_inter_scale_features(
+    const hw_hme_result* root, hw_hme_mv root_amvp_qpel, int qp,
+    const hw_hme_result probe16[4], const hw_hme_result probe8[16],
+    int ime_range_x, int ime_range_y, hw_hme_inter_scale_features* features);
+
+/* Frozen depth-7 cost-sensitive CART. A cutoff of 45 is the validated
+ * operating point. This selector never emits ONLY32. */
+int hw_hme_select_inter_layers_multiscale(
+    const hw_hme_inter_scale_features* features, int probability_cutoff,
+    hw_hme_inter_layer_decision* decision);
 
 /* Small, deterministic Exp-Golomb-style fallback for prototypes. Production
  * ports should connect their codec's exact MVD bit estimator instead. */

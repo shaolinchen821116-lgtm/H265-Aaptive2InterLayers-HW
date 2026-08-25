@@ -165,7 +165,8 @@ static inline bool betterRd(uint32_t cost, uint32_t sad, const MV& mv,
 
 int Search::hardwareMotionEstimate(Mode& interMode, const PredictionUnit& pu,
                                    int list, int refIdx, const MV& amvp,
-                                   MV& outQPel, HardwareHMETrace* outTrace)
+                                   MV& outQPel, HardwareHMETrace* outTrace,
+                                   bool imeOnly)
 {
     HardwareHMETrace trace;
     CUData& cu = interMode.cu;
@@ -287,6 +288,7 @@ int Search::hardwareMotionEstimate(Mode& interMode, const PredictionUnit& pu,
     const intptr_t refStride = reconRef->lumaStride;
     uint32_t bestImeCost = MAX_UINT;
     uint32_t bestImeSad = MAX_UINT;
+    uint32_t bestImeMvdBits = 0;
     uint32_t bestImeMvCost = 0;
     MV bestIme = trace.imeCenterFullPel;
 
@@ -297,6 +299,7 @@ int Search::hardwareMotionEstimate(Mode& interMode, const PredictionUnit& pu,
             MV fullMv(x, y);
             MV qmv = hwImeFullPelToQPel(fullMv);
             uint32_t sad = m_me.bufSAD(refOrigin + y * refStride + x, refStride);
+            uint32_t mvdBits = m_me.bitcost(qmv, amvp);
             uint32_t mvCost = m_me.mvcost(qmv);
             uint32_t cost = sad + mvCost;
             trace.imeCandidates++;
@@ -304,6 +307,7 @@ int Search::hardwareMotionEstimate(Mode& interMode, const PredictionUnit& pu,
             {
                 bestImeCost = cost;
                 bestImeSad = sad;
+                bestImeMvdBits = mvdBits;
                 bestImeMvCost = mvCost;
                 bestIme = fullMv;
             }
@@ -312,7 +316,20 @@ int Search::hardwareMotionEstimate(Mode& interMode, const PredictionUnit& pu,
 
     trace.imeMvFullPel = bestIme;
     trace.imeSad = bestImeSad;
+    trace.imeMvdBits = bestImeMvdBits;
     trace.imeMvCost = bestImeMvCost;
+
+    /* The multi-scale layer selector needs PME/IME measurements for all
+     * 1x32, 4x16, and 16x8 square blocks, but not their FME result. Keeping
+     * this early return explicit avoids 17 sub-pel candidates per probe and
+     * mirrors a hardware design where the 21 IME lanes feed the layer gate. */
+    if (imeOnly)
+    {
+        outQPel = hwImeFullPelToQPel(bestIme);
+        if (outTrace)
+            *outTrace = trace;
+        return (int)bestImeCost;
+    }
 
     /* Stage 3: IME seed plus one AMVP guard candidate, followed by one
      * half-pel ring and one quarter-pel ring around the better seed. The

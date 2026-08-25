@@ -1,0 +1,7 @@
+﻿class,sequence,bd_rate_y_psnr_pct,points,qp_set
+ClassB,BQTerrace,0.9559147028588955,4,22/27/32/37
+ClassB,BasketballDrive,1.848628594795887,4,22/27/32/37
+ClassB,Cactus,1.4375192092890954,4,22/27/32/37
+ClassB,Kimono1,2.8369593897797696,4,22/27/32/37
+ClassB,ParkScene,1.21572765084208,4,22/27/32/37
+All,ClassB arithmetic mean,1.6589499095131455,-,-
