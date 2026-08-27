@@ -125,6 +125,10 @@ Class B 采集 448,800 个 CU32 样本，标签来自完整三层最终 RDO：
 
 这说明主要问题并非缺少 QPstep 或 sqrt(lambda)，而是 `4×min(J8)` 在同组四个 8×8 的 SAD、纹理或 MV 不一致时系统性低估低层路径。cost-rooted 候选树已经输出到 `results/inter/hybrid_cost_tree_classb/`，其 cutoff 45 Class B 留一正确率为 `76.294%`，仍低于 mode 8，且尚无真实 BD-rate，不能作为已发布结果。
 
+### 4.3 原始J8求和与mode 11最终结果
+
+mode 10改为累加16个原始J8后，Class B平均BD-rate为`+3.133%`，说明纯求和会严重漏选CU8。mode 11以该sum-cost比较为强制树根，再使用SAD分层收益、纹理、MV一致性、QP和sqrt(lambda)做整数决策树纠错。ABCE 17序列、30帧、QP 22/27/32/37实测平均为`+0.273%`，Class A/B/C/E分别为`-0.181% / +0.554% / +0.090% / +0.313%`，高/低两层比例为`56.542% / 43.458%`。16/17个序列低于1%，Kimono1为`+1.609%`。
+
 ## 5. Intra 研究归档
 
 仓库同时保留了前期仅使用原始 32×32 YUV420 块和 QP 的 Intra 选层研究，以便同一硬件编码器复用特征提取结构。完整表格在 `results/intra/` 和 DOCX 报告中。

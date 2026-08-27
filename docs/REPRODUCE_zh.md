@@ -257,3 +257,17 @@ python .\experiments\inter_hw_hme\train_inter_hybrid_cost_tree.py `
 该脚本强制 cost-only 判决为根节点，再用 cost 裕量、四组 cost 一致性、纹理、SAD 与 MV 一致性训练两侧修正子树。模型导出后仍须进行逐序列留一验证和真实 30 帧 BD-rate 测试，不能只按分类正确率发布。
 
 仓库已保存一次 Class B 候选训练到 `results/inter/hybrid_cost_tree_classb/`。cutoff 45 的留一正确率为 76.294%，低于 mode 8 的 77.731%；尚未集成为新的运行模式，也没有真实 BD-rate，目录中的头文件仅供继续实验。
+
+## 9. 最终mode 11复现
+
+mode 7新版日志额外输出`INTERLAYERCOSTSUM`，保存四个CU16区域的原始J8和、16个J8总和、旧`4×min`总和及完整RDO标签。训练命令：
+
+```powershell
+python .\experiments\inter_hw_hme\train_inter_sum_cost_tree.py `
+  D:\work\classb_sumcost_collect\runs.csv `
+  --output D:\work\sum_cost_tree --max-depth 6 --min-leaf 128 `
+  --low-weight 1.5 --sample-stride 4 --recommended-cutoff 50 `
+  --cpp-header .\x265_overlay\source\encoder\inter_sum_cost_gate_model.h
+```
+
+正式编码使用`--hw-hme-inter-layers 11 --hw-hme-layer-cutoff 50`。相同30帧ABCE测试的平均BD-rate为+0.273%；完整逐序列结果位于`results/inter/abce_sumcost_adaptive_mode11_c50_30f/`。I帧仍由代码强制保持intra32/intra16/intra8三层开放。

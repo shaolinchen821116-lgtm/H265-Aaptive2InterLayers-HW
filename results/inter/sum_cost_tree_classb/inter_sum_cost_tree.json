@@ -1,0 +1,924 @@
+{
+  "features": [
+    "qp",
+    "sad32_q8",
+    "refine32_l1",
+    "mvd32_qpel_l1",
+    "mv32_fullpel_l1",
+    "activity32",
+    "boundary32",
+    "sad16_mean_q8",
+    "sad16_range_q8",
+    "sad16_mad_q8",
+    "sad8_mean_q8",
+    "sad8_range_q8",
+    "sad8_mad_q8",
+    "sad_gain32_to16_q8",
+    "sad_gain16_to8_q8",
+    "sad_gain16_to8_max_q8",
+    "mv16_root_mean_l1",
+    "mv16_root_max_l1",
+    "mv16_span_l1",
+    "mv8_parent_mean_l1",
+    "mv8_parent_max_l1",
+    "mv8_root_mean_l1",
+    "mv8_root_max_l1",
+    "mv8_span_l1",
+    "activity16_mean",
+    "activity16_range",
+    "activity8_mean",
+    "activity8_range",
+    "boundary_count",
+    "sum_cost_prefers_low",
+    "sum_cost_ratio_bin",
+    "cost32_q8pp",
+    "sum_cost8_q8pp",
+    "sum_cost_abs_delta_q8pp",
+    "sum_group_mean_q8pp",
+    "sum_group_range_q8pp",
+    "sum_group_mad_q8pp",
+    "min4_cost8_q8pp",
+    "min4_optimism_q8pp",
+    "sqrt_lambda_q8"
+  ],
+  "forced_sum_cost_root": true,
+  "max_depth": 6,
+  "min_leaf": 128,
+  "low_weight": 1.5,
+  "sample_stride": 4,
+  "recommended_cutoff": 50,
+  "sample_counters": {
+    "ms_records": 448800,
+    "sum_records": 448800,
+    "valid": 435600,
+    "invalid": 13200,
+    "bad_fields": 0,
+    "unpaired": 0,
+    "fit_stride": 4,
+    "fit_samples": 108900,
+    "all_valid_samples": 435600
+  },
+  "pure_sum_cost_metrics": {
+    "samples": 108900,
+    "oracle_low_pct": 35.80440771349862,
+    "selected_low_pct": 15.18457300275482,
+    "accuracy_pct": 69.1799816345271,
+    "balanced_accuracy_pct": 60.110430185825734,
+    "low_recall_pct": 28.16547408376292,
+    "low_precision_pct": 66.41267537493952,
+    "false_high_pct_of_low": 71.83452591623708,
+    "false_low_pct_of_high": 7.944613712111459,
+    "tp": 10982,
+    "tn": 64355,
+    "fp": 5554,
+    "fn": 28009
+  },
+  "loo_metrics": {
+    "sequence": "All leave-one-sequence-out",
+    "cutoff": 50,
+    "samples": 108900,
+    "oracle_low_pct": 35.80440771349862,
+    "selected_low_pct": 49.439853076216714,
+    "accuracy_pct": 73.8099173553719,
+    "balanced_accuracy_pct": 75.72442648717384,
+    "low_recall_pct": 82.46774896771049,
+    "low_precision_pct": 59.72325408618128,
+    "false_high_pct_of_low": 17.5322510322895,
+    "false_low_pct_of_high": 31.0188959933628,
+    "tp": 32155,
+    "tn": 48224,
+    "fp": 21685,
+    "fn": 6836
+  },
+  "tree": {
+    "samples": 108900,
+    "low_samples": 38991,
+    "probability_low": 0.4555183,
+    "feature": "sum_cost_prefers_low",
+    "feature_index": 29,
+    "threshold": 0,
+    "gain": 4544.525158,
+    "left": {
+      "samples": 92364,
+      "low_samples": 28009,
+      "probability_low": 0.39498066,
+      "feature": "sum_cost_ratio_bin",
+      "feature_index": 30,
+      "threshold": 4,
+      "gain": 8003.168159,
+      "left": {
+        "samples": 57044,
+        "low_samples": 24838,
+        "probability_low": 0.53635749,
+        "feature": "sad_gain16_to8_max_q8",
+        "feature_index": 15,
+        "threshold": 14,
+        "gain": 3836.695089,
+        "left": {
+          "samples": 19000,
+          "low_samples": 3970,
+          "probability_low": 0.28377412,
+          "feature": "qp",
+          "feature_index": 0,
+          "threshold": 24,
+          "gain": 1440.261411,
+          "left": {
+            "samples": 3480,
+            "low_samples": 1895,
+            "probability_low": 0.64201016,
+            "feature": "sad8_mad_q8",
+            "feature_index": 12,
+            "threshold": 59,
+            "gain": 472.468676,
+            "left": {
+              "samples": 1637,
+              "low_samples": 463,
+              "probability_low": 0.37168852,
+              "feature": "sad8_mean_q8",
+              "feature_index": 10,
+              "threshold": 473,
+              "gain": 79.751413,
+              "left": {
+                "samples": 1044,
+                "low_samples": 194,
+                "probability_low": 0.25503944
+              },
+              "right": {
+                "samples": 593,
+                "low_samples": 269,
+                "probability_low": 0.55463918
+              }
+            },
+            "right": {
+              "samples": 1843,
+              "low_samples": 1432,
+              "probability_low": 0.83939039,
+              "feature": "min4_optimism_q8pp",
+              "feature_index": 38,
+              "threshold": 105,
+              "gain": 65.708284,
+              "left": {
+                "samples": 736,
+                "low_samples": 442,
+                "probability_low": 0.69278997
+              },
+              "right": {
+                "samples": 1107,
+                "low_samples": 990,
+                "probability_low": 0.92696629
+              }
+            }
+          },
+          "right": {
+            "samples": 15520,
+            "low_samples": 2075,
+            "probability_low": 0.18798128,
+            "feature": "sad8_range_q8",
+            "feature_index": 11,
+            "threshold": 1038,
+            "gain": 954.412021,
+            "left": {
+              "samples": 13334,
+              "low_samples": 1044,
+              "probability_low": 0.11301963,
+              "feature": "qp",
+              "feature_index": 0,
+              "threshold": 29,
+              "gain": 258.218288,
+              "left": {
+                "samples": 5143,
+                "low_samples": 857,
+                "probability_low": 0.23072781
+              },
+              "right": {
+                "samples": 8191,
+                "low_samples": 187,
+                "probability_low": 0.03385841
+              }
+            },
+            "right": {
+              "samples": 2186,
+              "low_samples": 1031,
+              "probability_low": 0.57245974,
+              "feature": "qp",
+              "feature_index": 0,
+              "threshold": 34,
+              "gain": 468.849714,
+              "left": {
+                "samples": 1135,
+                "low_samples": 859,
+                "probability_low": 0.82358581
+              },
+              "right": {
+                "samples": 1051,
+                "low_samples": 172,
+                "probability_low": 0.22691293
+              }
+            }
+          }
+        },
+        "right": {
+          "samples": 38044,
+          "low_samples": 20868,
+          "probability_low": 0.64569495,
+          "feature": "mv32_fullpel_l1",
+          "feature_index": 4,
+          "threshold": 4,
+          "gain": 1394.134843,
+          "left": {
+            "samples": 22809,
+            "low_samples": 14903,
+            "probability_low": 0.73873532,
+            "feature": "sum_cost_ratio_bin",
+            "feature_index": 30,
+            "threshold": 3,
+            "gain": 774.638633,
+            "left": {
+              "samples": 13887,
+              "low_samples": 10533,
+              "probability_low": 0.8248884,
+              "feature": "sad8_mean_q8",
+              "feature_index": 10,
+              "threshold": 616,
+              "gain": 293.600097,
+              "left": {
+                "samples": 2174,
+                "low_samples": 1110,
+                "probability_low": 0.61011359
+              },
+              "right": {
+                "samples": 11713,
+                "low_samples": 9423,
+                "probability_low": 0.86057414
+              }
+            },
+            "right": {
+              "samples": 8922,
+              "low_samples": 4370,
+              "probability_low": 0.59016836,
+              "feature": "sad8_range_q8",
+              "feature_index": 11,
+              "threshold": 706,
+              "gain": 236.0998,
+              "left": {
+                "samples": 2999,
+                "low_samples": 1027,
+                "probability_low": 0.43857651
+              },
+              "right": {
+                "samples": 5923,
+                "low_samples": 3343,
+                "probability_low": 0.66028047
+              }
+            }
+          },
+          "right": {
+            "samples": 15235,
+            "low_samples": 5965,
+            "probability_low": 0.49114862,
+            "feature": "qp",
+            "feature_index": 0,
+            "threshold": 24,
+            "gain": 582.668896,
+            "left": {
+              "samples": 7100,
+              "low_samples": 3698,
+              "probability_low": 0.61984579,
+              "feature": "sum_cost8_q8pp",
+              "feature_index": 32,
+              "threshold": 606,
+              "gain": 369.479677,
+              "left": {
+                "samples": 3153,
+                "low_samples": 1110,
+                "probability_low": 0.44902913
+              },
+              "right": {
+                "samples": 3947,
+                "low_samples": 2588,
+                "probability_low": 0.74069834
+              }
+            },
+            "right": {
+              "samples": 8135,
+              "low_samples": 2267,
+              "probability_low": 0.36688785,
+              "feature": "activity8_range",
+              "feature_index": 27,
+              "threshold": 15,
+              "gain": 334.292522,
+              "left": {
+                "samples": 5210,
+                "low_samples": 992,
+                "probability_low": 0.26077813
+              },
+              "right": {
+                "samples": 2925,
+                "low_samples": 1275,
+                "probability_low": 0.53684211
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "samples": 35320,
+        "low_samples": 3171,
+        "probability_low": 0.12888323,
+        "feature": "sad8_range_q8",
+        "feature_index": 11,
+        "threshold": 1262,
+        "gain": 1130.723603,
+        "left": {
+          "samples": 30981,
+          "low_samples": 1685,
+          "probability_low": 0.07942244,
+          "feature": "mv8_span_l1",
+          "feature_index": 23,
+          "threshold": 2,
+          "gain": 209.684636,
+          "left": {
+            "samples": 20496,
+            "low_samples": 519,
+            "probability_low": 0.03750813,
+            "feature": "activity8_range",
+            "feature_index": 27,
+            "threshold": 9,
+            "gain": 52.943143,
+            "left": {
+              "samples": 16134,
+              "low_samples": 202,
+              "probability_low": 0.01866338,
+              "feature": "qp",
+              "feature_index": 0,
+              "threshold": 29,
+              "gain": 8.456494,
+              "left": {
+                "samples": 3574,
+                "low_samples": 118,
+                "probability_low": 0.04872007
+              },
+              "right": {
+                "samples": 12560,
+                "low_samples": 84,
+                "probability_low": 0.00999841
+              }
+            },
+            "right": {
+              "samples": 4362,
+              "low_samples": 317,
+              "probability_low": 0.10518748,
+              "feature": "qp",
+              "feature_index": 0,
+              "threshold": 34,
+              "gain": 37.316127,
+              "left": {
+                "samples": 1851,
+                "low_samples": 234,
+                "probability_low": 0.17835366
+              },
+              "right": {
+                "samples": 2511,
+                "low_samples": 83,
+                "probability_low": 0.04877571
+              }
+            }
+          },
+          "right": {
+            "samples": 10485,
+            "low_samples": 1166,
+            "probability_low": 0.15802313,
+            "feature": "sad16_range_q8",
+            "feature_index": 8,
+            "threshold": 421,
+            "gain": 76.13272,
+            "left": {
+              "samples": 8518,
+              "low_samples": 766,
+              "probability_low": 0.12908662,
+              "feature": "sum_cost_ratio_bin",
+              "feature_index": 30,
+              "threshold": 5,
+              "gain": 41.605578,
+              "left": {
+                "samples": 5795,
+                "low_samples": 660,
+                "probability_low": 0.16163265
+              },
+              "right": {
+                "samples": 2723,
+                "low_samples": 106,
+                "probability_low": 0.05727666
+              }
+            },
+            "right": {
+              "samples": 1967,
+              "low_samples": 400,
+              "probability_low": 0.27688048,
+              "feature": "sum_cost_abs_delta_q8pp",
+              "feature_index": 33,
+              "threshold": 368,
+              "gain": 25.812724,
+              "left": {
+                "samples": 822,
+                "low_samples": 228,
+                "probability_low": 0.36538462
+              },
+              "right": {
+                "samples": 1145,
+                "low_samples": 172,
+                "probability_low": 0.2095857
+              }
+            }
+          }
+        },
+        "right": {
+          "samples": 4339,
+          "low_samples": 1486,
+          "probability_low": 0.43860685,
+          "feature": "qp",
+          "feature_index": 0,
+          "threshold": 29,
+          "gain": 239.858727,
+          "left": {
+            "samples": 486,
+            "low_samples": 373,
+            "probability_low": 0.83197026,
+            "feature": "mv32_fullpel_l1",
+            "feature_index": 4,
+            "threshold": 6,
+            "gain": 21.707874,
+            "left": {
+              "samples": 356,
+              "low_samples": 307,
+              "probability_low": 0.90382728,
+              "feature": "sad8_range_q8",
+              "feature_index": 11,
+              "threshold": 3338,
+              "gain": 7.213196,
+              "left": {
+                "samples": 128,
+                "low_samples": 91,
+                "probability_low": 0.78674352
+              },
+              "right": {
+                "samples": 228,
+                "low_samples": 216,
+                "probability_low": 0.96428571
+              }
+            },
+            "right": {
+              "samples": 130,
+              "low_samples": 66,
+              "probability_low": 0.60736196
+            }
+          },
+          "right": {
+            "samples": 3853,
+            "low_samples": 1113,
+            "probability_low": 0.37861436,
+            "feature": "sad_gain16_to8_max_q8",
+            "feature_index": 15,
+            "threshold": 99,
+            "gain": 47.545581,
+            "left": {
+              "samples": 1975,
+              "low_samples": 447,
+              "probability_low": 0.30498067,
+              "feature": "qp",
+              "feature_index": 0,
+              "threshold": 34,
+              "gain": 43.066246,
+              "left": {
+                "samples": 435,
+                "low_samples": 167,
+                "probability_low": 0.4831244
+              },
+              "right": {
+                "samples": 1540,
+                "low_samples": 280,
+                "probability_low": 0.25
+              }
+            },
+            "right": {
+              "samples": 1878,
+              "low_samples": 666,
+              "probability_low": 0.45183175,
+              "feature": "mv32_fullpel_l1",
+              "feature_index": 4,
+              "threshold": 10,
+              "gain": 40.236242,
+              "left": {
+                "samples": 1457,
+                "low_samples": 584,
+                "probability_low": 0.50085763
+              },
+              "right": {
+                "samples": 421,
+                "low_samples": 82,
+                "probability_low": 0.26623377
+              }
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "samples": 16536,
+      "low_samples": 10982,
+      "probability_low": 0.74785491,
+      "feature": "mv32_fullpel_l1",
+      "feature_index": 4,
+      "threshold": 3,
+      "gain": 605.281479,
+      "left": {
+        "samples": 6040,
+        "low_samples": 5130,
+        "probability_low": 0.89424753,
+        "feature": "sad8_mean_q8",
+        "feature_index": 10,
+        "threshold": 720,
+        "gain": 83.798072,
+        "left": {
+          "samples": 912,
+          "low_samples": 577,
+          "probability_low": 0.7209496,
+          "feature": "sad8_mad_q8",
+          "feature_index": 12,
+          "threshold": 164,
+          "gain": 25.86781,
+          "left": {
+            "samples": 591,
+            "low_samples": 321,
+            "probability_low": 0.64071856,
+            "feature": "qp",
+            "feature_index": 0,
+            "threshold": 24,
+            "gain": 21.282064,
+            "left": {
+              "samples": 400,
+              "low_samples": 252,
+              "probability_low": 0.71863118,
+              "feature": "sad_gain16_to8_q8",
+              "feature_index": 14,
+              "threshold": 132,
+              "gain": 6.595392,
+              "left": {
+                "samples": 265,
+                "low_samples": 184,
+                "probability_low": 0.77310924
+              },
+              "right": {
+                "samples": 135,
+                "low_samples": 68,
+                "probability_low": 0.6035503
+              }
+            },
+            "right": {
+              "samples": 191,
+              "low_samples": 69,
+              "probability_low": 0.45898004
+            }
+          },
+          "right": {
+            "samples": 321,
+            "low_samples": 256,
+            "probability_low": 0.85523385,
+            "feature": "min4_cost8_q8pp",
+            "feature_index": 37,
+            "threshold": 602,
+            "gain": 8.152313,
+            "left": {
+              "samples": 181,
+              "low_samples": 164,
+              "probability_low": 0.93536122
+            },
+            "right": {
+              "samples": 140,
+              "low_samples": 92,
+              "probability_low": 0.74193548
+            }
+          }
+        },
+        "right": {
+          "samples": 5128,
+          "low_samples": 4553,
+          "probability_low": 0.92234452,
+          "feature": "qp",
+          "feature_index": 0,
+          "threshold": 29,
+          "gain": 46.973984,
+          "left": {
+            "samples": 4022,
+            "low_samples": 3733,
+            "probability_low": 0.95092129,
+            "feature": "sad8_range_q8",
+            "feature_index": 11,
+            "threshold": 1026,
+            "gain": 15.061254,
+            "left": {
+              "samples": 805,
+              "low_samples": 666,
+              "probability_low": 0.87785589,
+              "feature": "mv8_root_mean_l1",
+              "feature_index": 21,
+              "threshold": 3,
+              "gain": 11.519828,
+              "left": {
+                "samples": 666,
+                "low_samples": 579,
+                "probability_low": 0.90894819
+              },
+              "right": {
+                "samples": 139,
+                "low_samples": 87,
+                "probability_low": 0.71506849
+              }
+            },
+            "right": {
+              "samples": 3217,
+              "low_samples": 3067,
+              "probability_low": 0.96842438,
+              "feature": "mv16_span_l1",
+              "feature_index": 18,
+              "threshold": 13,
+              "gain": 4.647974,
+              "left": {
+                "samples": 2785,
+                "low_samples": 2690,
+                "probability_low": 0.97699758
+              },
+              "right": {
+                "samples": 432,
+                "low_samples": 377,
+                "probability_low": 0.9113618
+              }
+            }
+          },
+          "right": {
+            "samples": 1106,
+            "low_samples": 820,
+            "probability_low": 0.81134565,
+            "feature": "mv8_parent_mean_l1",
+            "feature_index": 19,
+            "threshold": 2,
+            "gain": 16.108951,
+            "left": {
+              "samples": 633,
+              "low_samples": 519,
+              "probability_low": 0.87226891,
+              "feature": "sad8_range_q8",
+              "feature_index": 11,
+              "threshold": 1894,
+              "gain": 8.935423,
+              "left": {
+                "samples": 335,
+                "low_samples": 245,
+                "probability_low": 0.80327869
+              },
+              "right": {
+                "samples": 298,
+                "low_samples": 274,
+                "probability_low": 0.94482759
+              }
+            },
+            "right": {
+              "samples": 473,
+              "low_samples": 301,
+              "probability_low": 0.72413793,
+              "feature": "sad8_range_q8",
+              "feature_index": 11,
+              "threshold": 1738,
+              "gain": 10.87962,
+              "left": {
+                "samples": 185,
+                "low_samples": 93,
+                "probability_low": 0.60259179
+              },
+              "right": {
+                "samples": 288,
+                "low_samples": 208,
+                "probability_low": 0.79591837
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "samples": 10496,
+        "low_samples": 5852,
+        "probability_low": 0.65400089,
+        "feature": "activity8_range",
+        "feature_index": 27,
+        "threshold": 16,
+        "gain": 244.444367,
+        "left": {
+          "samples": 5447,
+          "low_samples": 2491,
+          "probability_low": 0.55831154,
+          "feature": "qp",
+          "feature_index": 0,
+          "threshold": 24,
+          "gain": 156.721769,
+          "left": {
+            "samples": 2873,
+            "low_samples": 1609,
+            "probability_low": 0.65628824,
+            "feature": "mv16_root_mean_l1",
+            "feature_index": 16,
+            "threshold": 2,
+            "gain": 48.972558,
+            "left": {
+              "samples": 1298,
+              "low_samples": 600,
+              "probability_low": 0.56320401,
+              "feature": "mv8_span_l1",
+              "feature_index": 23,
+              "threshold": 18,
+              "gain": 15.887032,
+              "left": {
+                "samples": 790,
+                "low_samples": 410,
+                "probability_low": 0.61809045
+              },
+              "right": {
+                "samples": 508,
+                "low_samples": 190,
+                "probability_low": 0.47263682
+              }
+            },
+            "right": {
+              "samples": 1575,
+              "low_samples": 1009,
+              "probability_low": 0.72781919,
+              "feature": "min4_cost8_q8pp",
+              "feature_index": 37,
+              "threshold": 896,
+              "gain": 16.7295,
+              "left": {
+                "samples": 1289,
+                "low_samples": 780,
+                "probability_low": 0.69684336
+              },
+              "right": {
+                "samples": 286,
+                "low_samples": 229,
+                "probability_low": 0.8576779
+              }
+            }
+          },
+          "right": {
+            "samples": 2574,
+            "low_samples": 882,
+            "probability_low": 0.43880597,
+            "feature": "sad16_mad_q8",
+            "feature_index": 9,
+            "threshold": 106,
+            "gain": 32.501968,
+            "left": {
+              "samples": 481,
+              "low_samples": 99,
+              "probability_low": 0.2799246,
+              "feature": "mvd32_qpel_l1",
+              "feature_index": 3,
+              "threshold": 40,
+              "gain": 12.556132,
+              "left": {
+                "samples": 353,
+                "low_samples": 91,
+                "probability_low": 0.3425345
+              },
+              "right": {
+                "samples": 128,
+                "low_samples": 8,
+                "probability_low": 0.09090909
+              }
+            },
+            "right": {
+              "samples": 2093,
+              "low_samples": 783,
+              "probability_low": 0.47273093,
+              "feature": "sum_cost_abs_delta_q8pp",
+              "feature_index": 33,
+              "threshold": 253,
+              "gain": 18.25785,
+              "left": {
+                "samples": 1315,
+                "low_samples": 434,
+                "probability_low": 0.42493473
+              },
+              "right": {
+                "samples": 778,
+                "low_samples": 349,
+                "probability_low": 0.5496063
+              }
+            }
+          }
+        },
+        "right": {
+          "samples": 5049,
+          "low_samples": 3361,
+          "probability_low": 0.74916413,
+          "feature": "qp",
+          "feature_index": 0,
+          "threshold": 24,
+          "gain": 74.450387,
+          "left": {
+            "samples": 1903,
+            "low_samples": 1484,
+            "probability_low": 0.8415879,
+            "feature": "sad_gain16_to8_q8",
+            "feature_index": 14,
+            "threshold": 538,
+            "gain": 24.596973,
+            "left": {
+              "samples": 1587,
+              "low_samples": 1298,
+              "probability_low": 0.87075134,
+              "feature": "mvd32_qpel_l1",
+              "feature_index": 3,
+              "threshold": 11,
+              "gain": 11.298981,
+              "left": {
+                "samples": 956,
+                "low_samples": 730,
+                "probability_low": 0.82891749
+              },
+              "right": {
+                "samples": 631,
+                "low_samples": 568,
+                "probability_low": 0.93114754
+              }
+            },
+            "right": {
+              "samples": 316,
+              "low_samples": 186,
+              "probability_low": 0.68215159,
+              "feature": "mvd32_qpel_l1",
+              "feature_index": 3,
+              "threshold": 10,
+              "gain": 37.982571,
+              "left": {
+                "samples": 147,
+                "low_samples": 49,
+                "probability_low": 0.42857143
+              },
+              "right": {
+                "samples": 169,
+                "low_samples": 137,
+                "probability_low": 0.86526316
+              }
+            }
+          },
+          "right": {
+            "samples": 3146,
+            "low_samples": 1877,
+            "probability_low": 0.68931326,
+            "feature": "mv32_fullpel_l1",
+            "feature_index": 4,
+            "threshold": 7,
+            "gain": 55.285419,
+            "left": {
+              "samples": 959,
+              "low_samples": 708,
+              "probability_low": 0.80883473,
+              "feature": "sad8_mad_q8",
+              "feature_index": 12,
+              "threshold": 253,
+              "gain": 28.698495,
+              "left": {
+                "samples": 268,
+                "low_samples": 143,
+                "probability_low": 0.63181149
+              },
+              "right": {
+                "samples": 691,
+                "low_samples": 565,
+                "probability_low": 0.87057011
+              }
+            },
+            "right": {
+              "samples": 2187,
+              "low_samples": 1169,
+              "probability_low": 0.63268988,
+              "feature": "mvd32_qpel_l1",
+              "feature_index": 3,
+              "threshold": 10,
+              "gain": 32.71458,
+              "left": {
+                "samples": 1128,
+                "low_samples": 513,
+                "probability_low": 0.55579632
+              },
+              "right": {
+                "samples": 1059,
+                "low_samples": 656,
+                "probability_low": 0.70944484
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

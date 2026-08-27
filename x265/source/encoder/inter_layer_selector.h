@@ -13,6 +13,7 @@
 #include "search.h"
 #include "inter_only32_gate_model.h"
 #include "inter_multiscale_gate_model.h"
+#include "inter_sum_cost_gate_model.h"
 
 namespace X265_NS {
 
@@ -104,8 +105,10 @@ struct HardwareInterScaleFeatures
     uint32_t splitBits8To32;
     uint32_t rootMvdBits;
     uint64_t cost8Group[4];
+    uint64_t cost8SumGroup[4];
     uint64_t cost32;
     uint64_t cost8To32;
+    uint64_t cost8SumTo32;
     uint8_t valid;
 
     HardwareInterScaleFeatures() { memset(this, 0, sizeof(*this)); }
@@ -266,6 +269,87 @@ static inline HardwareInterLayerDecision hwSelectInterLayersHierarchyCost(
         return out;
     const bool low = features.cost8To32 <= features.cost32;
     out.lowProbability = low ? 100u : 0u;
+    out.layerSet = low ? HW_INTER_LAYER_LOW_16_8
+                       : HW_INTER_LAYER_HIGH_32_16;
+    return out;
+}
+
+/* Corrected hierarchy-cost baseline. Unlike mode 9, this path preserves the
+ * measured J8 of every child and adds all sixteen costs. This removes the
+ * optimistic 4 * min(J8) approximation while retaining the same Q8 lambda
+ * rate term and five split bits. */
+static inline HardwareInterLayerDecision hwSelectInterLayersHierarchySumCost(
+    const HardwareInterScaleFeatures& features)
+{
+    HardwareInterLayerDecision out;
+    out.features = features.root;
+    out.scaleFeatures = features;
+    if (!features.valid)
+        return out;
+    const bool low = features.cost8SumTo32 <= features.cost32;
+    out.lowProbability = low ? 100u : 0u;
+    out.layerSet = low ? HW_INTER_LAYER_LOW_16_8
+                       : HW_INTER_LAYER_HIGH_32_16;
+    return out;
+}
+
+static inline uint32_t hwInterSumCostRatioBin(uint64_t cost8, uint64_t cost32)
+{
+    if (cost8 * 4 <= cost32 * 3) return 0;
+    if (cost8 * 8 <= cost32 * 7) return 1;
+    if (cost8 <= cost32) return 2;
+    if (cost8 * 8 <= cost32 * 9) return 3;
+    if (cost8 * 4 <= cost32 * 5) return 4;
+    if (cost8 * 2 <= cost32 * 3) return 5;
+    return 6;
+}
+
+/* Mode 11: corrected sum-cost is the forced first decision; the generated
+ * child tree corrects it with SAD hierarchy, activity/texture and MV
+ * consistency. All normalization uses shifts and integer arithmetic. */
+static inline HardwareInterLayerDecision hwSelectInterLayersSumCostAdaptive(
+    const HardwareInterScaleFeatures& features, int probabilityCutoff)
+{
+    HardwareInterLayerDecision out;
+    out.features = features.root;
+    out.scaleFeatures = features;
+    if (!features.valid)
+        return out;
+    uint32_t values[HW_INTER_MS_FEATURE_COUNT + 11];
+    features.toArray(values);
+    const uint64_t groupMean = (features.cost8SumGroup[0] +
+                                features.cost8SumGroup[1] +
+                                features.cost8SumGroup[2] +
+                                features.cost8SumGroup[3] + 2) >> 2;
+    uint64_t groupMin = features.cost8SumGroup[0];
+    uint64_t groupMax = groupMin;
+    uint64_t groupMad = 0;
+    for (uint32_t i = 0; i < 4; i++)
+    {
+        groupMin = X265_MIN(groupMin, features.cost8SumGroup[i]);
+        groupMax = X265_MAX(groupMax, features.cost8SumGroup[i]);
+        groupMad += features.cost8SumGroup[i] > groupMean
+                  ? features.cost8SumGroup[i] - groupMean
+                  : groupMean - features.cost8SumGroup[i];
+    }
+    const uint32_t base = HW_INTER_MS_FEATURE_COUNT;
+    values[base + 0] = features.cost8SumTo32 <= features.cost32;
+    values[base + 1] = hwInterSumCostRatioBin(features.cost8SumTo32,
+                                              features.cost32);
+    values[base + 2] = (uint32_t)((features.cost32 + 2) >> 2);
+    values[base + 3] = (uint32_t)((features.cost8SumTo32 + 2) >> 2);
+    values[base + 4] = (uint32_t)(((features.cost8SumTo32 > features.cost32
+                         ? features.cost8SumTo32 - features.cost32
+                         : features.cost32 - features.cost8SumTo32) + 2) >> 2);
+    values[base + 5] = (uint32_t)groupMean;
+    values[base + 6] = (uint32_t)(groupMax - groupMin);
+    values[base + 7] = (uint32_t)((groupMad + 2) >> 2);
+    values[base + 8] = (uint32_t)((features.cost8To32 + 2) >> 2);
+    values[base + 9] = (uint32_t)(((features.cost8SumTo32 > features.cost8To32
+                         ? features.cost8SumTo32 - features.cost8To32 : 0) + 2) >> 2);
+    values[base + 10] = features.sqrtLambdaQ8;
+    out.lowProbability = hwInterSumCostLowProbability(values);
+    const bool low = out.lowProbability >= (uint32_t)probabilityCutoff;
     out.layerSet = low ? HW_INTER_LAYER_LOW_16_8
                        : HW_INTER_LAYER_HIGH_32_16;
     return out;

@@ -16,6 +16,6 @@
 
 便携 C 参考实现位于 `portable_c/`。它用于验证精度换算、搜索窗口、代价函数、AMVP attractor 和三级选层，可独立于 x265 编译。`inter_only32_gate_model.h` 由训练脚本生成，不应手工编辑。
 
-P 帧模式：`0` 完整三层；`1` 强制高两层；`2` 强制低两层；`3` 旧版 CU32 自适应；`4` 旧标签；`5` CU32-only；`6` CU32-only 级联；`7` 多尺度完整三层标签；`8` 多尺度 CART；`9` 层次 cost-only。当前高/低两层推荐为 mode 8、cutoff 45；mode 9 是研究基线。
+P 帧模式：`0` 完整三层；`1` 强制高两层；`2` 强制低两层；`3` 旧版 CU32 自适应；`4` 旧标签；`5` CU32-only；`6` CU32-only 级联；`7` 多尺度完整三层标签；`8` 多尺度 CART；`9` 4×min层次cost；`10` 16个原始J8求和；`11` sum-cost根节点加多特征纠错。当前推荐为 mode 11、cutoff 50。
 
 详细命令见仓库根目录的 `docs/REPRODUCE_zh.md`、`docs/P_INTER_MULTISCALE_2LAYER_OPTIMIZATION_zh.md` 和 `docs/P_INTER_HIERARCHY_COST_BASELINE_zh.md`。

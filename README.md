@@ -12,7 +12,7 @@ The repository contains:
 - Chinese design, reproduction, and final Word reports;
 - the earlier intra two-layer and conservative `only32` study used by the same x265 snapshot.
 
-Headline 30-frame ABCE result (1 I + 29 P, QP 22/27/32/37): the original CU32-only high2/low2 selector is **+1.498% BD-rate** versus full three-layer hardware HME; the new cost-sensitive multiscale selector (mode 8, cutoff 45) reduces this to **+0.966%** across 17 sequences. Its frozen Class-B model reaches **84.834%** independent decision accuracy on Class A/C/E. The requested hierarchy-cost-only baseline, `SAD + sqrt(lambda) * MVD_bits` with `4 * min(J8)` aggregation (mode 9), is **+1.659%** on Class B and is retained as a training baseline rather than the recommendation. I pictures always keep intra32/intra16/intra8 enabled.
+Headline 30-frame ABCE result (1 I + 29 P, QP 22/27/32/37): the corrected sum-cost-rooted selector (mode 11, cutoff 50) reaches **+0.273% BD-rate** versus full three-layer hardware HME across 17 sequences, improving the prior mode 8 result of +0.966%. It sums all 16 original J8 costs, then corrects the forced cost root with integer SAD, texture, MV-consistency, QP, and sqrt(lambda) features. I pictures always keep intra32/intra16/intra8 enabled.
 
 For the full documentation, see [中文说明](README_zh.md), [algorithm design](docs/DESIGN_zh.md), [results](docs/RESULTS_zh.md), [reproduction guide](docs/REPRODUCE_zh.md), and the [final Word report](docs/P帧多尺度与层次Cost两层选择_测试与训练报告_zh.docx).
 

@@ -20,6 +20,7 @@
 - 旧 PME 在 BasketballDrive 上为 **+2.028%**；优化后为 **−0.565%**。
 - 旧版 CU32 单点自适应两层相对完整三层：17 序列平均 **+1.498% BD-rate**。
 - 新版多尺度代价敏感 CART（mode 8，cutoff 45）：17 序列平均 **+0.966% BD-rate**，高/低两层比例 **55.283% / 44.717%**；Class B 平均 +1.050%。
+- 修正原始CU8 cost求和并加入SAD/纹理/MV一致性纠错（mode 11，cutoff 50）：17序列平均 **+0.273% BD-rate**，高/低两层比例 **56.542% / 43.458%**；相对mode 8再改善0.693个百分点。16/17个序列低于1%，Kimono1为+1.609%。
 - 新版在未参与训练的 A/C/E 上判断正确率 **84.834%**；I 帧 mode 0/8 在 `--no-info` 下码流 SHA-256 完全相同，intra32/16/8 不受控制。
 - 用户指定的层次 `SAD+sqrt(lambda)*MVD_bits` cost-only 规则（mode 9）：Class B 平均 **+1.659% BD-rate**，用于后续 cost-rooted 混合训练的独立基线，不作为最终推荐。
 - cost-rooted 候选树已完成 Class B 训练导出，cutoff 45 留一准确率 **76.294%**，低于 mode 8 的 **77.731%**；尚未集成为新运行模式，也没有真实 BD-rate 结论。
@@ -67,8 +68,8 @@ python .\experiments\inter_hw_hme\run_classb.py `
 - `--hw-hme-pme-rate-scale 256`：PME 码率项 Q8 缩放。
 - `--hw-hme-pme-texture 8,24`：平均梯度的两级阈值；三档权重在参考实现中为 256/160/96。
 - `--hw-hme-pme-attractor 0|1|2`：零向量、AMVP 或两者取小。
-- `--hw-hme-inter-layers 0..9`：完整三层、高两层、低两层、旧自适应、旧标签、only32、only32 级联、多尺度标签、多尺度 CART、层次 cost-only。
-- `--hw-hme-layer-cutoff 45`：mode 8 的低两层概率阈值。
+- `--hw-hme-inter-layers 0..11`：新增mode 10原始CU8 cost求和、mode 11 sum-cost根节点加多特征纠错。
+- `--hw-hme-layer-cutoff 50`：最终推荐mode 11低两层概率阈值；mode 8复现仍使用45。
 - `--hw-hme-stats`：输出各级搜索与选层统计。
 
 ## 许可与数据
@@ -76,3 +77,5 @@ python .\experiments\inter_hw_hme\run_classb.py `
 `x265_overlay/` 含有修改后的 x265 文件，适用 x265/GPL 条款；详见 [NOTICE.md](NOTICE.md) 和 [x265-COPYING.txt](third_party/x265-COPYING.txt)。测试序列不随仓库分发。
 
 最新两层优化见 [多尺度优化报告](docs/P_INTER_MULTISCALE_2LAYER_OPTIMIZATION_zh.md)；层次 cost-only 的公式、日志、结果和训练入口见 [cost-only 基线报告](docs/P_INTER_HIERARCHY_COST_BASELINE_zh.md)。完整测试、训练、流程图和源码索引见 [正式 Word 报告](docs/P帧多尺度与层次Cost两层选择_测试与训练报告_zh.docx)。
+
+原始CU8 cost求和与最终mode 11优化见 [mode 10/11优化报告](docs/P_INTER_SUM_COST_MODE11_OPTIMIZATION_zh.md)。

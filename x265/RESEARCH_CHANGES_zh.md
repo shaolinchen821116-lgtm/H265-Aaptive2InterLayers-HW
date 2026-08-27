@@ -9,7 +9,7 @@
 - PME 自适应 rate 权重、纹理分档及零向量/AMVP attractor 控制。
 - P 帧完整三层、强制高两层、强制低两层、CU32-only、多尺度 CART 和层次 cost-only 运行模式。
 - mode 7 的 `INTERLAYERMS` 与 `INTERLAYERCOST` 训练日志。
-- mode 8 的 29 维整数多尺度树；mode 9 的 `SAD + sqrt(lambda)×MVD_bits` 层次判据。
+- mode 8 的29维整数多尺度树；mode 9的`4×min(J8)`判据；mode 10的16个原始J8求和；mode 11的sum-cost强制根节点与40维整数纠错树。
 - I 帧保护：P 帧选层开启时，I_SLICE 仍开放 intra32/intra16/intra8。
 
 构建示例：
@@ -20,6 +20,6 @@ cmake -S .\x265\source -B .\x265\build\hw -G Ninja `
 cmake --build .\x265\build\hw
 ```
 
-推荐的 P 帧两层配置是 `--hw-hme-inter-layers 8 --hw-hme-layer-cutoff 45`。mode 9 是用户指定公式的独立研究基线，不是当前推荐。详细参数、训练、测试和结果请返回仓库根目录查看 `README_zh.md`、`docs/REPRODUCE_zh.md` 和正式 DOCX 报告。
+推荐的 P 帧两层配置是 `--hw-hme-inter-layers 11 --hw-hme-layer-cutoff 50`。ABCE 17序列、1I+29P的平均损失为+0.273%。详细参数、训练、测试和结果请返回仓库根目录查看 `README_zh.md`、`docs/P_INTER_SUM_COST_MODE11_OPTIMIZATION_zh.md` 和正式 DOCX 报告。
 
 源码沿用 x265 的 GPL 条款，见本目录 `COPYING`。测试 YUV、码流、可执行文件、构建目录和逐 CTU 大日志不随仓库分发。

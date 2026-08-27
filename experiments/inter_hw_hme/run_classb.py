@@ -259,7 +259,7 @@ def main() -> int:
     parser.add_argument("--pme-rate-scale", type=int, default=256)
     parser.add_argument("--pme-texture", default="8,24")
     parser.add_argument("--pme-attractor", type=int, choices=(0, 1, 2), default=1)
-    parser.add_argument("--layer-mode", type=int, choices=range(10), default=0)
+    parser.add_argument("--layer-mode", type=int, choices=range(12), default=0)
     parser.add_argument("--layer-sad", type=int, default=2048)
     parser.add_argument("--layer-slope", type=int, default=64)
     parser.add_argument("--layer-refine", type=int, default=8)

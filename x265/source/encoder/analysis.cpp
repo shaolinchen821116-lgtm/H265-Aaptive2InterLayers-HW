@@ -528,6 +528,17 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
                 cf.cost8Group[0], cf.cost8Group[1], cf.cost8Group[2],
                 cf.cost8Group[3], cf.splitBits8To32, cf.cost8To32,
                 costSelected, leaf32, leaf16, leaf8, oracle);
+            const char* sumSelected = cf.cost32 < cf.cost8SumTo32 ? "high" : "low";
+            fprintf(stderr,
+                "INTERLAYERCOSTSUM,%u,%u,%u,%u,%d,%u," X265_LL ","
+                X265_LL "," X265_LL "," X265_LL "," X265_LL ","
+                X265_LL "," X265_LL ",%s,%u,%u,%u,%s\n",
+                ctu.m_cuAddr, ctu.m_cuPelX, ctu.m_cuPelY,
+                (uint32_t)cf.valid, qp, cf.sqrtLambdaQ8, cf.cost32,
+                cf.cost8SumGroup[0], cf.cost8SumGroup[1],
+                cf.cost8SumGroup[2], cf.cost8SumGroup[3],
+                cf.cost8SumTo32, cf.cost8To32, sumSelected,
+                leaf32, leaf16, leaf8, oracle);
         }
         else
         {
@@ -733,9 +744,11 @@ bool Analysis::collectHardwareInterScaleFeatures(const CUData& parentCTU,
                                     f.splitBits32 + 128) >> 8;
     f.cost32 = (uint64_t)rootMe.hwImeSad + rootMvRate + rootSplitRate;
     f.cost8To32 = ((uint64_t)f.sqrtLambdaQ8 * f.splitBits8To32 + 128) >> 8;
+    f.cost8SumTo32 = f.cost8To32;
     for (uint32_t group = 0; group < 4; group++)
     {
         uint64_t minCost8 = ~(uint64_t)0;
+        uint64_t sumCost8 = 0;
         for (uint32_t child = 0; child < 4; child++)
         {
             const HardwareHMETrace& trace = trace8[group * 4 + child];
@@ -743,9 +756,12 @@ bool Analysis::collectHardwareInterScaleFeatures(const CUData& parentCTU,
                                    trace.imeMvdBits + 128) >> 8;
             const uint64_t cost8 = (uint64_t)trace.imeSad + rate;
             minCost8 = X265_MIN(minCost8, cost8);
+            sumCost8 += cost8;
         }
         f.cost8Group[group] = minCost8 << 2;
+        f.cost8SumGroup[group] = sumCost8;
         f.cost8To32 += f.cost8Group[group];
+        f.cost8SumTo32 += f.cost8SumGroup[group];
     }
     f.valid = 1;
     return true;
@@ -1637,12 +1653,14 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
                                        (hwLayerMode == 1 || hwLayerMode == 2 ||
                                         hwLayerMode == 3 || hwLayerMode == 5 ||
                                         hwLayerMode == 6 || hwLayerMode == 8 ||
-                                        hwLayerMode == 9);
+                                        hwLayerMode == 9 || hwLayerMode == 10 ||
+                                        hwLayerMode == 11);
         const bool hwLayerRootProbe = m_param->bEnableHwHME && m_slice->isInterP() &&
                                       depth == 0 &&
                                       (hwLayerMode == 3 || hwLayerMode == 6 ||
                                        hwLayerMode == 7 || hwLayerMode == 8 ||
-                                       hwLayerMode == 9);
+                                       hwLayerMode == 9 || hwLayerMode == 10 ||
+                                       hwLayerMode == 11);
         bool hwRootProbeDone = false;
         bool hwAllowCurrent = true;
 
@@ -1677,9 +1695,17 @@ SplitData Analysis::compressInterCU_rd0_4(const CUData& parentCTU, const CUGeom&
             md.pred[PRED_2Nx2N].cu.initSubCU(parentCTU, cuGeom, qp);
             checkInter_rd0_4(md.pred[PRED_2Nx2N], cuGeom, SIZE_2Nx2N, probeRefMasks);
             const MotionData& rootMe = md.pred[PRED_2Nx2N].bestME[0][0];
-            if (hwLayerMode == 7 || hwLayerMode == 8 || hwLayerMode == 9)
+            if (hwLayerMode == 7 || hwLayerMode == 8 || hwLayerMode == 9 ||
+                hwLayerMode == 10 || hwLayerMode == 11)
                 collectHardwareInterScaleFeatures(parentCTU, cuGeom, qp, rootMe);
-            if (hwLayerMode == 9 && m_hwInterScaleFeatures.valid)
+            if (hwLayerMode == 11 && m_hwInterScaleFeatures.valid)
+                /* Corrected sum-cost tree using SAD/texture/MV features. */
+                m_hwInterLayerDecision = hwSelectInterLayersSumCostAdaptive(
+                    m_hwInterScaleFeatures, m_param->hwHmeInterLayerCutoff);
+            else if (hwLayerMode == 10 && m_hwInterScaleFeatures.valid)
+                m_hwInterLayerDecision = hwSelectInterLayersHierarchySumCost(
+                    m_hwInterScaleFeatures);
+            else if (hwLayerMode == 9 && m_hwInterScaleFeatures.valid)
                 m_hwInterLayerDecision = hwSelectInterLayersHierarchyCost(
                     m_hwInterScaleFeatures);
             else if (hwLayerMode == 8 && m_hwInterScaleFeatures.valid)

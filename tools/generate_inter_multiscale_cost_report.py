@@ -34,6 +34,7 @@ DOCX = ROOT / "docs" / "P帧多尺度与层次Cost两层选择_测试与训练�
 FLOW = ROOT / "docs" / "assets" / "p_inter_multiscale_cost_flow.png"
 MS_ROOT = ROOT / "results" / "inter" / "multiscale_2layer"
 COST_ROOT = ROOT / "results" / "inter" / "hierarchy_cost_only"
+SUM_ROOT = ROOT / "results" / "inter"
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -74,9 +75,9 @@ def render_flowchart(path: Path) -> None:
 
     box(530, 25, 620, 90, "P 帧 CU32 根节点", strong=True)
     box(405, 165, 870, 120, "并行/复用 IME 探针\n1×CU32 + 4×CU16 + 16×CU8")
-    box(80, 375, 680, 125, "mode 8：29 维整数特征\nSAD / 活动度 / MV 一致性 / QP")
-    box(920, 375, 680, 125, "mode 9：层次 cost-only\nJ = SAD + sqrt(lambda) × MVD_bits")
-    box(100, 590, 640, 110, "代价敏感 CART；cutoff 45",
+    box(80, 375, 680, 125, "mode 11：40 维整数特征\nSum-cost / SAD / 纹理 / MV / QP")
+    box(920, 375, 680, 125, "mode 10：原始 CU8 cost 求和\nJ = SAD + sqrt(lambda) × MVD_bits")
+    box(100, 590, 640, 110, "Sum-cost 强制根 CART；cutoff 50",
         fill="#EAF4EA", outline="#3B7A57", strong=True)
     box(940, 590, 640, 110, "J32 < J8→32？",
         fill="#FFF4D6", outline="#B7791F", strong=True)
@@ -88,8 +89,8 @@ def render_flowchart(path: Path) -> None:
     arrow(1010, 285, 1260, 375, "公式基线")
     arrow(420, 500, 420, 590)
     arrow(1260, 500, 1260, 590)
-    arrow(420, 700, 420, 805, "低概率 < 45")
-    arrow(650, 700, 1260, 805, "低概率 ≥ 45")
+    arrow(420, 700, 420, 805, "低概率 < 50")
+    arrow(650, 700, 1260, 805, "低概率 ≥ 50")
     arrow(1140, 700, 420, 805, "是：高")
     arrow(1380, 700, 1260, 805, "否：低")
     arrow(420, 910, 720, 1010)
@@ -114,21 +115,21 @@ def add_title_page(doc: Document) -> None:
     set_font(p.add_run("完整 x265 实现、测试结果、数据格式与训练方法"),
              size=14, color=DARK_BLUE)
     fixed_table(doc, ["项目", "内容"], [
-        ("当前推荐", "mode 8：多尺度代价敏感 CART，cutoff 45"),
-        ("公式基线", "mode 9：J32 与 4×min(J8) 层次 cost-only"),
+        ("当前推荐", "mode 11：原始 CU8 sum-cost 根节点 + 多特征纠错，cutoff 50"),
+        ("公式基线", "mode 10：16 个原始 J8 求和；mode 9 保留 4×min(J8)"),
         ("测试集合", "Class A/B/C/E；17 序列；每点 1I+29P"),
         ("码率点", "固定 QP 22 / 27 / 32 / 37"),
         ("I 帧保护", "intra32 / intra16 / intra8 全部开放"),
         ("源码状态", "仓库 x265/ 为已合入研究改动的完整源码"),
-        ("日期", "2026-08-26"),
+        ("日期", "2026-08-27"),
     ], [2200, 7160], font_size=9.5,
                 aligns=[WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.LEFT])
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(14)
     set_font(p.add_run("结论摘要"), size=13, bold=True, color=BLUE)
-    add_para(doc, "mode 8 在 ABCE 17 序列上的平均 BD-rate 为 +0.966%，最差 Kimono1 +1.606%；冻结的 Class B 模型在 A/C/E 独立数据上的决策正确率为 84.834%。")
-    add_para(doc, "mode 9 严格实现指定公式，在 Class B 上平均 +1.659%；其 58.073% 的低两层选择率明显高于 RDO 标签的 35.894%，说明 4×min(J8) 会低估兄弟块差异大的低层路径。")
-    add_para(doc, "因此 mode 9 保留为 cost-rooted 混合训练的根判据，不作为当前发布配置；所有结论均来自短序列研究，正式硬件定型仍需更长序列验证。")
+    add_para(doc, "最终 mode 11 在 ABCE 17 序列上的平均 BD-rate 为 +0.273%，相对上一版 mode 8 的 +0.966% 改善 0.693 个百分点；高/低两层比例为 56.542% / 43.458%。")
+    add_para(doc, "纯原始 J8 求和的 mode 10 在 Class B 平均 +3.133%，说明只修正 4×min 会造成 CU8 漏选；mode 11 以 sum-cost 为强制树根，再用 SAD、纹理、MV 一致性、QP 与 sqrt(lambda) 纠错。")
+    add_para(doc, "16/17 个序列低于 1%，Kimono1 为 +1.609%；因此不能宣称逐序列全部满足 <1%。所有结论均来自短序列研究，正式硬件定型仍需更长序列验证。")
     doc.add_page_break()
 
 
@@ -323,14 +324,18 @@ def build_report() -> None:
         "x265.exe ... --hw-hme --hw-hme-inter-layers 8 --hw-hme-layer-cutoff 45",
         "# 指定层次 cost-only 基线",
         "x265.exe ... --hw-hme --hw-hme-inter-layers 9",
+        "# 最终原始 sum-cost 根节点 + 多特征纠错",
+        "x265.exe ... --hw-hme --hw-hme-inter-layers 11 --hw-hme-layer-cutoff 50",
     ])
     fixed_table(doc, ["模式", "作用"], [
         ("0", "P 帧完整三层；anchor"),
         ("1 / 2", "强制高两层 / 强制低两层"),
         ("3–6", "历史 CU32 特征树、标签和 CU32-only 研究"),
-        ("7", "完整三层，并输出 INTERLAYERMS / INTERLAYERCOST 标签日志"),
-        ("8", "29 维多尺度 CART；当前推荐 cutoff 45"),
+        ("7", "完整三层，输出 INTERLAYERMS / INTERLAYERCOST / INTERLAYERCOSTSUM"),
+        ("8", "29 维多尺度 CART；历史推荐 cutoff 45"),
         ("9", "J32 与 4×min(J8) 层次 cost-only"),
+        ("10", "J32 与 16 个原始 J8 求和的纯 cost 基线"),
+        ("11", "sum-cost 强制树根 + 40 维多特征纠错；最终推荐 cutoff 50"),
     ], [1500, 7860], font_size=8.8,
                 aligns=[WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT])
 
@@ -347,7 +352,44 @@ def build_report() -> None:
         ("README_zh.md", "仓库总入口、模式和结论摘要"),
     ], [4800, 4560], font_size=8.4,
                 aligns=[WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.LEFT])
-    add_para(doc, "当前可发布结论是：mode 8 在短序列 ABCE 平均损失低于 1%，但最差序列仍高于 1%；mode 9 验证了 sqrt(lambda) 和 split bits 的作用，也暴露了 4×min 聚合的结构性偏差。下一步应优先验证 cost-rooted 修正树，并将测试扩展到 100–300 帧、场景切换和更多运动类型。")
+    add_para(doc, "历史结论是：mode 8 在短序列 ABCE 平均损失低于 1%；mode 9 验证了 sqrt(lambda) 和 split bits 的作用，也暴露了 4×min 聚合的结构性偏差。下面给出已完成的原始 cost 求和与纠错树结果。")
+
+    doc.add_page_break()
+    heading(doc, "13. mode 10/11：原始 CU8 Cost 求和与最终优化", 1)
+    add_para(doc, "mode 10 不再用每组最小 J8 乘 4，而是保留 16 个 CU8 的原始 cost：J8_sum=R(5)+ΣJ8[i]。该修改把 Class B 低层选择从旧公式约 58.1% 降至约 15.2%，但低层召回仅 28.2%，真实 BD-rate 反而达到 +3.133%。")
+    add_code(doc, [
+        "J8[i]    = SAD8[i] + ((sqrtLambdaQ8 * MVD_bits8[i] + 128) >> 8)",
+        "J8_sum   = sum(i=0..15, J8[i]) + R(5)",
+        "J32      = SAD32 + R(MVD_bits32) + R(1)",
+        "mode 11  = forced-root(J8_sum <= J32) + integer correction CART",
+    ])
+    add_para(doc, "mode 11 在原 29 维多尺度特征上增加 11 个 cost 特征：sum-cost 初判与比例分箱、J32/J8_sum及差值、四个 CU16 区域 sum-cost 的均值/极差/MAD、旧 min-cost 乐观偏差和 sqrtLambdaQ8。树的强制根节点是 sum-cost 比较，子树使用 QP、SAD 分层收益、纹理和 MV 一致性修正。")
+    fixed_table(doc, ["方案", "测试范围", "平均 BD-rate", "说明"], [
+        ("mode 8 / cutoff45", "ABCE 17序列", "+0.966%", "上一发布版"),
+        ("mode 10", "Class B 5序列", "+3.133%", "纯16个J8求和，漏选CU8"),
+        ("mode 11 / cutoff55", "ABCE 17序列", "+0.611%", "偏高层"),
+        ("mode 11 / cutoff50", "ABCE 17序列", "+0.273%", "最终推荐"),
+    ], [2200, 2200, 2100, 2860], font_size=8.8,
+                aligns=[WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.LEFT,
+                        WD_ALIGN_PARAGRAPH.RIGHT, WD_ALIGN_PARAGRAPH.LEFT])
+    sum_bd = read_csv(SUM_ROOT / "abce_sumcost_adaptive_mode11_c50_30f" / "bd_rate_summary.csv")
+    fixed_table(doc, ["Class", "序列", "mode11 cutoff50"], [
+        (r["class"].replace("Class", ""), r["sequence"],
+         f'{float(r["bd_rate_y_psnr_pct"]):+.3f}%')
+        for r in sum_bd if r["class"] != "All"
+    ], [1200, 5000, 3160], font_size=8.2,
+                aligns=[WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT,
+                        WD_ALIGN_PARAGRAPH.RIGHT])
+    add_para(doc, "类别平均：Class A -0.181%、Class B +0.554%、Class C +0.090%、Class E +0.313%；17 序列算术平均 +0.273%。16/17 个序列低于 1%，唯一例外 Kimono1 为 +1.609%。")
+    heading(doc, "14. mode 11训练与运行", 1)
+    add_code(doc, [
+        "python experiments/inter_hw_hme/train_inter_sum_cost_tree.py ^",
+        "  D:/work/classb_sumcost_collect/runs.csv --output D:/work/sum_tree ^",
+        "  --max-depth 6 --min-leaf 128 --low-weight 1.5 --sample-stride 4 ^",
+        "  --recommended-cutoff 50 --cpp-header source/encoder/inter_sum_cost_gate_model.h",
+        "x265.exe ... --hw-hme --hw-hme-inter-layers 11 --hw-hme-layer-cutoff 50",
+    ])
+    add_para(doc, "采集日志含 448,800 对 INTERLAYERMS/INTERLAYERCOSTSUM，435,600 个完整 CU32 有效。确定性 1/4 抽样用于拟合；Class B 留一分类验证在 cutoff50 下准确率 73.810%、平衡准确率 75.724%、LOW recall 82.468%。分类指标只用于诊断，发布阈值由真实 BD-rate 选择。I 帧继续绕过该模式，intra32/intra16/intra8 全开。")
 
     # Structural audit for compact_reference_guide.
     assert len(doc.sections) == 1
